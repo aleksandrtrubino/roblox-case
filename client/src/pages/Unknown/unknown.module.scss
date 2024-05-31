@@ -1,0 +1,37 @@
+.unknown {
+  min-height: 564px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_title {
+    font-size: 32px;
+  }
+
+  &_button {
+    margin-top: 32px;
+
+    border-radius: 6px;
+    height: 42px;
+    padding: 0 42px;
+
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    align-self: center;
+
+    background: #2a2c36;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgb(11, 172, 11);
+    }
+  }
+}

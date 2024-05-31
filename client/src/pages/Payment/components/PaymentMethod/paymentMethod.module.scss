@@ -1,0 +1,56 @@
+@import "../../../../styles/colors.scss";
+
+.method {
+    padding: 6px 3px 0;
+    width: 25%;
+    height: 156px;
+
+    &_wrapper {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background: rgb(27, 28, 36);
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // transition: 3s ease;
+
+        &:hover {
+            background: linear-gradient(300deg, rgba(107, 222, 53, .5) 0%, rgb(27, 28, 36) 100%);;
+        }
+    }
+}
+
+.picture {
+    width: 72px;
+}
+
+.selected {
+
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    display: none;
+    
+
+    &_icon {
+        width: 25px;
+        height: 25px;
+        fill: none;
+
+        & path {
+            stroke: rgb(6, 205, 6);
+        }
+    }
+}
+
+.selected_active {
+    display: block;
+}
+
+.active {
+    background: linear-gradient(300deg, rgba(107, 222, 53, .5) 0%, rgb(27, 28, 36) 100%);
+}

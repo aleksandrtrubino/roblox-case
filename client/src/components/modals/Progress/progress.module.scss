@@ -1,0 +1,78 @@
+@import "../../../styles/colors.scss";
+
+.progress {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_wrapper {
+        position: absolute;
+        top: -100px;
+        padding: 12px 24px;
+        border-radius: 10px;
+        background-color: #252731;
+        
+        display: flex;
+        align-items: center;
+
+        animation: showing 5s infinite ease-in-out;
+    }
+
+    &_gear {
+        margin-right: 24px;
+        width: 24px;
+        height: 24px;
+
+        animation: gear 3s infinite ease-in-out;
+
+
+        & path {
+            fill: white;
+        }
+    }
+
+    &_title {
+        white-space: nowrap;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+}
+
+@keyframes gear { 
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes showing {
+    0% {
+        top: -100px;
+    }
+
+    35% {
+        top: 5%;
+    }
+
+    50% {
+        top: 5%;
+    }
+
+    75% {
+        top: 5%;
+    }
+
+    100% {
+        top: -100px;
+    }
+}

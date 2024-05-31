@@ -1,0 +1,95 @@
+@import "../../../../styles/colors.scss";
+
+.inventory {
+    width: 100%;
+    min-height: 402px;
+    border-radius: 12px;
+    position: relative;
+
+    background-color: $inventory-color;
+
+    &_header {
+    }
+}
+
+.header {
+    &_wrapper {
+        background-color: $inventory-background-tabs-color;
+        border-radius: 10px;
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+    }
+
+    &_button {
+        padding: 12px 24px;
+        width: 100%;
+        border-radius: 12px;
+        background-color: $inventory-button-color;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 500;
+
+        transition: all .3s ease;
+
+        &:hover  {
+            background-color: $inventory-button-hover-color;
+        }
+
+        &:hover .header_icon path {
+            fill: $icon-hover-color;
+        }
+
+        &_wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        & span {
+            color: $text-color-grey;
+
+            transition: all .3s ease;
+        }
+
+        &:hover span {
+            color: $text-color-light;
+        }
+    }
+
+    &_icon {
+        width: 24px;
+        height: 24px;
+
+        & path {
+            transition: all .3s ease;
+            fill: $icon-color;
+        }
+    }
+}
+
+.home_button {
+    width: 64px;
+    height: 48px;
+
+    &:hover &_icon {
+        fill: $icon-hover-color;
+    }
+
+    &_icon {
+        width: 24px;
+        height: 24px;
+        fill: $icon-color;
+
+        transition: all .3s ease;
+    }
+}

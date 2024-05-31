@@ -1,0 +1,51 @@
+.privacy {
+  width: 100%;
+  padding: 12px 42px 42px 42px;
+
+  &_header {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 24px;
+  }
+
+  &_title {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &_wrapper {
+    & ol {
+      list-style: none;
+      counter-reset: li;
+
+      & li {
+        & ol {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+      }
+    }
+    & li:before {
+      color: green;
+      counter-increment: li;
+      content: counters(li, '.') '. ';
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    & li div {
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+  }
+}
+
+.privacy_item {
+    margin-bottom: 10px;
+}
+
+.privacy_paragraph {
+    font-weight: 500;
+}

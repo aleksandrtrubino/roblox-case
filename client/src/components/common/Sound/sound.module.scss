@@ -1,0 +1,22 @@
+.sound {
+    position: relative;
+    width: 64px;
+    height: 42px;
+    background-color: #1b1c24;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: #252732;
+    }
+
+
+    & svg {
+        width: 16px;
+        height: 16px;
+        
+        & path {
+            fill: white;
+        }
+    }
+}

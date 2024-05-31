@@ -1,0 +1,33 @@
+.profile {
+    width: 42px;
+    height: 42px;
+    background-color: #272934;
+    border-radius: 8px;
+
+    margin-left: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_image {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 916px) {
+    .profile {
+        width: 46px;
+        height: 46px;
+        margin-left: 14px;
+    }
+}
+
+@media (max-width: 416px) {
+    .profile {
+        width: 40px;
+        height: 40px;
+        margin-left: 8px;
+    }
+}

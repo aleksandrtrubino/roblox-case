@@ -1,0 +1,13 @@
+.online {
+    display: flex;
+    align-items: center;
+
+
+    &_icon {
+        width: 20px;
+        height: 20px;
+        fill: white;
+
+        margin-right: 4px;
+    }
+}

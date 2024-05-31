@@ -1,0 +1,26 @@
+.backward {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 42px;
+    padding: 0 16px;
+    background-color: #1b1c24;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: #252732;
+    }
+
+    &_title {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    &_icon {
+        width: 16px;
+        height: 16px;
+        fill: white;
+    }
+}

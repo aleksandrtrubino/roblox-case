@@ -1,0 +1,18 @@
+.close {
+    width: 32px;
+    height: 32px;
+    background-color: green;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    &_icon {
+        width: 25px;
+        height: 25px;
+        & path {
+            stroke: white;
+        }
+    }
+}

@@ -1,0 +1,184 @@
+@import "../../styles/colors.scss";
+
+.profile {
+    display: flex;
+    flex-direction: column;
+
+    &_settings {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 32px;
+    }
+
+    &_header {
+        display: flex;
+
+        margin-bottom: 32px;
+    }
+
+    &_info {
+
+    }
+}
+
+.settings {
+    &_title {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    &_button {
+        background-color: $profile-button-color;
+
+        display: flex;
+        align-items: center;
+        padding: 12px 24px;
+        border-radius: 10px;
+        transition: all .2s ease;
+
+        &:hover {
+            background-color: $profile-button-hover-color;
+        }
+    }
+
+    &_icon {
+        margin-right: 10px;
+
+        width: 20px;
+        height: 20px;
+
+        & path {
+            fill: white;
+        }
+    }
+
+    &_text {
+        text-transform: uppercase;
+    }
+
+}
+
+.header {
+
+
+    &_picture {
+        width: 208px;
+        height: 208px;
+        border-radius: 12px;
+        background-color: $profile-button-hover-color;
+
+        margin-right: 24px;
+    }
+}
+
+.details {
+    padding: 12px 0 12px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &_name {
+        text-transform: uppercase;
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    &_identificator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &_buttons {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &_button {
+        background: $profile-button-color;
+        padding: 12px 24px;
+        border-radius: 10px;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: $profile-button-hover-color;
+        }
+
+        &_money {
+            width: 25px;
+            height: 25px;
+
+            & path {
+                stroke: white;
+            }
+
+        }
+
+        &_support {
+            width: 25px;
+            height: 25px;
+            
+
+            & path {
+                fill: white;
+            }
+        }
+    }
+}
+
+.identificator {
+    &_copy {
+        background: transparent;
+        &_icon {
+            width: 18px;
+            height: 18px;
+            & path {
+                fill: white;
+            }
+        }
+    }
+}
+
+.settings_right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logout {
+    padding: 9px;
+    background-color: red;
+    border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & svg {
+        width: 25px;
+        height: 25px;
+
+        & path {
+            stroke: white;
+        }
+    }
+}
+
+
+

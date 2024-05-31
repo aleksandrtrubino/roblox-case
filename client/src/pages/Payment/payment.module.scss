@@ -1,0 +1,241 @@
+@import '../../styles/colors.scss';
+
+.payment {
+  padding: 24px 0;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 32px;
+  }
+
+  &_icon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+  }
+
+  &_title {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+  }
+}
+
+.left {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.methods {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -6px;
+
+  margin-bottom: 24px;
+}
+
+.right {
+  max-width: 516px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.selected {
+  padding: 14px 20px;
+
+  background-color: $payment-methods-color;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &_method {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_title {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  &_option {
+    font-weight: 500;
+  }
+
+  &_picture {
+    width: 52px;
+    height: 52px;
+    background-color: green;
+  }
+}
+
+.promocode {
+  padding: 14px 20px;
+  background-color: $payment-methods-color;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+
+  &_field {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+  }
+
+  &_confirm {
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: green;
+    border-radius: 5px;
+    height: 100%;
+    width: 100px;
+  }
+}
+
+.field {
+  background-color: #252534;
+  border-radius: 5px;
+  height: 52px;
+  flex: 1;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+
+  &_icon {
+    width: 20px;
+    height: 20px;
+    fill: grey;
+  }
+
+  &_input {
+    background: transparent;
+    outline: 0;
+    border: none;
+
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
+
+.refill {
+  padding: 14px 20px;
+  background-color: $payment-methods-color;
+  border-radius: 10px;
+
+  &_icon {
+    width: 20px;
+    height: 20px;
+
+    & path {
+      stroke: grey;
+    }
+  }
+
+  &_field {
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #252534;
+    border-radius: 5px;
+    height: 52px;
+    flex: 1;
+    position: relative;
+  }
+
+  &_left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &_convert {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    fill: white;
+  }
+
+  &_right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &_total {
+    font-weight: 500;
+  }
+
+  &_input {
+    width: 164px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
+
+.selectors {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+
+  &_button {
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px 0;
+    background-color: #252534;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: green;
+    }
+  }
+}
+
+.recharge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  background-color: green;
+  border-radius: 10px;
+  padding: 20px 0;
+
+  &_title {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &_icon {
+    width: 25px;
+    height: 25px;
+    fill: white;
+  }
+}

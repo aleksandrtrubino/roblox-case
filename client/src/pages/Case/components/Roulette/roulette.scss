@@ -1,0 +1,83 @@
+
+  .roulette {
+    position: relative;
+    width: 1000px;
+    background: #088136;
+    border-radius: 10px;
+  
+    .pointer {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      transform: translate3d(-50%, -25px, 0);
+      height: 50px;
+      filter: drop-shadow(0 0 20px rgba(230, 174, 174, 0.3));
+    }
+  
+    .scope {
+      overflow: hidden;
+  
+      .list {
+        position: relative;
+        display: inline-flex;
+        left: 0;
+        transform: translate3d(0, 0, 0);
+        list-style: none;
+        transition: 5s cubic-bezier(0.21, 0.53, 0.29, 0.99);
+  
+        &__item {
+          flex-shrink: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 200px;
+          height: 160px;
+          opacity: 0.8;
+          transition: 0.3s ease;
+  
+          &:nth-child(2n) {
+            background: rgba(45, 232, 32, 0.1);
+          }
+  
+          &.active {
+            opacity: 1;
+  
+            img {
+              transform: scale(1.05);
+            }
+          }
+  
+          img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            transition: 0.3s ease;
+          }
+        }
+      }
+    }
+  
+    .start {
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translate3d(-50%, 20px, 0);
+      padding: 24px 52px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      background: rgb(12, 135, 12);
+      color: inherit;
+      font-size: 24px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+      box-shadow: 0 0 30px 0 rgba(255, 118, 118, 0.2);
+      cursor: pointer;
+  
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  

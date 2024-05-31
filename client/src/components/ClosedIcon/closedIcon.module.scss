@@ -1,0 +1,23 @@
+.closed {
+    position: absolute;
+    border-radius: 6px;
+    background-color: rgba($color: #1b1c23, $alpha: .8);
+    backdrop-filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_icon {
+        width: 16px;
+        height: 16px;
+
+        & path {
+            stroke: white;
+        }
+    }
+}

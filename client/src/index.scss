@@ -1,0 +1,63 @@
+@import './styles/fonts.scss';
+@import './styles/colors.scss';
+
+//* Дефолт
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  font-family: 'Rubik', sans-serif;
+  color: $text-color-light;
+}
+
+* input[type='number'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+* input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  display: none;
+}
+
+//* Запрет на перетаскивание изображений
+* img {
+  pointer-events: none;
+}
+
+* button {
+  border: none;
+  cursor: pointer;
+}
+
+* ul {
+  list-style-type: none;
+}
+
+* a {
+  text-decoration: none;
+}
+
+* input {
+  &:focus {
+    outline: none;
+  }
+}
+
+//* Основные редактирования
+
+body {
+  position: relative;
+  background-color: $main-color;
+
+  height: 100vh;
+}
