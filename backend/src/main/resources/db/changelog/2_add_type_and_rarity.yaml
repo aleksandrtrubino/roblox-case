@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: chupachups84
+      changes:
+        - createTable:
+            tableName: pet_type
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: type
+                  type: smallint
+                  constraints:
+                    nullable: false
+                    unique: true
+        - createTable:
+            tableName: pet_rarity
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: rarity
+                  type: smallint
+                  constraints:
+                    nullable: false
+                    unique: true
+        - addColumn:
+            tableName: pet
+            columns:
+              - column:
+                  name: rarity_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    referencedTableName: pet_rarity
+                    referencedColumnNames: id
+                    deleteCascade: true
+                    foreignKeyName: fk_pet_pet_rarity
+        - createTable:
+            tableName: pet_pet_type
+            columns:
+              - column:
+                  name: pet_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    foreignKeyName: fk_pet_id
+                    referencedTableName: pet
+                    referencedColumnNames: id
+                    deleteCascade: true
+              - column:
+                  name: type_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    foreignKeyName: fk_type_id
+                    referencedTableName: pet_type
+                    referencedColumnNames: id
+                    deleteCascade: true

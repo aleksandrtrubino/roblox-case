@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: chupachups84
+      changes:
+        - renameTable:
+            oldTableName: case
+            newTableName: container

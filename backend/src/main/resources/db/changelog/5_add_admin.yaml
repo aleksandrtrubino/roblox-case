@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: chupachups84
+      changes:
+        - insert:
+            tableName: _user
+            columns:
+              - column:
+                  name: username
+                  value: 'admin'
+              - column:
+                  name: password
+                  value: '$2a$10$7VFBc.RTbNA3LVqBxr1nYOJMc8eZsDKN7YLDWGPqgoZmfK6I540yC'
+              - column:
+                  name: balance
+                  value: 999999999
+              - column:
+                  name: role_id
+                  value: 2
+              - column:
+                  name: is_active
+                  value: true
+              - column:
+                  name: is_email_confirmed
+                  value: false

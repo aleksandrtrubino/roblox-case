@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/0_add_user_pet_case.yaml
+  - include:
+      file: db/changelog/1_add_jwt.yaml
+  - include:
+      file: db/changelog/2_add_type_and_rarity.yaml
+  - include:
+      file: db/changelog/3_add_role.yaml
+  - include:
+      file: db/changelog/4_insert_roles_raritys_types.yaml
+  - include:
+      file: db/changelog/5_add_admin.yaml
+  - include:
+      file: db/changelog/6_rename_case_to_container.yaml

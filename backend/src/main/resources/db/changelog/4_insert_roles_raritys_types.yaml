@@ -1,0 +1,113 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: chupachups84
+      changes:
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: 'ROLE_USER'
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: 'ROLE_ADMIN'
+        - insert:
+            tableName: pet_rarity
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: rarity
+                  value: 0
+        - insert:
+            tableName: pet_rarity
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: rarity
+                  value: 1
+        - insert:
+            tableName: pet_rarity
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: rarity
+                  value: 2
+        - insert:
+            tableName: pet_rarity
+            columns:
+              - column:
+                  name: id
+                  value: 4
+              - column:
+                  name: rarity
+                  value: 3
+        - insert:
+            tableName: pet_rarity
+            columns:
+              - column:
+                  name: id
+                  value: 5
+              - column:
+                  name: rarity
+                  value: 4
+        - insert:
+            tableName: pet_type
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: type
+                  value: 0
+        - insert:
+            tableName: pet_type
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: type
+                  value: 1
+        - insert:
+            tableName: pet_type
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: type
+                  value: 2
+        - insert:
+            tableName: pet_type
+            columns:
+              - column:
+                  name: id
+                  value: 4
+              - column:
+                  name: type
+                  value: 3
+        - insert:
+            tableName: pet_type
+            columns:
+              - column:
+                  name: id
+                  value: 5
+              - column:
+                  name: type
+                  value: 4
