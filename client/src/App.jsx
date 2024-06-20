@@ -60,12 +60,6 @@ function App() {
       <Router>
         <Header />
         <div className={styles.application_content}>
-          {/* <Notification /> */}
-          {/* <Progress /> */}
-          {/* <Auth /> */}
-          {/* <Nickname /> */}
-          {/* <Error /> */}
-          {/* <Support /> */}
           <Routes>
             <Route path="*" element={<Unknown />} />
             <Route path="/" element={<Cases />} />
@@ -77,12 +71,6 @@ function App() {
             <Route path="/agreement" element={<Agreement />} />
           </Routes>
         </div>
-
-        {/* Свечение на фоне */}
-        {/* <div className={`${styles.application_glow} ${styles.glow}`}>
-          <div className={`${styles.glow_wrapper} ${styles.glow_top}`}></div>
-          <div className={`${styles.glow_wrapper} ${styles.glow_bottom}`}></div>
-        </div> */}
         <Footer />
       </Router>
     </div>

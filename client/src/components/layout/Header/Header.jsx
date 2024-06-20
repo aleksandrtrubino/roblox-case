@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Logotype } from '../../common/Logotype/Logotype';
 import { Balance } from './components/Balance/Balance';
 import { NotificationIcon } from './components/NotificationIcon/NotificationIcon';
-import { Profile } from './components/Profile/Profile';
+import { ProfileIcon } from './components/Profile/ProfileIcon';
 import { useDispatch, useSelector } from 'react-redux';
 
 //? Временно неиспользуемые компоненты 
@@ -24,9 +24,9 @@ export const Header = () => {
       </div>
 
           <div className={styles.header_right}>
-            <NotificationIcon />
             <Balance balanceCount={balanceCount}/>
-            <Profile />
+            <ProfileIcon />
+              <NotificationIcon />
           </div>
           {/* <button className={styles.auth} >
             Войти

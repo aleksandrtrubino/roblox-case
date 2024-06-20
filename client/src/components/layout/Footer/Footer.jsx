@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
 
-import { Logotype } from '../../common/Logotype/Logotype';
-import { Closed } from '../../Closed/Closed';
-
 import styles from './footer.module.scss';
 
 export const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={`${styles.footer_header} ${styles.header}`}>
-        <Logotype className={styles.header_logotype} />
+        {/*<Logotype className={styles.header_logotype} />*/}
+
+      </div>
+      <div className={`${styles.footer_end} ${styles.end}`}>
+        {/*<span className={styles.end_copyright}>PETCASE © 2024 Все права защищены</span>*/}
         <div className={styles.header_list}>
           <Link to="/agreement">
             <span>Пользовательское соглашение</span>
@@ -21,12 +22,6 @@ export const Footer = () => {
             <span>FAQ</span>
           </Link>
         </div>
-      </div>
-      <div className={`${styles.footer_body} ${styles.body}`}>
-        <Closed />
-      </div>
-      <div className={`${styles.footer_end} ${styles.end}`}>
-        <span className={styles.end_copyright}>PETCASE © 2024 Все права защищены</span>
         <div className={`${styles.end_socials} ${styles.socials}`}>
           <div className={styles.socials_icons}>
             <button className={styles.socials_button}>

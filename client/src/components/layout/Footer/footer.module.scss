@@ -1,9 +1,13 @@
 @import '../../../styles/colors.scss';
 
 .footer {
-  padding: 12px 24px 42px 24px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
   border-radius: 10px 10px 0 0;
   background-color: $footer-color;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
 
   &_header {
     display: flex;
@@ -28,16 +32,25 @@
     align-items: center;
     justify-content: space-between;
   }
+
 }
 
 .header {
   &_list {
     display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-right: auto;
     align-items: center;
-    gap: 12px;
+    gap: 2rem;
 
     & span {
       text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: rgba(30, 184, 30, 0.879)
+
+      }
     }
   }
 }
