@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 
-import { Backward } from '../../components/common/Backward/Backward';
-import { Item } from '../../components/common/Item/Item';
-import { Sound } from '../../components/common/Sound/Sound';
+import { Backward } from '../../common/components/backward/Backward';
+import { Item } from '../../common/components/item/Item';
+import { Sound } from '../../common/components/sound/Sound';
 import styles from './case.module.scss';
-import { ClosedIcon } from '../../components/ClosedIcon/ClosedIcon';
+import { ClosedIcon } from '../../common/components/closedIcon/ClosedIcon';
 import axios from 'axios';
-import { Roulette } from './components/Roulette/Roulette';
+import { Roulette } from './components/roulette/Roulette';
 
 let caseCount = 26;
 let sellCount = 14;

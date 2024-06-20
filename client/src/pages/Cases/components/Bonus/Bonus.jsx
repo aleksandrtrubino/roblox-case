@@ -1,6 +1,6 @@
 // import { Link } from 'react-router-dom';
 
-import { Closed } from '../../../../components/Closed/Closed';
+import { Closed } from '../../../../common/components/closed/Closed';
 import styles from './bonus.module.scss';
 import backgroundBonus from '../../../../assets/images/backgroundBonus.png'
 

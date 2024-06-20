@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PaymentMethod } from './components/PaymentMethod/PaymentMethod';
+import { PaymentMethod } from './components/paymentMethod/PaymentMethod';
 
 import styles from './payment.module.scss';
 

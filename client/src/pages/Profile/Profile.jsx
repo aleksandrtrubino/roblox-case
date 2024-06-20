@@ -1,7 +1,7 @@
 import React from 'react';
-import { Friends } from './components/Friends/Friends';
-import { Inventory } from './components/Inventrory/Inventory';
-import { History } from './components/History/History';
+import { Friends } from './components/friends/Friends';
+import { Inventory } from './components/inventory/Inventory';
+import { History } from './components/history/History';
 import styles from './profile.module.scss';
 import { Link } from 'react-router-dom';
 import {faCoins} from "@fortawesome/free-solid-svg-icons";

@@ -1,7 +1,9 @@
 @import '../../styles/colors.scss';
 
 .payment {
-  padding: 24px 0;
+  width: 90%;
+  align-self: center;
+  margin-top: 2rem;
 
   &_header {
     display: flex;

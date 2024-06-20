@@ -1,4 +1,4 @@
-import { Item } from '../../../../components/common/Item/Item';
+import { Item } from '../../../../common/components/item/Item';
 import styles from './items.module.scss';
 
 export const Items = () => {

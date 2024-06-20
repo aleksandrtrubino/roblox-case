@@ -9,10 +9,10 @@
   padding: 0;
   margin: 0;
 
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  //user-select: none;
+  //-webkit-user-select: none;
+  //-moz-user-select: none;
+  //-ms-user-select: none;
 
   font-family: 'Rubik', sans-serif;
   color: $text-color-light;
@@ -56,8 +56,5 @@ input[type='number']::-webkit-inner-spin-button {
 //* Основные редактирования
 
 body {
-  position: relative;
-  background-color: $main-color;
 
-  height: 100vh;
 }
