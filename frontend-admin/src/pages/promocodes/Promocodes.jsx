@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Promocodes.module.scss';
 import promocodes from '../../data/promocodes.json';
-import AddPromocode from './modules/AddPromocode/AddPromocode';
+import AddPromocode from './components/addPromocode/AddPromocode';
 const pageNumbers = [1, 2, 3, 4, 5];
 
 const Promocodes = () => {

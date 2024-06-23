@@ -2,8 +2,8 @@ import React from 'react';
 import cases from '../../data/cases.json';
 import styles from './Cases.module.scss';
 
-import AddCase from './modules/AddCase/AddCase';
-import EditCase from './modules/EditCase/EditCase';
+import AddCase from './components/addCase/AddCase';
+import EditCase from './components/editCase/EditCase';
 const pageNumbers = [1, 2, 3, 4, 5]
 
 const Cases = () => {

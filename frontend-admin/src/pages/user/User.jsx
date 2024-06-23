@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './User.module.scss';
 import userProfile from '../../data/user.json';
-import Transactions from './modules/Transactions/Transactions';
-import CaseHistory from './modules/CaseHistory/CaseHistory';
-import Inventory from './modules/Inventory/Inventory';
-import OutputHistory from './modules/OutputHistory/OutputHistory';
+import Transactions from './components/transactions/Transactions';
+import CaseHistory from './components/caseHistory/CaseHistory';
+import Inventory from './components/inventory/Inventory';
+import OutputHistory from './components/outputHistory/OutputHistory';
 
 const User = () => {
   const {

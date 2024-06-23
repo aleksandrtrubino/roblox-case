@@ -2,8 +2,8 @@ import React from 'react';
 
 import styles from './Items.module.scss';
 import items from '../../data/items.json';
-import Add from './modules/Add/Add';
-import Edit from './modules/Edit/Edit'
+import Add from './components/add/Add';
+import Edit from './components/edit/Edit'
 const pageNumbers = [1, 2, 3, 4, 5, 6, 7];
 
 const Items = () => {

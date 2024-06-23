@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import admin from '../../data/admin.json';
 import styles from './Admin.module.scss';
-import Deal from './modules/Deal/Deal';
+import Deal from './components/deal/Deal';
 const pageNumbers = [1, 2, 3, 4, 5];
 
 const Admin = () => {

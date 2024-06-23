@@ -1,5 +1,5 @@
 import React from 'react';
-import CaseHistory from '../CaseHistory/CaseHistory';
+import CaseHistory from '../caseHistory/CaseHistory';
 import styles from './OutputHistory.module.scss';
 const pageNumbers = [1, 2, 3, 4, 5];
 

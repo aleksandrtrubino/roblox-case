@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Outputting.module.scss';
 import items from '../../data/outputting.json';
 import { Link } from 'react-router-dom';
-import Modal from './modules/Modal/Modal';
+import Modal from './components/modal/Modal';
 const pageNumbers = [1, 2, 3, 4, 5]
 
 const Outputting = () => {

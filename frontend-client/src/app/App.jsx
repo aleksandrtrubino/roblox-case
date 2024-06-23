@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Routes, Route, BrowserRouter} from 'react-router-dom';
+import {Routes, Route, BrowserRouter, Navigate} from 'react-router-dom';
 
 //* Импортирование компонентов лейаут ( layout )
 import { Header } from '../common/containers/header/Header';
@@ -58,14 +58,15 @@ function App() {
       <BrowserRouter>
           <Routes>
             <Route element={<Layout />} >
-              <Route path="*" element={<Unknown />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/faq" element={<Faq />} />
-              <Route path="/case" element={<Case />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/payment" element={<Payment />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/agreement" element={<Agreement />}/>
+                <Route path="*" element={<Unknown />} />
+                <Route path="/" element={<Navigate to="/home" />}/>
+                <Route path="/home" element={<Home />} />
+                <Route path="/faq" element={<Faq />} />
+                <Route path="/case" element={<Case />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/payment" element={<Payment />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/agreement" element={<Agreement />}/>
             </Route>
           </Routes>
       </BrowserRouter>

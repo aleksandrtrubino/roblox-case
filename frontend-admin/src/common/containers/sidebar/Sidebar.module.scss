@@ -1,8 +1,8 @@
-@import '../../styles/colors.scss';
+@import '../../../styles/colors';
 
 @font-face {
     font-family: 'Fugaz';
-    src: url(../../assets/fonts/FugazOne.ttf);
+    src: url(../../../assets/fonts/FugazOne.ttf);
 }
 
 .logotype {
@@ -21,7 +21,7 @@
         content: '';
         width: 36px;
         height: 36px;
-        background-image: url('../../assets/images/logotype.png');
+        background-image: url('../../../assets/images/logotype.png');
         background-repeat: no-repeat;
         background-size: cover;
     }
