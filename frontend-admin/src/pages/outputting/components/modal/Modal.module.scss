@@ -1,0 +1,212 @@
+.modal {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.471);
+
+  display: flex;
+  align-items: center;
+
+  &__container {
+    position: relative;
+    margin: 0 auto;
+    width: 640px;
+    border-radius: 12px;
+    background-color: white;
+    padding: 24px 12px;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  & svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+
+  &__profile {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__control {
+    margin-right: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__button {
+    border: none;
+    padding: 12px 64px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: .2s;
+  }
+
+  &__accept {
+    background-color: rgb(27, 194, 27);
+
+    &:hover {
+        background-color: rgb(23, 169, 23);
+    }
+  }
+  
+  &__cancel {
+    background-color: rgb(223, 54, 54);
+
+    &:hover {
+        background-color: rgb(192, 42, 42);
+    }
+  }
+
+  &__chat {
+    background-color: #1f67db;
+
+    &:hover {
+        background-color: #1e5cc1;
+    }
+  }
+
+  &__image {
+    width: 164px;
+    height: 164px;
+    border-radius: 6px;
+    object-fit: cover;
+    padding: 2px;
+    transition: 0.2s ease-in-out;
+    border: 2px solid white;
+
+    &:hover {
+      border-color: black;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+  }
+}
+
+.username {
+  font-size: 32px;
+  font-weight: 500;
+  color: rgb(17, 17, 17);
+}
+
+.nickname {
+  font-size: 15px;
+  color: rgb(17, 17, 17);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copy {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.items__title {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: rgb(17, 17, 17);
+  opacity: .8;
+}
+
+.items__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+
+  &__info {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__image {
+    padding: 2px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid;
+    border-radius: 6px;
+    margin-right: 32px;
+  }
+
+  &__name {
+    width: 120px;
+    color: rgb(17, 17, 17);
+  }
+
+  &__age {
+    width: 120px;
+    color: rgb(17, 17, 17);
+  }
+}
+
+.properties {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.properties__icon {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  display: none;
+  color: white;
+}
+
+.mega__neon {
+  background: linear-gradient(180deg, rgba(168, 98, 216, 1) 0%, rgba(71, 10, 205, 1) 100%);
+  display: flex;
+}
+
+.neon {
+  background-color: #33d300;
+  display: flex;
+}
+
+.flyable {
+  background-color: #1a68e6;
+  display: flex;
+}
+
+.ridible {
+  background-color: #ff267b;
+  display: flex;
+}

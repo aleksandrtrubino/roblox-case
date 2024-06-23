@@ -1,0 +1,128 @@
+{
+  "id": "dq724gldci8htb6",
+  "avatar": "https://sun1-99.userapi.com/impg/EarhAd1L_O9SQRTqFoH5MnMbdSPyX2VgyTxJZQ/dHGmtUfpBLU.jpg?size=1080x1080&quality=96&sign=2298e911bfcb7a7fe5e2666786dfac78&type=album",
+  "nickname": "Данила Беркут",
+  "role": "admin",
+  "outputtings": [
+    {
+      "avatar": "http://kartinkof.club/uploads/posts/2022-03/1648225020_5-kartinkof-club-p-morgenshtern-mem-litso-5.jpg",
+      "id": "3nlepe9ggx3gdhu",
+      "username": "robux2007",
+      "timestamp": "2023-05-20 14:30:00",
+      "identificator": "if9w9r1ncoqnowf",
+      "status": "cancel",
+      "items": [
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        }
+      ]
+    },
+    {
+      "avatar": "http://kartinkof.club/uploads/posts/2022-03/1648225020_5-kartinkof-club-p-morgenshtern-mem-litso-5.jpg",
+      "id": "3nlepe9ggx3gdhu",
+      "username": "robux2007",
+      "timestamp": "2023-05-20 14:30:00",
+      "identificator": "if9w9r1ncoqnowf",
+      "status": "agreed",
+      "items": [
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        }
+      ]
+    },
+    {
+      "avatar": "http://kartinkof.club/uploads/posts/2022-03/1648225020_5-kartinkof-club-p-morgenshtern-mem-litso-5.jpg",
+      "id": "3nlepe9ggx3gdhu",
+      "username": "robux2007",
+      "timestamp": "2023-05-20 14:30:00",
+      "identificator": "if9w9r1ncoqnowf",
+      "status": "agreed",
+      "items": [
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+.items {
+  padding: 12px 12px;
+  position: relative;
+}
+
+.edit {
+  margin-bottom: 32px;
+}
+
+.table {
+  width: 100%;
+}
+
+.head__title {
+  text-align: left;
+}
+
+.edit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__button {
+    padding: 8px 18px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(12, 165, 43);
+    border-radius: 4px;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: rgb(14, 180, 47);
+    }
+  }
+}
+
+.items__control {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.control__manage {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.page__button {
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(17, 17, 17);
+}
+
+.control__search {
+  border: none;
+  outline: none;
+  background-color: rgb(17, 17, 17);
+  padding: 4px 6px;
+  border-radius: 6px;
+  width: 200px;
+  transition: 0.2s;
+
+  &:focus {
+    width: 220px;
+  }
+}
+
+.control__sorting {
+  border: none;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background-color: rgb(17, 17, 17);
+  cursor: pointer;
+}
+
+td {
+  padding: 2px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.image {
+  width: 48px;
+  height: 48px;
+  border: 2px solid;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.properties {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.properties__icon {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  display: none;
+  color: white;
+}
+
+.mega__neon {
+  background: linear-gradient(180deg, rgba(168, 98, 216, 1) 0%, rgba(71, 10, 205, 1) 100%);
+  display: flex;
+}
+
+.neon {
+  background-color: #33d300;
+  display: flex;
+}
+
+.flyable {
+  background-color: #1a68e6;
+  display: flex;
+}
+
+.ridible {
+  background-color: #ff267b;
+  display: flex;
+}
+
+.table__button {
+  display: flex;
+  gap: 8px;
+}
+
+
+.button__edit {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  padding: 8px 0;
+  border-radius: 6px;
+  background-color: rgb(17, 17, 17);
+  transition: .2s;
+
+  &:hover {
+    background-color: rgb(25, 25, 25);
+  }
+}
+
+.button__delete {
+    width: 100%;
+  cursor: pointer;
+  border: none;
+  padding: 8px 0;
+  border-radius: 6px;
+  background-color: rgb(208, 38, 32);
+  transition: .2s;
+
+  &:hover {
+    background-color: rgb(168, 21, 16);
+  }
+}

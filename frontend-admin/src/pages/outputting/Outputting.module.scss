@@ -1,0 +1,140 @@
+.outputtings {
+    padding: 6px 16px;
+}
+
+.outputting {
+    position: relative;
+    background-color: rgb(17, 17, 17);
+    padding: 4px 6px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.outputting__title {
+    margin-bottom: 16px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &__image {
+        width: 42px;
+        height: 42px;
+        border-radius: 6px;
+    }
+
+    &__nickname {
+        margin-left: 12px;
+    }
+}
+
+
+
+.items__list {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.item {
+    border: 2px solid;
+    padding: 2;
+    border-radius: 6px;
+
+    &__image {
+        width: 32px;
+        height: 32px;
+    
+    }
+
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    &__pending {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        color: rgba(255, 166, 0, 0.996);
+        & svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.button {
+    border: none;
+    background-color: rgb(32, 31, 31);
+    padding: 6px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+        background-color: rgb(45, 43, 43);
+    }
+}
+
+.payments__control {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.control__manage {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.page__button {
+    background-color: rgb(17, 17, 17);
+    padding: 4px 6px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.control__search {
+    background-color: rgb(17, 17, 17);
+    border: none;
+    outline: none;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+.control__sorting {
+    border: none;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background-color: rgb(17, 17, 17);
+    cursor: pointer;
+    
+}

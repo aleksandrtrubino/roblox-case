@@ -1,0 +1,94 @@
+@import '../../styles/colors.scss';
+
+@font-face {
+    font-family: 'Fugaz';
+    src: url(../../assets/fonts/FugazOne.ttf);
+}
+
+.auth {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logotype {
+    margin-bottom: 64px;
+    text-transform: uppercase;
+    font-family: 'Fugaz';
+    font-size: 32px;
+    
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    padding-left: 41px;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 52px;
+        height: 52px;
+        background-image: url('../../assets/images/logotype.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 512px;
+    width: 100%;
+    border-radius: 6px;
+
+    &__pass {
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+        & img {
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            right: 12px;
+            cursor: pointer;
+        }
+
+        & input {
+            position: relative;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 12px 12px;
+        background-color: rgb(17, 17, 17);
+        font-size: 16px;
+        border-radius: 6px;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__complete {
+        background-color: $auth-button;
+        border-radius: 4px;
+        padding: 12px 0;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        color: white;
+        transition: .2s;
+
+        &:hover {
+            background-color: $auth-button-hover;
+        }
+    }
+}

@@ -1,0 +1,98 @@
+.header {
+    padding: 2px 16px;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    justify-content: end;
+    background-color: #1c1c1c;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown__menu {
+    position: absolute;
+    background-color: #1c1c1c;
+    width: 100%;
+    padding: 12px 2px;
+    z-index: 2;
+    border-radius: 6px;
+    top: calc(100% + 6px);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu__button {
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    padding: 4px 4px;
+    background-color: #111111;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    & svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.exit {
+    display: flex;
+    justify-content: center;
+    &__icon {
+        display: flex;
+        align-items: center;
+        & svg {
+            margin-left: 12px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+
+.dropdown__arrow {
+    display: inline-flex;
+
+
+    & svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    & img {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+    }
+}
+
+.username {
+    font-size: 14px;
+}
+
+.settings {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    & svg {
+        width: 20px;
+        height: 20px;
+    }
+}

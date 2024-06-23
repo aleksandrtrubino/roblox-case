@@ -1,0 +1,240 @@
+.admin {
+  padding: 28px 12px;
+  position: relative;
+
+  &__user {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: 12px;
+  }
+
+  &__role {
+    border: 2px solid rgb(212, 45, 45);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(215, 39, 39);
+    padding: 4px 8px;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &__image {
+    width: 128px;
+    height: 128px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+}
+
+.user__container {
+  display: flex;
+  gap: 8px;
+}
+
+.item {
+  &__image {
+    width: 54px;
+    height: 54px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+}
+
+.history {
+  &__title {
+    margin: 32px 0 24px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__button {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    background-color: rgb(17, 17, 17);
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      background-color: rgb(25, 24, 24);
+    }
+  }
+
+  &__timestamp {
+    margin-left: 32px;
+  }
+
+  &__status {
+    margin-left: 64px;
+    border-radius: 6px;
+    border: 1px solid;
+    padding: 2px 8px;
+  }
+}
+
+.user__control {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.control__button {
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: rgb(215, 39, 39);
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  transition: .2s;
+
+  &:hover {
+    background-color: rgb(201, 2, 2);
+  }
+}
+
+.agreed {
+  color: rgb(8, 158, 8);
+  border-color: rgb(8, 158, 8);
+}
+
+.cancel {
+  color: rgb(225, 47, 47);
+  border-color: rgb(219, 42, 42);
+}
+
+.user__statistic {
+  display: flex;
+  gap: 16px;
+}
+
+.deals {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 72px;
+  background-color: rgb(17, 17, 17);
+  border-radius: 6px;
+
+  padding: 8px 12px;
+  width: 242px;
+
+  &__title {
+    font-size: 18px;
+    opacity: .8;
+    font-weight: 500;
+  }
+
+  &__count {
+    font-size: 24px;
+    
+  }
+}
+
+
+
+
+.items {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.thing {
+  &__image {
+    width: 42px;
+    height: 42px;
+    border: 1px solid;
+    padding: 2px;
+    border-radius: 6px;
+  }
+}
+
+.payments__control {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.items__control {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.control__manage {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.page__button {
+  background-color: rgb(17, 17, 17);
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.control__search {
+  border: none;
+  outline: none;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background-color: rgb(17, 17, 17);
+}
+
+.control__sorting {
+  border: none;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background-color: rgb(17, 17, 17);
+  cursor: pointer;
+  
+}

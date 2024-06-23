@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "promocode": "fnwqiqiw412jpqwj",
+        "used": 301,
+        "count": 101,
+        "left": 141,
+        "timestamp": "2023-05-20 14:30:00",
+        "timestampLeft": "2023-05-20 14:30:00"
+    },
+    {
+        "id": 2,
+        "promocode": "KAVO",
+        "used": 301,
+        "count": 50,
+        "left": 12,
+        "timestamp": "2023-05-20 14:30:00",
+        "timestampLeft": "2023-05-20 14:30:00"
+    },
+    {
+        "id": 3,
+        "promocode": "NewYear",
+        "used": 999,
+        "count": 500,
+        "left": 1,
+        "timestamp": "2023-05-20 14:30:00",
+        "timestampLeft": "2023-05-20 14:30:00"
+    },
+    {
+        "id": 4,
+        "promocode": "Ffwe231iw412jpqwj",
+        "used": 20,
+        "count": 1,
+        "left": 10,
+        "timestamp": "2023-05-20 14:30:00",
+        "timestampLeft": "2023-05-20 14:30:00"
+    },
+    {
+        "id": 5,
+        "promocode": "23fnwqiqwj",
+        "used": 301,
+        "count": 1000,
+        "left": 1231,
+        "timestamp": "2023-05-20 14:30:00",
+        "timestampLeft": "2023-05-20 14:30:00"
+    }
+]

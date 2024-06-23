@@ -1,0 +1,220 @@
+.users {
+    padding: 12px 12px;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.control {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.control__variations {
+    display: flex;
+    gap: 6px;
+}
+
+.variation {
+    border-radius: 6px;
+    padding: 4px 10px;
+    color: #fcfcfc;
+}
+
+.variation__active {
+    background-color: rgb(5, 149, 5);
+}
+
+.variation__offline {
+    background-color: rgb(117, 115, 115);
+}
+
+.variation__banned {
+    background-color: rgb(158, 41, 25);
+}
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+    background-color: rgb(17, 17, 17);
+    padding: 8px 16px;
+    border-radius: 6px;
+
+    & button {
+        padding: 4px 8px;
+        background-color: rgb(32, 32, 32);
+        transition: .2s;
+
+        &:hover {
+            background-color: rgb(48, 48, 48);
+        }
+    }
+}
+
+.button__cancel {
+    border: none;
+    border-radius: 6px;
+    padding: 4px 6px;
+    cursor: pointer;
+
+    margin-right: 4px;
+}
+
+.button__ban {
+    border: none;
+    border-radius: 6px;
+    padding: 4px 6px;
+    cursor: pointer;
+
+    margin-right: 4px;
+}
+
+.button__delete {
+    border: none;
+    border-radius: 6px;
+    padding: 4px 6px;
+
+    cursor: pointer;
+}
+
+.users__control {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.control__manage {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.page__button {
+    background-color: rgb(17, 17, 17);
+    padding: 4px 6px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.control__search {
+    background-color: rgb(17, 17, 17);
+    border: none;
+    outline: none;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+.control__sorting {
+    border: none;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background-color: rgb(17, 17, 17);
+    cursor: pointer;
+    
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.profile__user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 16px;
+    background-color: rgb(17, 17, 17);
+    border-radius: 12px;
+}
+
+.profile__container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile__image {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.profile__name {
+    font-weight: 500;
+}
+
+.profile__status {
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 2px 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.banned {
+    border-color: rgb(158, 41, 25);
+    color: rgb(158, 41, 25);
+}
+
+.active {
+    border-color: rgb(5, 149, 5);
+    color: rgb(5, 149, 5);
+}
+
+.offline {
+    border-color: rgb(124, 121, 121);
+    color: rgb(124, 121, 121);
+}
+
+.profile__buttons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.button__del {
+    border: none;
+    background-color: rgb(158, 41, 25);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+        background-color: rgb(179, 40, 22);
+    }
+}
+
+.link__button {
+    border: none;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+        background-color: rgb(48, 48, 48);
+    }
+}

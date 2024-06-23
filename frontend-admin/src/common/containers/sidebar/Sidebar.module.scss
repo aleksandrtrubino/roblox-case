@@ -1,0 +1,138 @@
+@import '../../styles/colors.scss';
+
+@font-face {
+    font-family: 'Fugaz';
+    src: url(../../assets/fonts/FugazOne.ttf);
+}
+
+.logotype {
+    font-family: 'Fugaz', sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    padding-left: 28px;
+    position: relative;
+    margin-left: 12px;
+    
+    &::before {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 36px;
+        height: 36px;
+        background-image: url('../../assets/images/logotype.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    margin-bottom: 24px;
+}
+
+.sidebar {
+    padding: 32px 0;
+    position: sticky;
+    width: 254px;
+    flex-shrink: 0;
+    background-color: $sidebar-background;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__head {
+        display: flex;
+        padding: 0 12px;
+        justify-content: space-between;
+    }
+}
+
+.dropdown {
+    position: relative;
+    &__button {
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        img {
+            width: 32px;
+            height: 32px;
+            border-radius: 52px;
+        }
+    }
+
+    &__content {
+        background-color: $light;
+        border-radius: 6px;
+        padding: 12px;
+        position: absolute;
+        left: calc(100% + 16px);
+        top: 0;
+        display: none;
+        
+        flex-direction: column;
+    }
+
+    &__username {
+        margin-bottom: 4px;
+        font-size: 20px;
+        white-space: nowrap;
+    }
+
+    &__role {
+        padding: 4px 6px;
+        background-color: rgb(205, 58, 0);
+        border-radius: 4px;
+        font-size: 14px;
+        color: $light;
+        font-weight: 500;
+
+        margin-bottom: 24px;
+    }
+
+    &__out {
+        border: none;
+        padding: 4px 0;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+}
+
+.opened {
+    display: flex;
+}
+
+.category {
+    &__name {
+        font-weight: 500;
+        font-size: 20px;
+        margin-left: 12px;
+        opacity: .9;
+    }
+
+    &__list {
+
+    }
+
+    &__item {
+        
+    }
+
+    &__link {
+        padding: 12px 12px;
+        cursor: pointer;
+        display: block;
+        background-color: transparent;
+
+        transition: .2s;
+        &:hover {
+            background-color: $sidebar-item-hover;
+        }
+    }
+
+    margin-bottom: 24px;
+}
+
+.active {
+    background-color: $sidebar-item-hover !important;
+}

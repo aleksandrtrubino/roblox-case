@@ -1,0 +1,699 @@
+{
+  "id": "4b0rr9jtx33lfu1",
+  "avatar": "https://avatars.mds.yandex.net/i?id=f6afc03c2510800a01e5f5258fe673fbadae5946-8922087-images-thumbs&n=13",
+  "nickname": "Артемий Дроздов",
+  "gameNickname": "truffel208",
+  "status": "banned",
+  "email": "artem@example.com",
+  "registrationDate": "2023-05-01",
+  "lastVisit": "2023-05-22",
+  "banDate": "2023-05-20",
+  "balance": 500.0,
+  "replenish": 1200.0,
+  "inventory": [
+    {
+      "id": 1,
+      "name": "Frost Dragon",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+      "age": "Full-Grown",
+      "rarity": "legendary",
+      "pumping": "megaNeon",
+      "ridible": true,
+      "flyable": true,
+      "price": 1099,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "id": 2,
+      "name": "Badger",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+      "age": "Post-Teen",
+      "rarity": "ultraRare",
+      "pumping": "neon",
+      "ridible": true,
+      "flyable": true,
+      "price": 304,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "id": 3,
+      "name": "Beaver",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+      "age": "Teen",
+      "rarity": "rare",
+      "pumping": "default",
+      "ridible": true,
+      "flyable": false,
+      "price": 505,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "id": 4,
+      "name": "Bat",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+      "age": "Pre-Teen",
+      "rarity": "uncommon",
+      "pumping": "default",
+      "ridible": false,
+      "flyable": true,
+      "price": 212,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "id": 5,
+      "name": "Brown Bear",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/5/58/Brown_Bear.png",
+      "age": "Junior",
+      "rarity": "common",
+      "pumping": "neon",
+      "ridible": true,
+      "flyable": false,
+      "price": 1099,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "id": 6,
+      "name": "Chicken",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/a/ac/Chicken_Pet.png",
+      "age": "Newborn",
+      "rarity": "legendary",
+      "pumping": "default",
+      "ridible": true,
+      "flyable": true,
+      "price": 1099,
+      "timestamp": "2023-05-22 18:15:00"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1",
+      "transactionId": "ABC123",
+      "amount": 10.0,
+      "status": "success",
+      "paymentMethod": "Credit Card",
+      "timestamp": "2023-05-22T10:30:00Z"
+    },
+    {
+      "id": "2",
+      "transactionId": "DEF456",
+      "amount": 20.0,
+      "status": "failed",
+      "paymentMethod": "PayPal",
+      "timestamp": "2023-05-21T15:45:00Z"
+    },
+    {
+      "id": "3",
+      "transactionId": "GHI789",
+      "amount": 15.0,
+      "status": "pending",
+      "paymentMethod": "Bank Transfer",
+      "timestamp": "2023-05-20T09:20:00Z"
+    }
+  ],
+  "outputHistory": [
+    {
+      "avatar": "https://sun9-49.userapi.com/impg/7ZPUmqJhDyTalPU5U18_IMdlmv1974vkJK1Q2A/6CIPu4QNuYw.jpg?size=1280x960&quality=96&sign=1069423af2a1fff7bc949bae6fab7670&type=album",
+      "id": "dq724gldci8htb6",
+      "name": "Илья Пенкин",
+      "timestamp": "2023-05-22 18:15:00",
+      "items": [
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        },
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        }
+      ]
+    },
+    {
+      "avatar": "https://sun1-98.userapi.com/impg/HQSK46--SuAk8BNd0FK6yEVJULcEvjFllswoeg/oiw7bP4DH0I.jpg?size=853x1280&quality=95&sign=f2313a92618e3e0cc7e4945cab48376b&type=album",
+      "id": "dq724gldci8htb6",
+      "timestamp": "2023-05-22 18:15:00",
+      "name": "Денис Губин",
+      "items": [
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        },
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        }
+      ]
+    },
+    {
+      "avatar": "https://sun9-49.userapi.com/impg/7ZPUmqJhDyTalPU5U18_IMdlmv1974vkJK1Q2A/6CIPu4QNuYw.jpg?size=1280x960&quality=96&sign=1069423af2a1fff7bc949bae6fab7670&type=album",
+      "id": "dq724gldci8htb6",
+      "timestamp": "2023-05-22 18:15:00",
+      "name": "Илья Пенкин",
+      "items": [
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        },
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        }
+      ]
+    },
+    {
+      "avatar": "https://sun9-49.userapi.com/impg/7ZPUmqJhDyTalPU5U18_IMdlmv1974vkJK1Q2A/6CIPu4QNuYw.jpg?size=1280x960&quality=96&sign=1069423af2a1fff7bc949bae6fab7670&type=album",
+      "id": "dq724gldci8htb6",
+      "name": "Илья Пенкин",
+      "timestamp": "2023-05-22 18:15:00",
+      "items": [
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        },
+        {
+          "id": 1,
+          "name": "Frost Dragon",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+          "age": "Full-Grown",
+          "rarity": "legendary",
+          "pumping": "megaNeon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 2,
+          "name": "Badger",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+          "age": "Post-Teen",
+          "rarity": "ultraRare",
+          "pumping": "neon",
+          "ridible": true,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        },
+        {
+          "id": 3,
+          "name": "Beaver",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+          "age": "Teen",
+          "rarity": "rare",
+          "pumping": "default",
+          "ridible": true,
+          "flyable": false
+        },
+        {
+          "id": 4,
+          "name": "Bat",
+          "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+          "age": "Pre-Teen",
+          "rarity": "uncommon",
+          "pumping": "default",
+          "ridible": false,
+          "flyable": true
+        }
+      ]
+    }
+  ],
+  "caseHistory": [
+    {
+      "caseName": "King Case",
+      "caseId": "king",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fcrown.png&w=384&q=75",
+      "id": 1,
+      "name": "Frost Dragon",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+      "age": "Full-Grown",
+      "rarity": "legendary",
+      "pumping": "megaNeon",
+      "ridible": true,
+      "flyable": true,
+      "price": 1099,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "caseName": "Sweet Case",
+      "caseId": "sweet",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fhorns.png&w=384&q=75",
+      "id": 2,
+      "name": "Badger",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+      "age": "Post-Teen",
+      "rarity": "ultraRare",
+      "pumping": "neon",
+      "ridible": true,
+      "flyable": true,
+      "price": 304,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "caseName": "Cold Case",
+      "caseId": "cold",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fdomino.png&w=384&q=75",
+      "id": 3,
+      "name": "Beaver",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+      "age": "Teen",
+      "rarity": "rare",
+      "pumping": "default",
+      "ridible": true,
+      "flyable": false,
+      "price": 505,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "caseName": "Overseer Case",
+      "caseId": "overseer",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fprae.png&w=384&q=75",
+      "id": 4,
+      "name": "Bat",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+      "age": "Pre-Teen",
+      "rarity": "uncommon",
+      "pumping": "default",
+      "ridible": false,
+      "flyable": true,
+      "price": 212,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "caseName": "Hitman Case",
+      "caseId": "hitman",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fspaceitems.png&w=384&q=75",
+      "id": 5,
+      "name": "Brown Bear",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/5/58/Brown_Bear.png",
+      "age": "Junior",
+      "rarity": "common",
+      "pumping": "neon",
+      "ridible": true,
+      "flyable": false,
+      "price": 1099,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "caseName": "Sparkle Case",
+      "caseId": "sparkle",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Ffruityitems.png&w=384&q=75",
+      "id": 2,
+      "name": "Badger",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+      "age": "Post-Teen",
+      "rarity": "ultraRare",
+      "pumping": "neon",
+      "ridible": true,
+      "flyable": true,
+      "price": 304,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "caseName": "Hallow Case",
+      "caseId": "hallow",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fhallowcaseitems.png&w=384&q=75",
+      "id": 3,
+      "name": "Beaver",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+      "age": "Teen",
+      "rarity": "rare",
+      "pumping": "default",
+      "ridible": true,
+      "flyable": false,
+      "price": 505,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "caseName": "Evil Case",
+      "caseId": "evil",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fportraitcaseitems.png&w=384&q=75",
+      "id": 4,
+      "name": "Bat",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+      "age": "Pre-Teen",
+      "rarity": "uncommon",
+      "pumping": "default",
+      "ridible": false,
+      "flyable": true,
+      "price": 212,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "caseName": "Dominus Case",
+      "caseId": "dominus",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fpurplepower.png&w=384&q=75",
+      "id": 5,
+      "name": "Brown Bear",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/5/58/Brown_Bear.png",
+      "age": "Junior",
+      "rarity": "common",
+      "pumping": "neon",
+      "ridible": true,
+      "flyable": false,
+      "price": 1099,
+      "timestamp": "2023-05-22 18:15:00"
+    },
+    {
+      "caseName": "Hyperbeast Case",
+      "caseId": "hyperbeast",
+      "caseImage": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fgucci.png&w=384&q=75",
+      "id": 6,
+      "name": "Chicken",
+      "image": "https://static.wikia.nocookie.net/adoptme/images/a/ac/Chicken_Pet.png",
+      "age": "Newborn",
+      "rarity": "legendary",
+      "pumping": "default",
+      "ridible": true,
+      "flyable": true,
+      "price": 1099,
+      "timestamp": "2023-05-22 18:15:00"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+.payments {
+    padding: 4px 12px;
+}
+
+.payments__title {
+    margin-bottom: 12px;
+}
+
+.payments__control {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.control__manage {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.page__button {
+    background-color: rgb(17, 17, 17);
+    padding: 4px 6px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.control__search {
+    background-color: rgb(17, 17, 17);
+    border: none;
+    outline: none;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+.control__sorting {
+    border: none;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background-color: rgb(17, 17, 17);
+    cursor: pointer;
+    
+}
+
+.body__user {
+    width: 200px;
+}
+
+.table {
+    width: 100%;
+    background-color: rgb(17, 17, 17);
+    padding: 12px 6px;
+    border-radius: 12px;
+}
+
+.table__head {
+
+}
+
+.head__title {
+    text-align: left;
+}
+
+.button__user {
+    background-color: rgb(37, 37, 37);
+    border: none;
+    border-radius: 6px;
+    padding: 4px 18px;
+    transition: .2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(48, 47, 47);
+    }
+}
+
+.payment__border {
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 2px 4px;
+    font-size: 15px;
+}
+
+.pending {
+    border-color: orange;
+    color: orange;
+}
+
+.failure {
+    border-color: red;
+    color: red;
+}
+
+.success {
+    border-color: green;
+    color: green;
+}

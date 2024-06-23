@@ -1,0 +1,227 @@
+[
+  {
+    "name": "Overseer Case",
+    "id": "overseer",
+    "image": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fprae.png&w=384&q=75",
+    "price": 199,
+    "count": 1002,
+    "items": [
+        {
+            "id": 1,
+            "name": "Frost Dragon",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+            "rarity": "legendary"
+          },
+          {
+            "id": 2,
+            "name": "Badger",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+            "rarity": "ultraRare"
+          },
+          {
+            "id": 3,
+            "name": "Beaver",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+            "rarity": "rare"
+          },
+          {
+            "id": 4,
+            "name": "Bat",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+            "rarity": "uncommon"
+          },
+          {
+            "id": 5,
+            "name": "Brown Bear",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/5/58/Brown_Bear.png",
+            "rarity": "common"
+          },
+          {
+            "id": 6,
+            "name": "Chicken",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/a/ac/Chicken_Pet.png",
+            "rarity": "legendary"
+          }
+    ]
+  },
+  {
+    "name": "King Case",
+    "id": "king",
+    "image": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fcrown.png&w=384&q=75",
+    "price": 403,
+    "count": 1002,
+    "items": [
+        {
+            "id": 1,
+            "name": "Frost Dragon",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+            "rarity": "legendary"
+          },
+          {
+            "id": 2,
+            "name": "Badger",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+            "rarity": "ultraRare"
+          },
+          {
+            "id": 3,
+            "name": "Beaver",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+            "rarity": "rare"
+          },
+          {
+            "id": 4,
+            "name": "Bat",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+            "rarity": "uncommon"
+          },
+          {
+            "id": 5,
+            "name": "Brown Bear",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/5/58/Brown_Bear.png",
+            "rarity": "common"
+          },
+          {
+            "id": 6,
+            "name": "Chicken",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/a/ac/Chicken_Pet.png",
+            "rarity": "legendary"
+          }
+    ]
+  },
+  {
+    "name": "Sweet Case",
+    "id": "sweet",
+    "image": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fhorns.png&w=384&q=75",
+    "price": 202,
+    "count": 1002,
+    "items": [
+        {
+            "id": 1,
+            "name": "Frost Dragon",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+            "rarity": "legendary"
+          },
+          {
+            "id": 2,
+            "name": "Badger",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+            "rarity": "ultraRare"
+          },
+          {
+            "id": 3,
+            "name": "Beaver",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+            "rarity": "rare"
+          },
+          {
+            "id": 4,
+            "name": "Bat",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+            "rarity": "uncommon"
+          },
+          {
+            "id": 5,
+            "name": "Brown Bear",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/5/58/Brown_Bear.png",
+            "rarity": "common"
+          },
+          {
+            "id": 6,
+            "name": "Chicken",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/a/ac/Chicken_Pet.png",
+            "rarity": "legendary"
+          }
+    ]
+  },
+  {
+    "name": "Cold Case",
+    "id": "cold",
+    "image": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fdomino.png&w=384&q=75",
+    "price": 503,
+    "count": 1002,
+    "items": [
+        {
+            "id": 1,
+            "name": "Frost Dragon",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+            "rarity": "legendary"
+          },
+          {
+            "id": 2,
+            "name": "Badger",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+            "rarity": "ultraRare"
+          },
+          {
+            "id": 3,
+            "name": "Beaver",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+            "rarity": "rare"
+          },
+          {
+            "id": 4,
+            "name": "Bat",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+            "rarity": "uncommon"
+          },
+          {
+            "id": 5,
+            "name": "Brown Bear",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/5/58/Brown_Bear.png",
+            "rarity": "common"
+          },
+          {
+            "id": 6,
+            "name": "Chicken",
+            "image": "https://static.wikia.nocookie.net/adoptme/images/a/ac/Chicken_Pet.png",
+            "rarity": "legendary"
+          }
+    ]
+  },
+  {
+    "name": "Hitman Case",
+    "id": "hitman",
+    "image": "https://bloxflip.com/_next/image?url=https%3A%2F%2Fcdn-bf.blox.land%2Fspaceitems.png&w=384&q=75",
+    "price": 764,
+    "count": 1002,
+    "items": [
+      {
+        "id": 1,
+        "name": "Frost Dragon",
+        "image": "https://static.wikia.nocookie.net/adoptme/images/f/fd/Frost_Dragon_Pet.png",
+        "rarity": "legendary"
+      },
+      {
+        "id": 2,
+        "name": "Badger",
+        "image": "https://static.wikia.nocookie.net/adoptme/images/f/ff/Badger.png",
+        "rarity": "ultraRare"
+      },
+      {
+        "id": 3,
+        "name": "Beaver",
+        "image": "https://static.wikia.nocookie.net/adoptme/images/2/26/Beaver.png",
+        "rarity": "rare"
+      },
+      {
+        "id": 4,
+        "name": "Bat",
+        "image": "https://static.wikia.nocookie.net/adoptme/images/a/ad/Bat.png",
+        "rarity": "uncommon"
+      },
+      {
+        "id": 5,
+        "name": "Brown Bear",
+        "image": "https://static.wikia.nocookie.net/adoptme/images/5/58/Brown_Bear.png",
+        "rarity": "common"
+      },
+      {
+        "id": 6,
+        "name": "Chicken",
+        "image": "https://static.wikia.nocookie.net/adoptme/images/a/ac/Chicken_Pet.png",
+        "rarity": "legendary"
+      }
+    ]
+  }
+]

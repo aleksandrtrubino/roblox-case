@@ -1,0 +1,156 @@
+.deal {
+  width: 100%;
+  height: calc(100vh - 36px);
+  background-color: rgba(0, 0, 0, 0.618);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+  &__container {
+    padding: 12px;
+    position: relative;
+    width: 1020px;
+    border-radius: 6px;
+    margin: 0 auto;
+    background-color: white;
+  }
+}
+
+.button__close {
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  color: rgb(17, 17, 17);
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  z-index: 1;
+}
+
+.deal__user {
+  display: flex;
+  gap: 8px;
+}
+
+.user {
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__image {
+    width: 128px;
+    height: 128px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  &__username {
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(17, 17, 17);
+  }
+
+  &__indeficator {
+    color: rgb(17, 17, 17);
+  }
+
+  &__timestamp {
+    color: rgb(17, 17, 17);
+  }
+}
+
+.item {
+  &__status {
+    width: 146px;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid;
+    padding: 2px 8px;
+  }
+}
+
+.agreed {
+  color: green;
+  border-color: green;
+}
+
+.cancel {
+  color: red;
+  border-color: red;
+}
+
+.properties {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.properties__icon {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  display: none;
+  color: white;
+}
+
+.mega__neon {
+  background: linear-gradient(180deg, rgba(168, 98, 216, 1) 0%, rgba(71, 10, 205, 1) 100%);
+  display: flex;
+}
+
+.neon {
+  background-color: #33d300;
+  display: flex;
+}
+
+.flyable {
+  background-color: #1a68e6;
+  display: flex;
+}
+
+.ridible {
+  background-color: #ff267b;
+  display: flex;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.list__title {
+  margin: 12px 0;
+  color: rgb(17, 17, 17);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background-color: rgb(17, 17, 17);
+  padding: 2px 4px;
+  border-radius: 6px;
+  justify-content: space-between;
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 200px;
+  }
+  &__image {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    padding: 2px;
+    border: 1px solid;
+  }
+}
