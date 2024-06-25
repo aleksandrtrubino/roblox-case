@@ -1,5 +1,5 @@
 import styles from './notificationIcon.module.scss';
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {faBell} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 

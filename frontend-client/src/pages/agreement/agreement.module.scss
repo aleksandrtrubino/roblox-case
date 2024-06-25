@@ -1,3 +1,5 @@
+@import "../../styles/colors";
+
 .agreement {
   padding: 0 200px;
   &_wrapper {
@@ -16,7 +18,7 @@
       }
     }
     & li:before {
-        color: green;
+        color: $color-6;
         counter-increment: li;
         content: counters(li, '.') '. ';
         line-height: 1.5;

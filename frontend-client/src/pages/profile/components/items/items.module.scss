@@ -1,3 +1,5 @@
+@import "../../../../styles/colors";
+
 .items {
     padding: 16px 18px 32px 18px;
 }
@@ -24,7 +26,7 @@
             position: absolute;
             width: 18px;
             height: 18px;
-            border: 2px solid white;
+            border: 2px solid $color-5;
             border-radius: 5px;
         }
     }
@@ -36,7 +38,7 @@
         height: 25px;
 
         & path {
-            fill: white;
+            fill: $color-5;
         }
     }
 
@@ -121,6 +123,6 @@
     }
 
     &_output {
-        background-color: green;
+        background-color: $color-6;
     }
 }

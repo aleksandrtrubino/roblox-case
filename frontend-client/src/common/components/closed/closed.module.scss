@@ -1,10 +1,12 @@
+@import "../../../styles/colors.scss";
+
 //* Стилизация закрытого контента
 .closed {
     position: absolute;
     border-radius: 12px;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #000000, $alpha: 0.8);
+    background-color: rgba($color: $color-6, $alpha: 0.8);
     backdrop-filter: blur(5px);
     z-index: 2;
 
@@ -21,7 +23,7 @@
         margin-right: 16px;
 
         & path {
-            stroke: white;
+            stroke: $color-5;
         }
     }
 }

@@ -1,8 +1,9 @@
+@import "../../../../styles/colors";
 
   .roulette {
     position: relative;
     width: 1000px;
-    background: #088136;
+    background: $color-6;
     border-radius: 10px;
   
     .pointer {
@@ -66,7 +67,7 @@
       border: none;
       border-radius: 5px;
       outline: none;
-      background: rgb(12, 135, 12);
+      background: $color-6;
       color: inherit;
       font-size: 24px;
       text-transform: uppercase;

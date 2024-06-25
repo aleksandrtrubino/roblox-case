@@ -62,11 +62,15 @@ function App() {
                 <Route path="/" element={<Navigate to="/home" />}/>
                 <Route path="/home" element={<Home />} />
                 <Route path="/faq" element={<Faq />} />
-                <Route path="/case" element={<Case />} />
+                {/*<Route path="/auth" element={<Auth />} />*/}
+                {/*<Route path="/case" element={<Case />} />*/}
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/payment" element={<Payment />} />
+                {/*<Route path="/notification" element={<Notification />} />*/}
                 <Route path="/privacy" element={<Privacy />} />
+                {/*<Route path="/progress" element={<Progress />} />*/}
                 <Route path="/agreement" element={<Agreement />}/>
+                {/*<Route path="/support" element={<Support />}/>*/}
             </Route>
           </Routes>
       </BrowserRouter>

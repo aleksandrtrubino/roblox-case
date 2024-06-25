@@ -1,3 +1,5 @@
+@import "../../../../styles/colors";
+
 .cases {
   width: 100%;
 }
@@ -21,7 +23,7 @@
 }
 
 .item {
-  background-color: rgba(27, 28, 36, 1);
+  background-color: $color-2;
   cursor: pointer;
   position: relative;
   border-radius: 1rem;
@@ -66,7 +68,7 @@
 
   &_button {
     width: 100%;
-    background-color: rgba(30, 184, 30, 0.879);
+    background-color: $color-6;
     padding: 12px;
     opacity: 0;
     text-align: center;
@@ -113,7 +115,7 @@
   &_button {
     width: 100%;
     border-radius: 6px;
-    background-color: green;
+    background-color: $color-6;
     padding: 12px;
     display: flex;
     justify-content: space-between;
@@ -138,7 +140,7 @@
     padding: 0.5rem;
 
     & path {
-      stroke: white;
+      stroke: $color-5;
     }
   }
 }

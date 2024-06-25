@@ -23,14 +23,14 @@
     filter: blur(200px);
     border-radius: 100%;
     opacity: 30%;
-    background: -o-linear-gradient(124deg, #2dff14, #098003);
-    background: linear-gradient(326deg, #2dff14, #098003);
+    background: -o-linear-gradient(124deg, $color-6, #098003);
+    background: linear-gradient(326deg, $color-6, #098003);
     background-size: 400% 400%;
     -webkit-animation: lightAnimation 5s ease-in-out infinite;
     animation: lightAnimation 5s ease-in-out infinite;
     width: 1000px;
     height: 1000px;
-    background-color: green;
+    background-color: $color-6;
   }
 
   &_top {

@@ -1,3 +1,5 @@
+@import "../../styles/colors";
+
 .privacy {
   width: 100%;
   padding: 12px 42px 42px 42px;
@@ -28,7 +30,7 @@
       }
     }
     & li:before {
-      color: green;
+      color: $color-6;
       counter-increment: li;
       content: counters(li, '.') '. ';
       line-height: 1.5;

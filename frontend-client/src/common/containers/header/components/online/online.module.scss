@@ -1,3 +1,5 @@
+@import "../../../../../styles/colors";
+
 .online {
     display: flex;
     align-items: center;
@@ -6,7 +8,7 @@
     &_icon {
         width: 20px;
         height: 20px;
-        fill: white;
+        fill: $color-5;
 
         margin-right: 4px;
     }

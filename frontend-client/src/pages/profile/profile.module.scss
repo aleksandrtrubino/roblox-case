@@ -54,7 +54,7 @@
         height: 20px;
 
         & path {
-            fill: white;
+            fill: $color-5;
         }
     }
 
@@ -75,7 +75,7 @@
 
         font-size:4rem;
         font-weight: 700;
-        color:darkgrey;
+        color:$color-4;
 
         width:7rem;
         height:7rem;
@@ -155,7 +155,7 @@
             }
 
             & path {
-                stroke: white;
+                stroke: $color-5;
             }
 
         }
@@ -166,7 +166,7 @@
             
 
             & path {
-                fill: white;
+                fill: $color-5;
             }
         }
     }
@@ -180,7 +180,7 @@
             width: 18px;
             height: 18px;
             & path {
-                fill: white;
+                fill: $color-5;
             }
         }
     }
@@ -217,7 +217,7 @@
         height: 25px;
 
         & path {
-            stroke: white;
+            stroke: $color-5;
         }
     }
 }

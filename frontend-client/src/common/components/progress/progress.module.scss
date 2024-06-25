@@ -17,7 +17,7 @@
         top: -100px;
         padding: 12px 24px;
         border-radius: 10px;
-        background-color: #252731;
+        background-color: $color-1;
         
         display: flex;
         align-items: center;
@@ -34,7 +34,7 @@
 
 
         & path {
-            fill: white;
+            fill: $color-5;
         }
     }
 

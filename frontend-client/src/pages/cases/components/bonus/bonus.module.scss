@@ -1,10 +1,12 @@
+@import "../../../../styles/colors";
+
 .bonus {
     overflow: hidden;
     position: relative;
     width: 100%;
     height: 202px;
     border-radius: 12px;
-    background-color: rgb(15, 159, 15);
+    background-color: $color-6;
     margin-bottom: 32px;
 
     &_wrapper {
@@ -38,7 +40,7 @@
         width: fit-content;
         padding: 12px 24px;
         border-radius: 10px;
-        background-color: white;
+        background-color: $color-5;
 
         display: flex;
         align-items: center;
@@ -48,7 +50,7 @@
             white-space: nowrap;
             font-size: 16px;
             text-transform: uppercase;
-            color: rgb(15, 159, 15);
+            color: $color-6;
         }
 
         & svg {
@@ -56,7 +58,7 @@
             height: 25px;
 
             & path {
-                fill: rgb(15, 159, 15);
+                fill: $color-6;
             }
         }
     }
