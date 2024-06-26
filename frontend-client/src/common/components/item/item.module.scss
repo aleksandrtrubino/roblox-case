@@ -9,7 +9,7 @@
     &_wrapper {
         margin: 0 3px;
         position: relative;
-        background: #22232b;
+        background: $color-2;
         border-radius: 6px;
         height: 164px;
         display: flex;
@@ -36,7 +36,7 @@
     &_age {
         text-transform: uppercase;
         font-size: 12px;
-        color: grey;
+        color: $color-4;
     }
 
     &_name {
@@ -56,7 +56,7 @@
     &_name {
         width: 20px;
         height: 20px;
-        background: black;
+        background: $color-1;
         border-radius: 4px;
 
         display: none;
@@ -74,7 +74,7 @@
 }
 
 .neon {
-    background: $neon-properties-color;
+    background: $color-6;
     display: flex;
 }
 

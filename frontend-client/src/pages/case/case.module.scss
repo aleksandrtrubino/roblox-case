@@ -1,3 +1,5 @@
+@import "../../styles/colors";
+
 .case {
   padding: 32px;
 
@@ -30,7 +32,7 @@
     width: 100%;
     padding: 24px 0px;
     height: 300px;
-    background-color: #1b1c24;
+    background-color: $color-2;
     border-radius: 6px;
 
     display: flex;
@@ -60,7 +62,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #252531;
+    background-color: $color-2;
     width: 512px;
     border-radius: 6px;
     height: calc(100% + 42px);
@@ -99,7 +101,7 @@
     height: 42px;
 
     & path {
-      fill: white;
+      fill: $color-5;
     }
   }
 
@@ -125,7 +127,7 @@
 
   &_wrapper {
     width: 100%;
-    background-color: #1b1c24;
+    background-color: $color-2;
     border-radius: 6px;
     height: 42px;
     padding: 4px;
@@ -137,14 +139,14 @@
 
   &_button {
     width: 100%;
-    background-color: #232430;
+    background-color: $color-3;
     border-radius: 6px;
     height: 100%;
 
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background-color: #282936;
+      background-color: $color-4;
     }
   }
 }
@@ -156,7 +158,7 @@
   justify-content: center;
 
   &_button {
-    background-color: #279a25;
+    background-color: $color-6;
     width: 100%;
     height: 52px;
     border-radius: 6px;
@@ -166,7 +168,7 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: rgb(38, 167, 36);
+      background-color: $color-6;
     }
   }
 }
@@ -178,7 +180,7 @@
   justify-content: center;
 
   &_button {
-    background-color: #1b1c24;
+    background-color: $color-3;
     border-radius: 6px;
     width: 100%;
     height: 42px;
@@ -188,7 +190,7 @@
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background-color: #1f2028;
+      background-color: $color-4;
     }
   }
 }
@@ -212,7 +214,7 @@
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background-color: rgb(11, 172, 11);
+      background-color: $color-6;
     }
   }
 }
@@ -253,7 +255,7 @@
         height: 25px;
 
         & path {
-          stroke: white;
+          stroke: $color-5;
         }
       }
     }

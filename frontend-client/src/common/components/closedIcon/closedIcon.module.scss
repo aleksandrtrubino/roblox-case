@@ -1,7 +1,9 @@
+@import "../../../styles/colors.scss";
+
 .closed {
     position: absolute;
     border-radius: 6px;
-    background-color: rgba($color: #1b1c23, $alpha: .8);
+    background-color: rgba($color: $color-1, $alpha: .8);
     backdrop-filter: blur(1px);
     width: 100%;
     height: 100%;
@@ -17,7 +19,7 @@
         height: 16px;
 
         & path {
-            stroke: white;
+            stroke: $color-5;
         }
     }
 }

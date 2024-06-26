@@ -28,9 +28,9 @@ export const Header = () => {
             <ProfileIcon />
               <NotificationIcon />
           </div>
-          {/* <button className={styles.auth} >
-            Войти
-          </button> */}
+          {/*{ <button className={styles.auth} >*/}
+          {/*  Войти*/}
+          {/*</button> }*/}
     </div>
   );
 };

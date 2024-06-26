@@ -1,15 +1,17 @@
+@import '../../../styles/colors.scss';
+
 .backward {
     display: flex;
     align-items: center;
     gap: 8px;
     height: 42px;
     padding: 0 16px;
-    background-color: #1b1c24;
+    background-color: $color-2;
     border-radius: 6px;
     transition: all .3s ease-in-out;
 
     &:hover {
-        background-color: #252732;
+        background-color: $color-3;
     }
 
     &_title {
@@ -21,6 +23,6 @@
     &_icon {
         width: 16px;
         height: 16px;
-        fill: white;
+        fill: $color-5;
     }
 }

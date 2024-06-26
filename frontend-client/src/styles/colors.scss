@@ -1,55 +1,14 @@
-//* Расцветка основы
-$main-color: #17171f;
-
-//* Расцветка текста
-$text-color-grey: #747686;
-$text-color-light: #f1f1f6;
-
-//* Расцветка логотипа
-$logotype-color: $text-color-light;
-
-//* Расцветка страницы оплаты
-$payment-methods-color: #1b1c24;
-
-//* Расцветка хеадера ( Header )
-$header-color: rgba(27, 28, 36, 1);
-$header-button-color: none;
-$header-button-hover-color: $header-color;
-
-//* Расцветка футера ( Footer )
-$footer-color: rgba(27, 28, 36, 1);
-
-//* Расцветка профиля ( ProfileIcon )
-$profile-button-color: $header-color;
-$profile-button-hover-color: #27282c;
-
-//* Расцветка инвентаря ( Inventory )
-$inventory-color: $header-color;
-$inventory-background-tabs-color: #1e1f22;
-$inventory-button-color: #27282c;
-$inventory-button-hover-color: #292a2f;
+$color-1: #17171f;
+$color-2: #1b1c24;
+$color-3: #2a2c36;
+$color-4: #747686;
+$color-5: #f1f1f6;
+$color-6: #3fc252;
 
 //* Расцветка неизвестной страницы ( Not Found )
 $notfound-link-color: #9c78e0;
 
-//* Расцветка авторизация ( Authorization )
-$authorization-color: #1D1E21;
-$authorization-stroke-active: #F5F5FA;
-$authorization-stroke: #3E404A;
-
-//* Расцветка выплывающего окна ( Progress )
-$progress-color: #4fad4d;
-
-//* Расцветка кнопок
-$button-color: #4fad4d;
-$button-hover-color: #4eb74c;
-
-//* Расцветка иконок ( svg )
-$icon-color: #7d8091;
-$icon-hover-color: #ffffff;
-
 //* Расцветка категории предмета
-$neon-properties-color: #30bd01;
 $flyable-properties-color: #1a68e6;
 $ridible-properties-color: #ff267b;
 $mega-properties-color: linear-gradient(180deg, rgb(139, 61, 191) 0%, rgb(70, 11, 197) 100%);
@@ -58,5 +17,5 @@ $mega-properties-color: linear-gradient(180deg, rgb(139, 61, 191) 0%, rgb(70, 11
 $rarity-legendary-color: linear-gradient(0deg, rgb(255, 193, 70) 0%, rgba(0, 0, 0, 0) 100%);
 $rarity-ultra-color: linear-gradient(0deg, rgb(255, 60, 53) 0%, rgba(0, 0, 0, 0) 100%);
 $rarity-rare-color: linear-gradient(0deg, rgb(149, 18, 255) 0%, rgba(0, 0, 0, 0) 100%);
-$rarity-uncommon-color: linear-gradient(0deg, rgb(107, 222, 53) 0%, rgba(0, 0, 0, 0) 100%);
+$rarity-uncommon-color: linear-gradient(0deg, $color-6 0%, rgba(0, 0, 0, 0) 100%);
 $rarity-common-color: linear-gradient(0deg, rgb(0, 225, 224) 0%, rgba(0, 0, 0, 0) 100%);

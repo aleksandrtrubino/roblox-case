@@ -6,7 +6,7 @@
     border-radius: 12px;
     position: relative;
 
-    background-color: $inventory-color;
+    background-color: $color-2;
 
     &_header {
     }
@@ -14,7 +14,7 @@
 
 .header {
     &_wrapper {
-        background-color: $inventory-color;
+        background-color: $color-2;
         border-radius: 10px;
         padding: 6px;
         display: flex;
@@ -27,7 +27,7 @@
         padding: 12px 24px;
         width: 100%;
         border-radius: 12px;
-        background-color: $inventory-button-color;
+        background-color: $color-3;
 
         display: flex;
         align-items: center;
@@ -41,11 +41,11 @@
         transition: all .3s ease;
 
         &:hover  {
-            background-color: $inventory-button-hover-color;
+            background-color: $color-4;
         }
 
         &:hover .header_icon path {
-            fill: $icon-hover-color;
+            fill: $color-5;
         }
 
         &_wrapper {
@@ -56,13 +56,13 @@
         }
 
         & span {
-            color: $text-color-grey;
+            color: $color-4;
 
             transition: all .3s ease;
         }
 
         &:hover span {
-            color: $text-color-light;
+            color: $color-5;
         }
     }
 
@@ -72,7 +72,7 @@
 
         & path {
             transition: all .3s ease;
-            fill: $icon-color;
+            fill: $color-4;
         }
     }
 }
@@ -82,13 +82,13 @@
     height: 48px;
 
     &:hover &_icon {
-        fill: $icon-hover-color;
+        fill: $color-5;
     }
 
     &_icon {
         width: 24px;
         height: 24px;
-        fill: $icon-color;
+        fill: $color-4;
 
         transition: all .3s ease;
     }

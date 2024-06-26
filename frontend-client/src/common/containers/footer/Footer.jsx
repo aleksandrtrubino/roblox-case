@@ -21,6 +21,9 @@ export const Footer = () => {
           <Link to="/faq">
             <span>FAQ</span>
           </Link>
+          {/*<Link to="/auth">*/}
+          {/*  <span>auth</span>*/}
+          {/*</Link>*/}
         </div>
         <div className={`${styles.end_socials} ${styles.socials}`}>
           <div className={styles.socials_icons}>
