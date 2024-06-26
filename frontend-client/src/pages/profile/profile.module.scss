@@ -34,7 +34,7 @@
     }
 
     &_button {
-        background-color: $profile-button-color;
+        background-color: $color-2;
 
         display: flex;
         align-items: center;
@@ -43,7 +43,7 @@
         transition: all .2s ease;
 
         &:hover {
-            background-color: $profile-button-hover-color;
+            background-color: $color-3;
         }
     }
 
@@ -89,7 +89,7 @@
         //width: 8rem;
         //height: 8rem;
         //border-radius: 2rem;
-        background-color: $profile-button-hover-color;
+        background-color: $color-3;
 
         margin-right: 24px;
     }
@@ -128,7 +128,7 @@
     }
 
     &_button {
-        background: $profile-button-color;
+        background: $color-2;
         padding: 12px 24px;
         height: 3rem;
         border-radius: 0.5rem;
@@ -143,7 +143,7 @@
         transition: all .3s ease;
 
         &:hover {
-            background-color: $profile-button-hover-color;
+            background-color: $color-3;
         }
 
         &_money {
@@ -197,14 +197,14 @@
     border-radius: 0.5rem;
 
     padding: 9px;
-    background-color: $profile-button-color;
+    background-color: $color-2;
 
 
     font-size: 14px;
     text-transform: uppercase;
 
     &:hover {
-        background-color: $profile-button-hover-color;
+        background-color: $color-3;
     }
 
 

@@ -5,58 +5,10 @@ $color-4: #747686;
 $color-5: #f1f1f6;
 $color-6: #3fc252;
 
-//* Расцветка основы
-$main-color: $color-1;
-
-//* Расцветка текста
-$text-color-grey: $color-4;
-$text-color-light: $color-5;
-
-//* Расцветка логотипа
-$logotype-color: $text-color-light;
-
-//* Расцветка страницы оплаты
-$payment-methods-color: $color-2;
-
-//* Расцветка хеадера ( Header )
-$header-color: $color-2;
-//$header-button-color: none;
-//$header-button-hover-color: $header-color;
-
-//* Расцветка футера ( Footer )
-$footer-color: $color-2;
-
-//* Расцветка кнопок в профиле ( ProfileIcon )
-$profile-button-color: $color-2;
-$profile-button-hover-color: $color-3;
-
-//* Расцветка инвентаря ( Inventory )
-$inventory-color: $color-2;
-//$inventory-background-tabs-color: #1e1f22;
-$inventory-button-color: $color-3;
-$inventory-button-hover-color: $color-4;
-
 //* Расцветка неизвестной страницы ( Not Found )
 $notfound-link-color: #9c78e0;
 
-//* Расцветка авторизация ( Authorization )
-$authorization-color: #1D1E21;
-$authorization-stroke-active: #F5F5FA;
-$authorization-stroke: #3E404A;
-
-//* Расцветка выплывающего окна ( Progress )
-$progress-color: $color-6;
-
-//* Расцветка кнопок
-$button-color: $color-6;
-$button-hover-color: $color-6;
-
-//* Расцветка иконок ( svg )
-$icon-color: $color-4;
-$icon-hover-color: $color-5;
-
 //* Расцветка категории предмета
-$neon-properties-color: $color-6;
 $flyable-properties-color: #1a68e6;
 $ridible-properties-color: #ff267b;
 $mega-properties-color: linear-gradient(180deg, rgb(139, 61, 191) 0%, rgb(70, 11, 197) 100%);
