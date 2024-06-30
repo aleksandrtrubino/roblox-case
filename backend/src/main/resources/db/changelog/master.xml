@@ -6,6 +6,8 @@
 
     <include file="001_add_users.xml" relativeToChangelogFile="true"/>
     <include file="002_add_authorities.xml" relativeToChangelogFile="true"/>
+    <include file="003_add_pets.xml" relativeToChangelogFile="true"/>
+    <include file="004_add_pet_cards.xml" relativeToChangelogFile="true"/>
 
 
 </databaseChangeLog>

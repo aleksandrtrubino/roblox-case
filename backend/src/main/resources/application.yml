@@ -26,5 +26,5 @@ spring:
 security:
   key: aW5zdGFodWIoY2h1cGFjaHVwczg0LGs0cjNsMW5zLHN3dHk0NSxpcmluYWZlZG9yb3ZpY2gxOTk1KQ==
   expiration:
-    access-token: 300000 # 5 min
+    access-token: 3000000 # 5 min
     refresh-token: 604800000 # 1 week

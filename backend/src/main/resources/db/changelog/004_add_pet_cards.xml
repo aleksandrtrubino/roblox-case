@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="0041" author="aleksandrtrubino">
+        <createSequence sequenceName="pet_cards_seq" startValue="1000" incrementBy="50"/>
+    </changeSet>
+
+    <changeSet id="0042" author="aleksandrtrubino">
+        <createTable tableName="pet_cards">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="pet_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="0043" author="aleksandrtrubino">
+        <createTable tableName="pet_properties">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="0044" author="aleksandrtrubino">
+        <createTable tableName="pet_cards_pet_properties">
+            <column name="pet_card_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pet_property_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="0045" author="aleksandrtrubino">
+        <addForeignKeyConstraint
+                baseTableName="pet_cards_pet_properties"
+                baseColumnNames="pet_card_id"
+                constraintName="fk_pet_cards_pet_properties_pet_card_id"
+                referencedTableName="pet_cards"
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+                onUpdate="RESTRICT"/>
+    </changeSet>
+
+    <changeSet id="0046" author="aleksandrtrubino">
+        <addForeignKeyConstraint
+                baseTableName="pet_cards_pet_properties"
+                baseColumnNames="pet_property_id"
+                constraintName="fk_pet_cards_pet_properties_pet_property_id"
+                referencedTableName="pet_properties"
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+                onUpdate="RESTRICT"/>
+    </changeSet>
+
+    <changeSet id="0047" author="aleksandrtrubino">
+        <insert tableName="pet_properties">
+            <column name="id" value="1"/>
+            <column name="name" value="neon"/>
+        </insert>
+        <insert tableName="pet_rarity">
+            <column name="id" value="2"/>
+            <column name="name" value="mega_neon"/>
+        </insert>
+        <insert tableName="pet_rarity">
+            <column name="id" value="3"/>
+            <column name="name" value="flyable"/>
+        </insert>
+        <insert tableName="pet_rarity">
+            <column name="id" value="4"/>
+            <column name="name" value="rideable"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
