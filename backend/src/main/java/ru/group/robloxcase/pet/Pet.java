@@ -1,0 +1,59 @@
+package ru.group.robloxcase.pet;
+
+import jakarta.persistence.*;
+import ru.group.robloxcase.pet.rarity.PetRarity;
+import ru.group.robloxcase.util.FileStorageUtils;
+
+
+@Entity
+@Table(name = "pets")
+public class Pet {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pets_seq")
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "name")
+    private String name;
+    @ManyToOne
+    @JoinColumn(name = "rarity_id")
+    PetRarity rarity;
+    @Transient
+    byte[] image;
+
+    public Pet() {
+    }
+
+    public Pet(String name, PetRarity rarity) {
+        this.name = name;
+        this.rarity = rarity;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public PetRarity getRarity() {
+        return rarity;
+    }
+
+    public void setRarity(PetRarity rarity) {
+        this.rarity = rarity;
+    }
+
+    public byte[] getImage() {
+        return this.image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+}
