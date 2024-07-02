@@ -11,26 +11,21 @@ import java.util.Set;
 @Table(name = "authorities")
 public class Authority {
 
-    public static final Long ROLE_USER = 135L;
-    public static final Long ROLE_ADMIN = 247L;
-    public static final Long ROLE_SUPER_ADMIN = 692L;
+    public static final Authority USER = new Authority(1L, "user");
+    public static final Authority MODERATOR = new Authority(2L, "moderator");
+    public static final Authority ADMIN = new Authority(3L, "admin");
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "authorities_seq")
     @Column(name = "id")
     private Long id;
     @Column(name = "name")
     private String name;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "authorities", fetch = FetchType.LAZY)
-    private Set<User> users;
-
     public Authority() {}
 
-    public Authority(String name) {
+    public Authority(Long id, String name) {
+        this.id = id;
         this.name = name;
-        this.users = new HashSet<>();
     }
 
     public Long getId() {
@@ -43,10 +38,6 @@ public class Authority {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Set<User> getUsers() {
-        return users;
     }
 
 }

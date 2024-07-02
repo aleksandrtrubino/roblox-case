@@ -5,11 +5,8 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="0021" author="aleksandrtrubino">
-        <createSequence sequenceName="authorities_seq" startValue="1000" incrementBy="50"/>
-    </changeSet>
 
-    <changeSet id="0022" author="aleksandrtrubino">
+    <changeSet id="0021" author="aleksandrtrubino">
         <createTable tableName="authorities">
             <column name="id" type="BIGINT">
                 <constraints primaryKey="true" nullable="false"/>
@@ -20,7 +17,7 @@
         </createTable>
     </changeSet>
     
-    <changeSet id="0023" author="aleksandrtrubino">
+    <changeSet id="0022" author="aleksandrtrubino">
         <createTable tableName="users_authorities">
             <column name="user_id" type="BIGINT">
                 <constraints nullable="false"/>
@@ -31,7 +28,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="0024" author="aleksandrtrubino">
+    <changeSet id="0023" author="aleksandrtrubino">
         <addForeignKeyConstraint
                 baseTableName="users_authorities"
                 baseColumnNames="authority_id"
@@ -42,7 +39,7 @@
                 onUpdate="RESTRICT"/>
     </changeSet>
 
-    <changeSet id="0025" author="aleksandrtrubino">
+    <changeSet id="0024" author="aleksandrtrubino">
         <addForeignKeyConstraint
                 baseTableName="users_authorities"
                 baseColumnNames="user_id"

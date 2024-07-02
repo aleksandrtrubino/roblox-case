@@ -64,23 +64,4 @@
                 onUpdate="RESTRICT"/>
     </changeSet>
 
-    <changeSet id="0047" author="aleksandrtrubino">
-        <insert tableName="pet_properties">
-            <column name="id" value="1"/>
-            <column name="name" value="neon"/>
-        </insert>
-        <insert tableName="pet_rarity">
-            <column name="id" value="2"/>
-            <column name="name" value="mega_neon"/>
-        </insert>
-        <insert tableName="pet_rarity">
-            <column name="id" value="3"/>
-            <column name="name" value="flyable"/>
-        </insert>
-        <insert tableName="pet_rarity">
-            <column name="id" value="4"/>
-            <column name="name" value="rideable"/>
-        </insert>
-    </changeSet>
-
 </databaseChangeLog>
