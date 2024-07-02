@@ -45,28 +45,5 @@
                 onDelete="CASCADE"
                 onUpdate="RESTRICT"/>
     </changeSet>
-    
-    <changeSet id="0035" author="aleksandrtrubino">
-        <insert tableName="pet_rarity">
-            <column name="id" value="1"/>
-            <column name="name" value="common"/>
-        </insert>
-        <insert tableName="pet_rarity">
-            <column name="id" value="2"/>
-            <column name="name" value="uncommon"/>
-        </insert>
-        <insert tableName="pet_rarity">
-            <column name="id" value="3"/>
-            <column name="name" value="rare"/>
-        </insert>
-        <insert tableName="pet_rarity">
-            <column name="id" value="4"/>
-            <column name="name" value="ultra-rare"/>
-        </insert>
-        <insert tableName="pet_rarity">
-            <column name="id" value="5"/>
-            <column name="name" value="legendary"/>
-        </insert>
-    </changeSet>
 
 </databaseChangeLog>

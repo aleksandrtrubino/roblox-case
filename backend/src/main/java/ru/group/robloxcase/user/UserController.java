@@ -21,32 +21,32 @@ public class UserController {
     }
 
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPER_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('admin')")
     @PostMapping
-    public ResponseEntity<User> create(@RequestBody UserDto userDto, @RequestParam(required = false) Long authorityId){
-        return ResponseEntity.ok(userService.create(userDto, authorityId));
+    public ResponseEntity<User> create(@RequestBody UserDto userDto){
+        return ResponseEntity.ok(userService.create(userDto));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPER_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('moderator','admin')")
     @PutMapping("/{userId}")
     public ResponseEntity<User> patchById(@PathVariable Long userId, @RequestBody UserDto userDto){
         return ResponseEntity.ok(userService.patchById(userId, userDto));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN','ROLE_SUPER_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('moderator','admin')")
     @GetMapping("/{userId}")
     public ResponseEntity<User> findById(@PathVariable Long userId){
         return ResponseEntity.ok(userService.findById(userId));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPER_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('admin')")
     @DeleteMapping("/{userId}")
     public ResponseEntity<Void> deleteById(@PathVariable Long userId){
         userService.deleteById(userId);
         return ResponseEntity.ok().build();
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN','ROLE_SUPER_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('moderator','admin')")
     @GetMapping
     public ResponseEntity<List<User>> findAll(){
         return ResponseEntity.ok(userService.findAll());
@@ -54,10 +54,17 @@ public class UserController {
 
     @PostMapping("/me")
     public ResponseEntity<User> createMe(@RequestBody UserDto userDto){
-        return ResponseEntity.ok(userService.create(userDto, Authority.ROLE_USER));
+        UserDto safeUserDto = new UserDto(
+                userDto.nickname(),
+                userDto.email(),
+                userDto.password(),
+                userDto.enabled(),
+                Authority.USER.getId()
+        );
+        return ResponseEntity.ok(userService.create(safeUserDto));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER','ROLE_ADMIN','ROLE_SUPER_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('user','moderator','admin')")
     @GetMapping("/me")
     public ResponseEntity<User> findMe(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -66,7 +73,7 @@ public class UserController {
         return ResponseEntity.ok(userService.findById(userId));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER','ROLE_ADMIN','ROLE_SUPER_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('user','moderator','admin')")
     @PutMapping("/me")
     public ResponseEntity<User> patchMe(@RequestBody UserDto userDto){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

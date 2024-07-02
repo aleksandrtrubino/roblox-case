@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import ru.group.robloxcase.exception.NotFoundException;
 import ru.group.robloxcase.exception.AlreadyExistsException;
 import ru.group.robloxcase.user.authority.Authority;
-import ru.group.robloxcase.user.authority.AuthorityRepository;
 
 import java.util.List;
 
@@ -16,17 +15,15 @@ public class UserServiceImpl implements UserService {
     //TODO: написать проверки при создании и изменении User (проверка всех id на null, regexp и тп)
 
     private final UserRepository userRepository;
-    private final AuthorityRepository authorityRepository;
 
     private final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
-    public UserServiceImpl(UserRepository userRepository, AuthorityRepository authorityRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.authorityRepository = authorityRepository;
     }
 
     @Override
-    public User create(UserDto userDto, Long authorityId) {
+    public User create(UserDto userDto) {
         String nickname = userDto.nickname();
         if(userRepository.findByNickname(nickname).isPresent())
             throw new AlreadyExistsException(String.format("Nickname %1$s is taken",nickname));
@@ -39,8 +36,17 @@ public class UserServiceImpl implements UserService {
         if(enabled == null)
             enabled = true;
         User user = new User(nickname,email, encodedPassword, enabled);
-        Authority authority = authorityRepository.findById(authorityId)
-                .orElseThrow(()->new NotFoundException(String.format("Authority with id %1$s not found",authorityId)));
+        Long authorityId = userDto.authorityId();
+        Authority authority;
+        if(authorityId.equals(Authority.USER.getId()))
+            authority = Authority.USER;
+        else if(authorityId.equals(Authority.MODERATOR.getId()))
+            authority = Authority.MODERATOR;
+        else if(authorityId.equals(Authority.ADMIN.getId())) {
+            authority = Authority.ADMIN;
+        }
+        else
+            throw new NotFoundException(String.format("Authority with ID=%1$s not found", authorityId));
         user.getAuthorities().add(authority);
         return userRepository.save(user);
     }
@@ -54,6 +60,7 @@ public class UserServiceImpl implements UserService {
         String password = userDto.password();
         String encodedPassword;
         Boolean enabled = userDto.enabled();
+        Long authorityId = userDto.authorityId();
         if(nickname != null) {
             if (userRepository.findByNickname(nickname).isPresent())
                 throw new AlreadyExistsException(String.format("Nickname %1$s is taken", nickname));
@@ -70,6 +77,20 @@ public class UserServiceImpl implements UserService {
         }
         if(enabled != null)
             user.setEnabled(enabled);
+        if(authorityId != null){
+            Authority authority;
+            if(authorityId.equals(Authority.USER.getId()))
+                authority = Authority.USER;
+            else if(authorityId.equals(Authority.MODERATOR.getId()))
+                authority = Authority.MODERATOR;
+            else if(authorityId.equals(Authority.ADMIN.getId())) {
+                authority = Authority.ADMIN;
+            }
+            else
+                throw new NotFoundException(String.format("Authority with ID=%1$s not found", authorityId));
+            user.getAuthorities().clear();
+            user.getAuthorities().add(authority);
+        }
         return userRepository.save(user);
     }
 

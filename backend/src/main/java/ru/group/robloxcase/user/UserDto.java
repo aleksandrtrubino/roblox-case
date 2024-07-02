@@ -4,5 +4,6 @@ public record UserDto(
         String nickname,
         String email,
         String password,
-        Boolean enabled) {
+        Boolean enabled,
+        Long authorityId) {
 }

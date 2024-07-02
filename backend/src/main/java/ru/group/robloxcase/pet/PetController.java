@@ -20,7 +20,7 @@ public class PetController {
         this.petService = petService;
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_SUPER_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('moderator','admin')")
     @PostMapping
     public ResponseEntity<Pet> create(
             @RequestParam("data") String data,
@@ -42,6 +42,7 @@ public class PetController {
         return ResponseEntity.ok(petService.create(petDto));
     }
 
+    @PreAuthorize("hasAnyAuthority('moderator','admin')")
     @PutMapping("/{petId}")
     public ResponseEntity<Pet> patchById(
             @PathVariable Long petId,
@@ -64,17 +65,20 @@ public class PetController {
         return ResponseEntity.ok(petService.patchById(petId, petDto));
     }
 
+    @PreAuthorize("hasAnyAuthority('moderator','admin')")
     @GetMapping("/{petId}")
     public ResponseEntity<Pet> findById(@PathVariable Long petId){
         return ResponseEntity.ok(petService.findById(petId));
     }
 
+    @PreAuthorize("hasAnyAuthority('moderator','admin')")
     @DeleteMapping("{petId}")
     public ResponseEntity<Void> deleteById(@PathVariable Long petId){
         petService.deleteById(petId);
         return ResponseEntity.ok().build();
     }
 
+    @PreAuthorize("hasAnyAuthority('moderator','admin')")
     @GetMapping
     public ResponseEntity<List<Pet>> findAll(){
         return ResponseEntity.ok(petService.findAll());
