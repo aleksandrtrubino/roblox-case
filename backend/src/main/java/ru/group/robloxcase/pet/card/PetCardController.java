@@ -1,4 +1,4 @@
-package ru.group.robloxcase.pet.card;
+package ru.group.robloxcase.petcard;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -1,4 +1,4 @@
-package ru.group.robloxcase.pet.card;
+package ru.group.robloxcase.petcard;
 
 import java.util.List;
 

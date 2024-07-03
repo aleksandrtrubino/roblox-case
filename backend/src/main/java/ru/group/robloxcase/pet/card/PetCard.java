@@ -1,9 +1,9 @@
-package ru.group.robloxcase.pet.card;
+package ru.group.robloxcase.petcard;
 
 
 import jakarta.persistence.*;
 import ru.group.robloxcase.pet.Pet;
-import ru.group.robloxcase.pet.property.PetProperty;
+import ru.group.robloxcase.pet.PetProperty;
 
 import java.util.Set;
 

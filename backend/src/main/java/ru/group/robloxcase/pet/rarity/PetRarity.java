@@ -1,4 +1,4 @@
-package ru.group.robloxcase.pet.rarity;
+package ru.group.robloxcase.pet;
 
 
 import jakarta.persistence.*;

@@ -1,11 +1,6 @@
-package ru.group.robloxcase.user.authority;
+package ru.group.robloxcase.user;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import ru.group.robloxcase.user.User;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "authorities")

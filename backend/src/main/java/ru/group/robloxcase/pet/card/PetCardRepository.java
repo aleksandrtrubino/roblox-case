@@ -1,4 +1,4 @@
-package ru.group.robloxcase.pet.card;
+package ru.group.robloxcase.petcard;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

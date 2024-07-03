@@ -1,11 +1,10 @@
-package ru.group.robloxcase.pet.card;
+package ru.group.robloxcase.petcard;
 
 import org.springframework.stereotype.Service;
 import ru.group.robloxcase.exception.NotFoundException;
 import ru.group.robloxcase.pet.Pet;
-import ru.group.robloxcase.pet.PetService;
 import ru.group.robloxcase.pet.PetServiceImpl;
-import ru.group.robloxcase.pet.property.PetProperty;
+import ru.group.robloxcase.pet.PetProperty;
 
 import java.util.HashSet;
 import java.util.List;
