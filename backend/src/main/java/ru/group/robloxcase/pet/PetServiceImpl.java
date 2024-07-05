@@ -54,10 +54,9 @@ public class PetServiceImpl implements PetService{
             throw new NotFoundException(String.format("PetRarity with ID=%1$s not found", rarityId));
         }
         Pet pet = new Pet(name, rarity);
-        pet = petRepository.save(pet);
         byte[] image = petDto.getImage();
-        uploadImage(image, pet);
-        return withImage(pet);
+        pet.setImage(image);
+        return petRepository.save(pet);
     }
 
     @Transactional
@@ -93,52 +92,29 @@ public class PetServiceImpl implements PetService{
         }
 
         byte[] image = petDto.getImage();
-        deleteImage(pet);
-        uploadImage(image, pet);
-        return withImage(petRepository.save(pet));
+        if(image != null) {
+            pet.setImage(image);
+        }
+        return petRepository.save(pet);
     }
 
     @Transactional
     @Override
     public Pet findById(Long petId) {
-        return withImage(petRepository.findById(petId)
-                .orElseThrow(()->new NotFoundException(String.format("Pet with id %1$s not found",petId))));
+        return petRepository.findById(petId)
+                .orElseThrow(()->new NotFoundException(String.format("Pet with id %1$s not found",petId)));
     }
 
     @Transactional
     @Override
     public void deleteById(Long petId) {
-        Optional<Pet> optionalPet = petRepository.findById(petId);
-        if(optionalPet.isPresent()){
-            Pet pet = optionalPet.get();
-            deleteImage(pet);
-        }
         petRepository.deleteById(petId);
     }
 
     @Transactional
     @Override
     public List<Pet> findAll() {
-        return petRepository.findAll().stream()
-                .map(this::withImage)
-                .collect(Collectors.toList());
+        return petRepository.findAll();
     }
 
-    public Pet withImage(Pet pet){
-        String fileName = IMAGE_NAME_PREFIX + pet.getId() + IMAGE_EXTENSION;
-        if(FileStorageUtils.isFileExist(IMAGE_DIRECTORY,fileName))
-            pet.setImage(FileStorageUtils.findFile(IMAGE_DIRECTORY, fileName));
-        return pet;
-    }
-
-    public void uploadImage(byte[] image, Pet pet){
-        String fileName = IMAGE_NAME_PREFIX + pet.getId() + IMAGE_EXTENSION;
-        if(!FileStorageUtils.isFileExist(IMAGE_DIRECTORY, fileName))
-            FileStorageUtils.saveFile(image, IMAGE_DIRECTORY, fileName);
-    }
-
-    public void deleteImage(Pet pet){
-        String fileName = IMAGE_NAME_PREFIX + pet.getId() + IMAGE_EXTENSION;
-            FileStorageUtils.deleteFile(IMAGE_DIRECTORY, fileName);
-    }
 }
