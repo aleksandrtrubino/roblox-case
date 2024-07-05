@@ -42,9 +42,7 @@ public class PetCardServiceImpl implements PetCardService{
                 throw new NotFoundException(String.format("PetProperty with ID=%1$s not found", propertyId));
         }
         PetCard petCard = new PetCard(pet, properties);
-        petCardRepository.save(petCard);
-        petCard.setPet(petService.withImage(petCard.getPet()));
-        return petCard;
+        return petCardRepository.save(petCard);
     }
 
     @Override
@@ -69,9 +67,7 @@ public class PetCardServiceImpl implements PetCardService{
         }
         petCard.setPet(pet);
         petCard.setProperties(properties);
-        petCardRepository.save(petCard);
-        petCard.setPet(petService.withImage(petCard.getPet()));
-        return petCard;
+        return petCardRepository.save(petCard);
     }
 
     @Override
@@ -91,8 +87,6 @@ public class PetCardServiceImpl implements PetCardService{
 
     @Override
     public List<PetCard> findAll() {
-        return petCardRepository.findAll().stream()
-                .peek(petCard -> petCard.setPet(petService.withImage(petCard.getPet())))
-                .collect(Collectors.toList());
+        return petCardRepository.findAll();
     }
 }

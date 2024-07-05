@@ -6,6 +6,7 @@ import ru.group.robloxcase.util.FileStorageUtils;
 
 
 @Entity
+@EntityListeners(PetListener.class)
 @Table(name = "pets")
 public class Pet {
 
