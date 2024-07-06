@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="0051" author="aleksandrtrubino">
+        <createSequence sequenceName="boxes_seq" startValue="1000" incrementBy="50"/>
+    </changeSet>
+
+    <changeSet id="0052" author="aleksandrtrubino">
+        <createTable tableName="boxes">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="0053" author="aleksandrtrubino">
+        <createSequence sequenceName="chances_seq" startValue="1000" incrementBy="50"/>
+    </changeSet>
+
+    <changeSet id="0054" author="aleksandrtrubino">
+        <createTable tableName="chances">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="box_id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="pet_card_id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="percent" type="INTEGER">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="0055" author="aleksandrtrubino">
+        <addForeignKeyConstraint
+                baseTableName="chances"
+                baseColumnNames="pet_card_id"
+                constraintName="fk_chances_pet_card_id"
+                referencedTableName="pet_cards"
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+                onUpdate="RESTRICT"/>
+    </changeSet>
+
+    <changeSet id="0056" author="aleksandrtrubino">
+        <addForeignKeyConstraint
+                baseTableName="chances"
+                baseColumnNames="box_id"
+                constraintName="fk_chances_box_id"
+                referencedTableName="boxes"
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+                onUpdate="RESTRICT"/>
+    </changeSet>
+
+</databaseChangeLog>
