@@ -3,6 +3,7 @@ import { Logotype } from '../../components/logotype/Logotype';
 import { Balance } from './components/balance/Balance';
 import { NotificationIcon } from './components/notification-icon/NotificationIcon';
 import { ProfileIcon } from './components/profile/ProfileIcon';
+import register from "../../../pages/Register/Register";
 import { useDispatch, useSelector } from 'react-redux';
 
 //? Временно неиспользуемые компоненты 
@@ -12,7 +13,7 @@ import styles from './header.module.scss';
 
 let balanceCount = 101;
 
-export const Header = () => {
+export const MainHeader = () => {
 
   return (
     <div className={styles.header}>
@@ -22,6 +23,9 @@ export const Header = () => {
         {/* Добавление счетчика пользователей на сайте */}
         {/* <Online className={styles.header_online}/> */}
       </div>
+        <Link to="./register">
+            <span>Авторизация</span>
+        </Link>
 
           <div className={styles.header_right}>
             <Balance balanceCount={balanceCount}/>
