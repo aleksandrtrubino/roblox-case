@@ -1,14 +1,14 @@
-import {Header} from "../../containers/header/Header";
+import {MainHeader} from "../../containers/header/mainHeader";
 import {Outlet} from "react-router-dom";
 import {Footer} from "../../containers/footer/Footer";
 
 import styles from "./layout.module.scss"
 
 
-export const Layout = () => {
+export const MainLayout = () => {
     return (
         <>
-            <Header />
+            <MainHeader />
                 <div className={styles.content}>
                     <Outlet />
                 </div>

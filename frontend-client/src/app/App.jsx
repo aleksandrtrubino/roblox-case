@@ -3,7 +3,7 @@ import React from 'react';
 import {Routes, Route, BrowserRouter, Navigate} from 'react-router-dom';
 
 //* Импортирование компонентов лейаут ( layout )
-import { Header } from '../common/containers/header/Header';
+import { MainHeader } from '../common/containers/header/mainHeader';
 import { Footer } from '../common/containers/footer/Footer';
 
 //* Импортирование страниц ( pages )
@@ -13,12 +13,14 @@ import { Payment } from '../pages/payment/Payment';
 import { Unknown } from '../pages/unknown/Unknown';
 import { Privacy } from '../pages/privacy/Privacy';
 import { Agreement } from '../pages/agreement/Agreement';
+import { Register } from "../pages/Register/Register";
+import { Login } from "../pages/login/Login";
 import { Case } from '../pages/case/Case';
 
 //* Импортирование модальных окон (0)
 import { Progress } from '../common/components/progress/Progress';
 import { Notification } from '../common/components/notification/Notification';
-import { Auth } from '../common/components/auth/Auth';
+//import { Auth } from '../common/components/authPage/Auth';
 import { Faq } from '../pages/faq/Faq';
 
 //* Импортирование стилей
@@ -26,7 +28,8 @@ import styles from './app.module.scss';
 import { useEffect } from 'react';
 import { Nickname } from '../common/components/nickname/Nickname';
 import { Support } from '../common/components/support/Support';
-import {Layout} from "../common/widgets/layout/Layout";
+import { MainLayout } from "../common/widgets/layout/mainLayout";
+import { AuthLayout } from "../common/widgets/layout/authLayout";
 
 // import { Error } from './components/modals/Error/Error';
 
@@ -57,7 +60,12 @@ function App() {
     <div className={styles.application}>
       <BrowserRouter>
           <Routes>
-            <Route element={<Layout />} >
+              <Route element={<AuthLayout />}>
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+              </Route>
+
+            <Route element={<MainLayout />} >
                 <Route path="*" element={<Unknown />} />
                 <Route path="/" element={<Navigate to="/home" />}/>
                 <Route path="/home" element={<Home />} />
