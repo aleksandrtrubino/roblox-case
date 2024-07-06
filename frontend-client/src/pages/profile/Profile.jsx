@@ -6,14 +6,18 @@ import styles from './profile.module.scss';
 import { Link } from 'react-router-dom';
 import {faCoins} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {useGetUserMeQuery} from "../../api/userApi";
 
 export const Profile = () => {
   React.useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
 
+  const user = useGetUserMeQuery();
+
 
   return (
+      user.isSuccess ?
     <div className={styles.profile}>
       <div className={`${styles.profile_settings} ${styles.settings}`}>
         <div className={styles.settings_right}>
@@ -34,10 +38,10 @@ export const Profile = () => {
         </div>
       </div>
       <div className={`${styles.profile_header} ${styles.header}`}>
-        <div className={styles.header_picture}>T</div>
+        <div className={styles.header_picture}>{user.data.nickname[0].toUpperCase()}</div>
         <div className={styles.details}>
           <div className={styles.details_content}>
-            <span className={styles.details_name}>@throwberries</span>
+            <span className={styles.details_name}>{user.data.nickname}</span>
           </div>
           <div className={styles.details_buttons}>
             <Link to="/payment" className={`${styles.details_button} ${styles.payment}`}>
@@ -76,5 +80,13 @@ export const Profile = () => {
       <Inventory />
       {/* <History /> */}
     </div>
+          :
+          user.isLoading ?
+              'loading..'
+              :
+              user.isError ?
+                  'Error happened'
+                  :
+                  'Pizdec'
   );
 };

@@ -1,19 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
-//import { useDispatch } from 'react-redux'
-//import {useLoginMutation, useLogoutMutation} from "../../features/auth/api/authApi";
-import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
+import {Link, useNavigate} from 'react-router-dom'
 
-//import {logout, setToken} from "../../features/auth/model/authSlice";
 
 import styles from "./LoginForm.module.scss";
+import {useLoginMutation, useLogoutMutation} from "../../api/authApi";
+import {logout, setToken} from "../../model/authSlice";
 
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[0-9]).{8,24}$/;
 const EMAIL_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 const Login = () => {
-    //const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const navigate = useNavigate()
 
     const [email, setEmail] = useState("");
@@ -23,49 +23,47 @@ const Login = () => {
     const [validPassword, setValidPassword] = useState(true);
 
 
-    //const [login] = useLoginMutation()
-    //const [logoutMutation] = useLogoutMutation()
+    const [login] = useLoginMutation()
+    const [logoutMutation] = useLogoutMutation()
 
-    // const doLogout = async () =>{
-    //   try{
-    //     dispatch(logout());
-    //     const response = await logoutMutation().unwrap();
-    //   }
-    //   catch(error){
-    //     console.log(error)
-    //   }
-    // }
+    const doLogout = async () =>{
+      try{
+        dispatch(logout());
+        const response = await logoutMutation().unwrap();
+      }
+      catch(error){
+        console.log(error)
+      }
+    }
 
-    // useEffect(()=> {
-    //   doLogout()
-    // },[])
+    useEffect(()=> {
+      doLogout()
+    },[])
 
     const defaultPasswordMessage = (
-        <p>
-            Пароль должен содержать не менее 8 символов
-            <br /> и включать в себя цифры и латинские буквы. <br />
-            Допускаются буквы верхнего регистра и специальные символы.
-        </p>
+        <span>
+            Пароль должен содержать не менее 8 символов и включать в себя цифры и латинские буквы. Допускаются буквы верхнего регистра и специальные символы.
+        </span>
     );
 
     const invalidPasswordMessage = (
-        <p>
+        <span>
             Неправильный пароль
-        </p>
+        </span>
     )
 
     const defaultEmailMessage = (
-        <p>Введите корректный адрес электронной почты.</p>
+        <span>Введите корректный адрес электронной почты.</span>
     )
 
 
     useEffect(() => {
-        setValidEmail(EMAIL_REGEX.test(email) || email === "" ? true : false);
+        setValidEmail(EMAIL_REGEX.test(email) || email === "");
     }, [email]);
 
     useEffect(() => {
         setValidPassword(
-            PASSWORD_REGEX.test(password) || password === "" ? true : false
+            PASSWORD_REGEX.test(password) || password === ""
         );
     }, [password]);
 
@@ -85,25 +83,12 @@ const Login = () => {
 
         if (validFields()) {
             try{
-                // const response = await axios.post(
-                //   LOGIN_URL,
-                //   JSON.stringify({ email, password }),
-                //   {
-                //     headers: { "Content-Type": "application/json" },
-                //     withCredentials: true,
-                //   }
-                // );
-                try{
-                    //dispatch(logout());
-                    //const response = await logoutMutation().unwrap();
-                }
-                catch(error){
-                    console.log(error)
-                }
                 console.log("Login: request is sent")
-                //const response = await login({email, password}).unwrap();
-                //console.log("token: "+ response?.token)
-                navigate("/catalog")
+                const response = await login({email, password}).unwrap();
+                const token = response?.token;
+                console.log("token: "+ token)
+                dispatch(setToken(token))
+                navigate("/home")
             }
             catch (error){
                 console.log(error);
@@ -118,30 +103,22 @@ const Login = () => {
                 }
             }
 
-
-
         }
     };
 
     return (
         <>
-            <div className={styles.login__wrapper}>
-                <section className={styles.login__section}>
-                    <form className={styles.login__form} onSubmit={handleSubmit}>
-                        <h1 className={styles.login__header}>Вход</h1>
+            <div className={styles.wrapper}>
+                <section className={styles.section}>
+                    <form className={styles.form} onSubmit={handleSubmit}>
+                        <h1 className={styles.header}>Вход</h1>
 
-                        <div className={styles.login__inputWrapper}>
-                            <label className={styles.login__label} htmlFor="email">
+                        <div className={styles.inputWrapper}>
+                            <label className={styles.label} htmlFor="email">
                                 Электронная почта:
                             </label>
                             <input
-                                className={
-                                    validEmail
-                                        ? email !== ""
-                                            ? `${styles.login__input} ${styles.login__inputBoxShadowGreen}`
-                                            : styles.login__input
-                                        : `${styles.login__input} ${styles.login__inputBoxShadowRed}`
-                                }
+                                className={styles.input}
                                 type="text"
                                 id="email"
                                 placeholder="Электронная почта"
@@ -155,8 +132,8 @@ const Login = () => {
                             <div
                                 className={
                                     !validEmail
-                                        ? styles.login__errorMessage
-                                        : styles.login__errorMessageHidden
+                                        ? styles.errorMessage
+                                        : styles.errorMessageHidden
                                 }
                                 id="email"
                             >
@@ -164,18 +141,12 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <div className={styles.login__inputWrapper}>
-                            <label className={styles.login__label} htmlFor="password">
+                        <div className={styles.inputWrapper}>
+                            <label className={styles.label} htmlFor="password">
                                 Пароль:
                             </label>
                             <input
-                                className={
-                                    validPassword
-                                        ? password !== ""
-                                            ? `${styles.login__input} ${styles.login__inputBoxShadowGreen}`
-                                            : styles.login__input
-                                        : `${styles.login__input} ${styles.login__inputBoxShadowRed}`
-                                }
+                                className={styles.input}
                                 type="password"
                                 id="password"
                                 placeholder="Пароль"
@@ -186,8 +157,8 @@ const Login = () => {
                             <div
                                 className={
                                     !validPassword
-                                        ? styles.login__errorMessage
-                                        : styles.login__errorMessageHidden
+                                        ? styles.errorMessage
+                                        : styles.errorMessageHidden
                                 }
                                 id="password"
                             >
@@ -195,7 +166,11 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <button className={styles.login__button}>Войти</button>
+                        <button className={styles.button}>Войти</button>
+                        <div className={styles.toRegister}>
+                            <span className={styles.toRegister_text}>{'Нет аккаунта? '}</span>
+                            <Link to='/register' className={styles.toRegister_link}>Зарегистрироваться</Link>
+                            </div>
                     </form>
                 </section>
             </div>
