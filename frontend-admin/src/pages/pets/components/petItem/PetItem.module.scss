@@ -1,0 +1,97 @@
+@import '../../../../styles/colors';
+
+.pet{
+  display: flex;
+  flex-direction: column;
+  background-color: $color-2;
+  width: 6em;
+  height: 6em;
+  border-radius: 1em;
+  padding: 1em;
+  cursor: pointer;
+
+  transition: All 0.2s ease-in;
+  -webkit-transition: All 0.2s ease-in;
+  -moz-transition: All 0.2s ease-in;
+  -o-transition: All 0.2s ease-in;
+
+  &:hover{
+    background-color: $color-3;
+  }
+
+  &_active{
+    background-color: $color-3;
+  }
+}
+
+//.pet:hover .image {
+//  transform: scale(1.1);
+//
+//  transition: All 0.2s ease-in;
+//  -webkit-transition: All 0.2s ease-in;
+//  -moz-transition: All 0.2s ease-in;
+//  -o-transition: All 0.2s ease-in;
+//}
+
+.imageWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rarity{
+  position: relative;
+  margin-bottom: -1em;
+  border-top-right-radius: 0.2em;
+  border-top-left-radius: 0.2em;
+  width: 2em;
+  height: 0.3em;
+
+  //border-top: 0.1em solid $color-4; /* Верхняя граница */
+  //border-left: 0.1em solid $color-4; /* Левая граница */
+  //border-right: 0.1em solid $color-4; /* Правая граница */
+
+  &_common{
+    background-color: $rarity-common;
+  }
+
+  &_uncommon{
+    background-color: $rarity-uncommon;
+  }
+
+  &_rare{
+    background-color: $rarity-rare;
+  }
+
+  &_ultraRare{
+    background-color: $rarity-ultra-rare;
+  }
+
+  &_legendary{
+    background-color: $rarity-legendary;
+  }
+}
+
+.image{
+  object-fit: cover;
+  overflow: hidden;
+  height: 4em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.nameWrapper{
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.name{
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  user-select: none;
+}

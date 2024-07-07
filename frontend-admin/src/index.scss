@@ -1,0 +1,52 @@
+@import 'styles/colors';
+
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('assets/fonts/Rubik-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('assets/fonts/Rubik-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('assets/fonts/Rubik-SemiBold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('assets/fonts/Rubik-Bold.ttf');
+  font-weight: 700;
+}
+//* ---------------------------------------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  display: flex;
+  height: 100%;
+}
+
+
+#root {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  font-family: 'Rubik', sans-serif;
+  color: $color-5;
+  background-color: $color-1;
+}

@@ -1,0 +1,141 @@
+@import '../../../../styles/colors';
+
+.petInfo{
+  grid-area: petInfo;
+  margin-top: 1rem;
+  margin-left: 1em;
+
+  padding: 3em;
+  border-radius: 1em;
+  background-color: $color-2;
+  width: 20em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.imageWrapper{
+  background-color: $color-3;
+  border-radius: 1em;
+  padding: 2em;
+  width: 16em;
+  height: 16em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rarity{
+  position: relative;
+  margin-top: -0.8em;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  width: 8em;
+  height: 0.8em;
+
+  //border-top: 0.1em solid $color-4; /* Верхняя граница */
+  //border-left: 0.1em solid $color-4; /* Левая граница */
+  //border-right: 0.1em solid $color-4; /* Правая граница */
+
+  &_common{
+    background-color: $rarity-common;
+  }
+
+  &_uncommon{
+    background-color: $rarity-uncommon;
+  }
+
+  &_rare{
+    background-color: $rarity-rare;
+  }
+
+  &_ultraRare{
+    background-color: $rarity-ultra-rare;
+  }
+
+  &_legendary{
+    background-color: $rarity-legendary;
+  }
+}
+
+.propertyWrapper{
+  margin-top: 1em;
+  width: 18em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.propertyName{
+  font-weight: bold;
+
+}
+
+
+.property{
+
+}
+
+.buttonWrapper{
+  margin-top: 4em;
+  width: 18em;
+  display: flex;
+  flex-direction: row;
+}
+
+.editButton{
+  outline: none;
+  background: $color-3;
+  color: $neutral-orange;
+  border: none;
+  padding: 12px 24px;
+  height: 2em;
+  border-radius: 0.7em;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  transition: all .3s ease;
+
+  &:hover {
+    opacity: 80%;
+  }
+
+  margin-right: 3em;
+}
+
+.deleteButton{
+  outline: none;
+  background: $color-3;
+  color: $wrong-red;
+  border: none;
+  padding: 12px 24px;
+  height: 2em;
+  border-radius: 0.7em;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  transition: all .3s ease;
+
+  &:hover {
+    opacity: 80%;
+  }
+}
