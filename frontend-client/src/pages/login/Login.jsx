@@ -1,20 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux'
-
-import {Link, useNavigate} from 'react-router-dom'
-
-
-import styles from "./LoginForm.module.scss";
-import {useLoginMutation, useLogoutMutation} from "../../api/authApi";
-import {logout, setToken} from "../../model/authSlice";
+import { Link, useNavigate } from 'react-router-dom'
+import styles from "./login.module.scss";
+import { useLoginMutation, useLogoutMutation } from "../../api/authApi";
+import { logout, setToken } from "../../model/authSlice";
 
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[0-9]).{8,24}$/;
 const EMAIL_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 const Login = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [validEmail, setValidEmail] = useState(true);
@@ -22,23 +19,21 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [validPassword, setValidPassword] = useState(true);
 
+    const [login] = useLoginMutation();
+    const [logoutMutation] = useLogoutMutation();
 
-    const [login] = useLoginMutation()
-    const [logoutMutation] = useLogoutMutation()
+    const doLogout = async () => {
+        try {
+            dispatch(logout());
+            const response = await logoutMutation().unwrap();
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
-    const doLogout = async () =>{
-      try{
-        dispatch(logout());
-        const response = await logoutMutation().unwrap();
-      }
-      catch(error){
-        console.log(error)
-      }
-    }
-
-    useEffect(()=> {
-      doLogout()
-    },[])
+    useEffect(() => {
+        doLogout();
+    }, []);
 
     const defaultPasswordMessage = (
         <span>
@@ -46,29 +41,16 @@ const Login = () => {
         </span>
     );
 
-    const invalidPasswordMessage = (
-        <span>
-            Неправильный пароль
-        </span>
-    )
-
     const defaultEmailMessage = (
         <span>Введите корректный адрес электронной почты.</span>
-    )
-
-
-    useEffect(() => {
-        setValidEmail(EMAIL_REGEX.test(email) || email === "");
-    }, [email]);
-
-    useEffect(() => {
-        setValidPassword(
-            PASSWORD_REGEX.test(password) || password === ""
-        );
-    }, [password]);
+    );
 
     const validFields = () => {
-        return validEmail && validPassword;
+        const isValidEmail = EMAIL_REGEX.test(email);
+        const isValidPassword = PASSWORD_REGEX.test(password);
+        setValidEmail(isValidEmail);
+        setValidPassword(isValidPassword);
+        return isValidEmail && isValidPassword;
     };
 
     const handleSubmit = async (e) => {
@@ -82,27 +64,23 @@ const Login = () => {
         }
 
         if (validFields()) {
-            try{
-                console.log("Login: request is sent")
-                const response = await login({email, password}).unwrap();
+            try {
+                console.log("Login: request is sent");
+                const response = await login({ email, password }).unwrap();
                 const token = response?.token;
-                console.log("token: "+ token)
-                dispatch(setToken(token))
-                navigate("/home")
-            }
-            catch (error){
+                console.log("token: " + token);
+                dispatch(setToken(token));
+                navigate("/home");
+            } catch (error) {
                 console.log(error);
-                if(!error){
-                    console.log("No server response")
-                }
-                else if(error?.response?.status === 404){
-                    console.log("User with this email doesn't exist")
-                }
-                else if(error?.response?.status === 403){
-                    console.log("Wrong password")
+                if (!error) {
+                    console.log("No server response");
+                } else if (error?.response?.status === 404) {
+                    console.log("User with this email doesn't exist");
+                } else if (error?.response?.status === 403) {
+                    console.log("Wrong password");
                 }
             }
-
         }
     };
 
@@ -170,7 +148,7 @@ const Login = () => {
                         <div className={styles.toRegister}>
                             <span className={styles.toRegister_text}>{'Нет аккаунта? '}</span>
                             <Link to='/register' className={styles.toRegister_link}>Зарегистрироваться</Link>
-                            </div>
+                        </div>
                     </form>
                 </section>
             </div>
@@ -179,3 +157,4 @@ const Login = () => {
 };
 
 export { Login };
+

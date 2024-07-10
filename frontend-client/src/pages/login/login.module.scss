@@ -1,0 +1,116 @@
+@import '../../styles/colors';
+@import "../../styles/fonts";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.section {
+  border-radius: 1rem;
+  background-color: $color-2;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 3rem 2rem 3rem;
+}
+
+.header {
+  margin-bottom: 1rem;
+  align-self: center;
+  color: $color-5;
+}
+
+.form {
+  width: 20rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.label {
+  display: none;
+}
+
+.inputWrapper {
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  margin-bottom: 0.5rem;
+  width: 20rem;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Rubik', sans-serif;
+  color: $color-1;
+  background-color: $color-5;
+  transition: all 0.2s ease-in;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  align-self: center;
+  margin-top: 2rem;
+  color: $color-5;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: $color-3;
+  outline: none;
+  border: none;
+  font-family: 'Rubik', sans-serif;
+  border-radius: 1rem;
+  width: 7rem;
+  height: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $color-6;
+  }
+
+  &:active {
+    opacity: 60%;
+  }
+}
+
+.errorMessage {
+  align-content: center;
+  min-height: 2rem;
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  background-color: $wrong-red;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in;
+}
+
+.errorMessageHidden {
+  display: none;
+}
+
+.toRegister {
+  margin-top: 2rem;
+  align-self: center;
+
+  &_text{
+
+  }
+
+  &_link{
+    color: $link-blue;
+    text-decoration: underline;
+  }
+}
