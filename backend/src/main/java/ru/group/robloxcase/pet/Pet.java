@@ -1,5 +1,6 @@
 package ru.group.robloxcase.pet;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import ru.group.robloxcase.pet.rarity.PetRarity;
 import ru.group.robloxcase.util.FileStorageUtils;
@@ -21,6 +22,9 @@ public class Pet {
     PetRarity rarity;
     @Transient
     byte[] image;
+    @JsonIgnore
+    @Column(name = "image_change")
+    private Integer imageChange = 0;
 
     public Pet() {
     }
@@ -56,5 +60,6 @@ public class Pet {
 
     public void setImage(byte[] image) {
         this.image = image;
+        ++this.imageChange;
     }
 }

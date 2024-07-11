@@ -1,9 +1,6 @@
 package ru.group.robloxcase.pet;
 
-import jakarta.persistence.PostLoad;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreRemove;
-import jakarta.persistence.PreUpdate;
+import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 import ru.group.robloxcase.util.FileStorageUtils;
 
