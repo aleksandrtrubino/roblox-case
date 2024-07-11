@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface PetRepository extends JpaRepository<Pet, Long>, JpaSpecificationExecutor<Pet> {
     boolean existsByName(String name);
+    Optional<Pet> findByName(String name);
 }

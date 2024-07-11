@@ -32,6 +32,9 @@
             <column name="rarity_id" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
+            <column name="image_change" type="INTEGER" defaultValue="0">
+                <constraints nullable="false" />
+            </column>
         </createTable>
     </changeSet>
 

@@ -43,25 +43,29 @@ public class PetController {
     }
 
     @PreAuthorize("hasAnyAuthority('moderator','admin')")
-    @PutMapping("/{petId}")
+    @PatchMapping("/{petId}")
     public ResponseEntity<Pet> patchById(
             @PathVariable Long petId,
-            @RequestParam("data") String data,
-            @RequestParam("image") MultipartFile file)
+            @RequestParam(value = "data", required = false) String data,
+            @RequestParam(value = "image",required = false) MultipartFile file)
     {
-        PetDto petDto = null;
-        try {
-            petDto = new ObjectMapper().readValue(data, PetDto.class);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+        PetDto petDto = new PetDto();
+        if(data != null) {
+            try {
+                petDto = new ObjectMapper().readValue(data, PetDto.class);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
         }
         byte[] image;
-        try {
-            image = file.getBytes();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if(file != null) {
+            try {
+                image = file.getBytes();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            petDto.setImage(image);
         }
-        petDto.setImage(image);
         return ResponseEntity.ok(petService.patchById(petId, petDto));
     }
 

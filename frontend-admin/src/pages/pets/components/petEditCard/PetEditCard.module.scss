@@ -26,6 +26,44 @@
   align-items: center;
 }
 
+.imageInput{
+  display: none;
+}
+
+.imageButton{
+  position: absolute;
+  font-size: 2.5rem;
+  user-select: none;
+  cursor: pointer;
+  margin-left: 16rem;
+  margin-bottom: 16rem;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &:hover &_icon{
+    color: $color-5;
+  }
+
+  &:hover &_text{
+    color: $color-5;
+  }
+
+  &_icon{
+    font-size: 2.5rem;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &_text{
+    color: $color-4;
+    margin-top: 0rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
 .image{
   width: 100%;
   height: auto;
@@ -68,23 +106,48 @@
   }
 }
 
+.imageClose{
+  position: absolute;
+  font-size: 2.5rem;
+  user-select: none;
+  cursor: pointer;
+  margin-left: 16rem;
+  margin-bottom: 16rem;
+}
+
 .propertyWrapper{
   margin-top: 1rem;
   width: 18rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .propertyName{
   font-weight: bold;
+}
 
+.nameInput{
+  width: 9rem;
+  height: 1.5rem;
+  padding: 0.1em 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: $color-1;
+  background-color: $color-5;
+  transition: all 0.2s ease-in;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 
-.property{
-
-}
 
 .buttonWrapper{
   margin-top: 6rem;
@@ -94,33 +157,11 @@
   justify-content: flex-end;
 }
 
-.editButton{
+.createButton{
   font-size: 1em;
   outline: none;
   background: $color-3;
-  color: $neutral-orange;
-  border: none;
-  padding: 0.5rem 1rem;
-  height: 2rem;
-  border-radius: 0.7rem;
-  font-family: inherit;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: all .3s ease;
-
-  &:hover {
-    opacity: 80%;
-  }
-
-  margin-right: 3rem;
-}
-
-.deleteButton{
-  font-size: 1em;
-  outline: none;
-  background: $color-3;
-  color: $wrong-red;
+  color: $right-green;
   border: none;
   padding: 0.5rem 1rem;
   height: 2rem;

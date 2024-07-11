@@ -67,14 +67,19 @@ public class PetServiceImpl implements PetService{
 
         String name = petDto.getName();
         if(name != null){
-            if(petRepository.existsByName(name))
-                throw new AlreadyExistsException(String.format("Pet with name '%1$s' already exists", name));
+            Optional<Pet> optionalPet = petRepository.findByName(name);
+            Pet foundPet;
+            if(optionalPet.isPresent()){
+                foundPet = optionalPet.get();
+                if(!foundPet.getId().equals(pet.getId()))
+                    throw new AlreadyExistsException(String.format("Pet with name '%1$s' already exists", name));
+            }
             pet.setName(name);
         }
 
         Long rarityId = petDto.getRarityId();
-        PetRarity rarity;
         if(rarityId != null){
+            PetRarity rarity;
             if(rarityId.equals(PetRarity.COMMON.getId())){
                 rarity = PetRarity.COMMON;
             } else if(rarityId.equals(PetRarity.UNCOMMON.getId())){

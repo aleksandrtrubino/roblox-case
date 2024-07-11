@@ -1,9 +1,11 @@
-import {PetItem} from "./components/petItem/PetItem";
+import {AddPetItem, PetItem} from "./components/petItem/PetItem";
 import styles from './Pets.module.scss';
 import {useGetPetsQuery} from "../../api/petApi";
 import {useEffect, useState} from "react";
 import Modal from "../../common/containers/modal/Modal";
 import {PetInfoCard} from "./components/petInfoCard/PetInfoCard";
+import {PetCreationCard} from "./components/petCreationCard/PetCreationCard";
+import {PetEditCard} from "./components/petEditCard/PetEditCard";
 
 export const Pets = () => {
 
@@ -19,26 +21,28 @@ export const Pets = () => {
 
     const handlePetItemClick = (pet) => {
         setCurrentPet(pet);
-        setIsModalOpen(true);
+        setIsPetInfoCardOpen(true);
     };
 
-    let content = null;
+    let content = [<AddPetItem onClick={()=>setIsPetCreationCardOpen(true)}/>];
     if(pets.isSuccess && pets.data && pets.data.length > 0){
-        content = pets.data.map((pet) => <PetItem
+        content = [...content,  pets.data.map((pet) => <PetItem
             key = {pet.id}
             pet={pet}
             isActive={false}
-            onClick={() => handlePetItemClick(pet)}/>);
+            onClick={() => handlePetItemClick(pet)}/>)];
     }
 
 
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isPetInfoCardOpen, setIsPetInfoCardOpen] = useState(false);
+    const [isPetCreationCardOpen, setIsPetCreationCardOpen] = useState(false);
+    const [isPetEditCardOpen, setIsPetEditCardOpen] = useState(false);
 
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
+    const handleEdit = (pet) =>{
+        setIsPetEditCardOpen(true)
+        setIsPetInfoCardOpen(false)
+    }
 
     return(
         pets.isSuccess && pets.data && pets.data.length > 0 ?
@@ -50,9 +54,19 @@ export const Pets = () => {
                     {content}
                 </div>
 
-                <Modal isOpen={isModalOpen} onClose={closeModal}>
-                   <PetInfoCard pet={currentPet}/>
+                <Modal isOpen={isPetInfoCardOpen} onClose={() => setIsPetInfoCardOpen(false)}>
+                   <PetInfoCard
+                       onEdit={()=>handleEdit(currentPet)}
+                       onClose={() => setIsPetInfoCardOpen(false)}
+                       pet={currentPet}/>
                 </Modal>
+                <Modal isOpen={isPetCreationCardOpen} onClose={()=>setIsPetCreationCardOpen(false)}>
+                    <PetCreationCard onClose={() => setIsPetCreationCardOpen(false)} />
+                </Modal>
+                <Modal isOpen={isPetEditCardOpen} onClose={()=>setIsPetEditCardOpen(false)}>
+                    <PetEditCard pet={currentPet} onClose={() => setIsPetEditCardOpen(false)} />
+                </Modal>
+
 
             </div>
 
@@ -66,3 +80,4 @@ export const Pets = () => {
                     'pizdec'
     )
 }
+

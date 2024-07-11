@@ -31,6 +31,7 @@ public class FilePetImageService implements PetImageService{
 
     @Override
     public void updateImageOf(Pet pet) {
+        pet.setName(pet.getName().trim());
         String fileName = IMAGE_NAME_PREFIX + pet.getId() + IMAGE_EXTENSION;
         byte[] newImage = pet.getImage();
         byte[] oldImage;
