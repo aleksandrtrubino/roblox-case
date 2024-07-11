@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
 @import '../../styles/colors';
-@import "../../styles/fonts";
 
 .wrapper {
   display: flex;
@@ -23,6 +23,7 @@
 
 .header {
   margin-bottom: 1rem;
+  font-family: "PT Sans Narrow", sans-serif;
   align-self: center;
   color: $color-5;
 }
@@ -38,6 +39,10 @@
 
 .label {
   display: none;
+}
+
+.input::placeholder {
+  color: $color-1;
 }
 
 .inputWrapper {
@@ -57,7 +62,7 @@
   background-color: $color-5;
   transition: all 0.2s ease-in;
 
-  &:focus {
+  &_focus {
     outline: none;
   }
 }
@@ -73,7 +78,7 @@
   border: none;
   font-family: 'Rubik', sans-serif;
   border-radius: 1rem;
-  width: 7rem;
+  width: 12rem;
   height: 3rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -86,7 +91,6 @@
     opacity: 60%;
   }
 }
-
 
 .errorMessage {
   align-content: center;
@@ -102,18 +106,6 @@
   display: none;
 }
 
-.toRegister {
-  margin-top: 2rem;
-  align-self: center;
-
-  &_text{
-
-  }
-
-  &_link{
-    color: $link-blue;
-    text-decoration: underline;
-  }
-
+.errorMessage#middle-name {
+  margin-left: 22rem;
 }
-
