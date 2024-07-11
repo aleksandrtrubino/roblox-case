@@ -1,5 +1,7 @@
 
 import styles from './PetItem.module.scss'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
 export const PetItem = ({pet, isActive, onClick}) =>{
 
@@ -25,6 +27,16 @@ export const PetItem = ({pet, isActive, onClick}) =>{
                 <div className={styles.name}>{pet.name}</div>
                 <div className={styles.rarity + ' ' + (rarityById[pet.rarity.id])}></div>
             </div>
+        </div>
+
+    )
+}
+
+export const AddPetItem = ({onClick}) => {
+
+    return(
+        <div className={styles.pet} onClick={onClick}>
+            <FontAwesomeIcon className={styles.petAdd} icon={faPlus} />
         </div>
 
     )
