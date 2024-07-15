@@ -25,7 +25,7 @@ VALUES
     (1022, 'Peacock', 5),
     (1023, 'Hamster', 4),
     (1024, 'Happy Clam', 4),
-    (1025, 'Orca', 4),
+    (1025, 'Chick', 1),
     (1026, 'Giant Blue Scarab', 4),
     (1027, 'Yeti', 4),
     (1028, 'Black Moon Bear', 3),
