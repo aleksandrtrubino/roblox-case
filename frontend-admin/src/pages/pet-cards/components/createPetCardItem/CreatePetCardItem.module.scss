@@ -1,0 +1,121 @@
+@import '../../../../styles/colors';
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 66rem;
+  height: 36rem;
+  background-color: $color-1;
+  padding: 2rem;
+
+  border-radius: 2rem;
+}
+
+.petCardWrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+.properties{
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  border-style: solid;
+  border-color: $color-3;
+  border-radius: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+}
+
+.propertyWrapper{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  background-color: $color-2;
+  &_active{
+    background-color: $color-3;
+  }
+}
+
+.property {
+  width: 2.5rem;         // Ширина квадратика
+  height: 2.5rem;        // Высота квадратика
+  display: flex;       // Используем Flexbox для центрирования содержимого
+  align-items: center; // Центрирование по вертикали
+  justify-content: center; // Центрирование по горизонтали
+  font-size: 1.4rem;     // Размер шрифта для буквы
+  color: white;        // Цвет текста внутри квадратика
+  border-radius: 0.2rem;  // Скругление углов
+  text-transform: uppercase; // Преобразование текста в верхний регистр
+  user-select: none;
+
+  &_neon {
+    background-color: $property-neon; // Розовый цвет неона
+    //box-shadow: 0 0 10px rgba(255, 0, 255, 0.7); // Эффект неона
+  }
+
+  &_megaNeon{
+    background-color: $property-mega-neon; // Голубой цвет неона
+    //box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); // Эффект мега неона
+  }
+
+  &_flyable{
+    background-color: $property-flyable; // Зеленый цвет
+    //box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); // Эффект свечение
+  }
+
+  &_rideable{
+    background-color: $property-rideable; // Желтый цвет
+    //box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); // Эффект свечение
+  }
+}
+
+.petsWrapper{
+  margin-top: 1rem;
+  width: 61rem;
+  height: 17rem;
+  padding: 1rem;
+  background-color: $color-1;
+  border-style: solid;
+  border-color: $color-2;
+  border-radius: 2rem;
+
+
+  flex-grow: 0;
+  display: grid;
+  grid-template-columns: min-content min-content min-content min-content min-content min-content min-content;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  justify-content: center;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+  }
+}
+
+.saveButton{
+  margin-top: 1rem;
+  align-self: flex-end;
+  font-size: 1rem;
+  outline: none;
+  background: $color-3;
+  color: $right-green;
+  border: none;
+  padding: 0.1rem 1rem;
+  height: 2rem;
+  border-radius: 0.7rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    opacity: 80%;
+  }
+}

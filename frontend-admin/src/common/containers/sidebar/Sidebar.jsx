@@ -43,8 +43,8 @@ const Sidebar = () => {
         <Link to='/admins' className={activeClass("/admins")}>
           <div>Администраторы</div>
         </Link>
-        <Link to='/items' className={activeClass("/items")}>
-          <div>Предметы</div>
+        <Link to='/pet-cards' className={activeClass("/pet-cards")}>
+          <div>Карточки</div>
         </Link>
         <Link to='/pets' className={activeClass("/pets")}>
           <div>Питомцы</div>
