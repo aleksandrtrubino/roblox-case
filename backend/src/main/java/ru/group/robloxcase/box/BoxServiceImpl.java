@@ -2,9 +2,11 @@ package ru.group.robloxcase.box;
 
 import org.springframework.stereotype.Service;
 import ru.group.robloxcase.box.chance.Chance;
+import ru.group.robloxcase.box.rarity.BoxRarity;
 import ru.group.robloxcase.exception.NotFoundException;
 import ru.group.robloxcase.pet.card.PetCard;
 import ru.group.robloxcase.pet.card.PetCardRepository;
+import ru.group.robloxcase.pet.rarity.PetRarity;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,6 +27,23 @@ public class BoxServiceImpl implements BoxService{
         Box box = new Box();
         box.setName(boxDto.name());
         box.setPrice(boxDto.price());
+        Long rarityId = boxDto.rarityId();
+        if(rarityId == null){
+            throw new IllegalArgumentException("Field 'rarity' of class Pet cannot be NULL");
+        }
+        BoxRarity rarity;
+        if(rarityId.equals(PetRarity.COMMON.getId())){
+            rarity = BoxRarity.COMMON;
+        } else if(rarityId.equals(PetRarity.UNCOMMON.getId())){
+            rarity = BoxRarity.UNCOMMON;
+        } else if (rarityId.equals(PetRarity.RARE.getId())) {
+            rarity = BoxRarity.RARE;
+        } else if (rarityId.equals(PetRarity.LEGENDARY.getId())) {
+            rarity = BoxRarity.LEGENDARY;
+        } else {
+            throw new NotFoundException(String.format("BoxRarity with ID=%1$s not found", rarityId));
+        }
+        box.setRarity(rarity);
 
         List<Chance> chances = boxDto.chances().stream()
                 .map(chanceDto -> {
@@ -59,6 +78,22 @@ public class BoxServiceImpl implements BoxService{
                     })
                     .collect(Collectors.toList());
             box.setChances(chances);
+        }
+        Long rarityId = boxDto.rarityId();
+        if(rarityId != null){
+            BoxRarity rarity;
+            if(rarityId.equals(PetRarity.COMMON.getId())){
+                rarity = BoxRarity.COMMON;
+            } else if(rarityId.equals(PetRarity.UNCOMMON.getId())){
+                rarity = BoxRarity.UNCOMMON;
+            } else if (rarityId.equals(PetRarity.RARE.getId())) {
+                rarity = BoxRarity.RARE;
+            } else if (rarityId.equals(PetRarity.LEGENDARY.getId())) {
+                rarity = BoxRarity.LEGENDARY;
+            } else {
+                throw new NotFoundException(String.format("BoxRarity with ID=%1$s not found", rarityId));
+            }
+            box.setRarity(rarity);
         }
         return boxRepository.save(box);
     }

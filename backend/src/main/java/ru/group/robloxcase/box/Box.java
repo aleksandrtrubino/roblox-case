@@ -2,6 +2,7 @@ package ru.group.robloxcase.box;
 
 import jakarta.persistence.*;
 import ru.group.robloxcase.box.chance.Chance;
+import ru.group.robloxcase.box.rarity.BoxRarity;
 
 import java.util.List;
 
@@ -18,6 +19,10 @@ public class Box {
 
     @Column(name="price")
     private Integer price;
+
+    @ManyToOne
+    @JoinColumn(name = "rarity_id")
+    private BoxRarity rarity;
 
     @OneToMany(mappedBy = "box", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Chance> chances;
@@ -44,6 +49,14 @@ public class Box {
 
     public void setPrice(Integer price) {
         this.price = price;
+    }
+
+    public BoxRarity getRarity() {
+        return rarity;
+    }
+
+    public void setRarity(BoxRarity rarity) {
+        this.rarity = rarity;
     }
 
     public List<Chance> getChances() {

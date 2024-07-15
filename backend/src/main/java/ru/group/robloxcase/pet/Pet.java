@@ -19,7 +19,7 @@ public class Pet {
     private String name;
     @ManyToOne
     @JoinColumn(name = "rarity_id")
-    PetRarity rarity;
+    private PetRarity rarity;
     @Transient
     byte[] image;
     @JsonIgnore
