@@ -49,6 +49,9 @@ const Sidebar = () => {
         <Link to='/pets' className={activeClass("/pets")}>
           <div>Питомцы</div>
         </Link>
+        <Link to='/boxes' className={activeClass("/boxes")}>
+          <div>Кейсы</div>
+        </Link>
         <Link to='/cases' className={activeClass("/cases")}>
           <div>Игровые кейсы</div>
         </Link>

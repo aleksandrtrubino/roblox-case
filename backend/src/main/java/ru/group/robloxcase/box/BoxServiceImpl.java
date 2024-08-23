@@ -69,7 +69,6 @@ public class BoxServiceImpl implements BoxService{
             box.setPrice(boxDto.price());
         }
         if (boxDto.chances() != null) {
-            box.getChances().clear();
             List<Chance> chances = boxDto.chances().stream()
                     .map(chanceDto -> {
                         PetCard petCard = petCardRepository.findById(chanceDto.petCardId())
@@ -77,7 +76,8 @@ public class BoxServiceImpl implements BoxService{
                         return new Chance(petCard, box, chanceDto.percent());
                     })
                     .collect(Collectors.toList());
-            box.setChances(chances);
+            box.getChances().clear();
+            box.getChances().addAll(chances);
         }
         Long rarityId = boxDto.rarityId();
         if(rarityId != null){

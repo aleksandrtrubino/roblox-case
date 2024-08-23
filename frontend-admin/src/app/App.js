@@ -24,6 +24,7 @@ import {persistor, store} from "./store";
 import {RequireAuth} from "../common/widgets/requireAuth/RequireAuth";
 import {Pets} from "../pages/pets/Pets";
 import {PetCards} from "../pages/pet-cards/PetCards";
+import {Boxes} from "../pages/boxes/Boxes";
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
                           <Route path="/promocodes" element={<Promocodes />}/>
                           <Route path="/pets" element={<Pets />}/>
                           <Route path="/pet-cards" element={<PetCards />}/>
+                          <Route path="/boxes" element={<Boxes />}/>
                       </Route>
                   </Route>
                   <Route path="/login" element={<Login />}/>
