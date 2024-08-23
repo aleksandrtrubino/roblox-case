@@ -1,0 +1,129 @@
+@import '../../../../styles/colors';
+
+
+.main{
+
+ display: grid;
+  grid-template-columns: 8rem 58rem 8rem;
+  grid-template-rows: 3rem 2rem;
+  grid-template-areas:
+          "image chances buttons"
+          "price chances buttons"
+          "name chances buttons";
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+ width: fit-content;
+  background-color: $color-2;
+  border-radius: 1.3rem;
+}
+
+.imageWrapper{
+ grid-area: image;
+ align-self: center;
+ justify-self: center;
+}
+
+.image{
+ width: 4rem;
+
+}
+
+.nameWrapper{
+ grid-area: name;
+ align-self: center;
+ justify-self: center;
+ width: fit-content;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.name{
+ font-size: 0.8rem;
+ text-align: center;
+}
+
+.priceWrapper{
+ grid-area: price;
+ align-self: center;
+ justify-self: center;
+ width: fit-content;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.price{
+ font-size: 0.8rem;
+ text-align: center;
+}
+
+.priceIcon{
+ font-size: 0.8rem;
+ margin-left: 0.1rem;
+}
+
+.chanceWrapper{
+ grid-area: chances;
+ height: 5.5rem;
+ display: flex;
+ flex-direction: row;
+ overflow-x: auto;
+ gap: 0.1rem;
+ align-self: center;
+ //justify-self: center;
+}
+
+.petCard{
+
+}
+
+.chance{
+
+}
+
+.buttonWrapper{
+ grid-area: buttons;
+}
+
+.editButton{
+ font-size: 0.8rem;
+ outline: none;
+ background: $color-3;
+ color: $neutral-orange;
+ border: none;
+ padding: 0.5rem 1rem;
+ height: 2rem;
+ border-radius: 0.7rem;
+ font-family: inherit;
+ display: flex;
+ align-items: center;
+ cursor: pointer;
+ transition: all .3s ease;
+
+ &:hover {
+  opacity: 80%;
+ }
+}
+
+.deleteButton{
+ margin-top: 1rem;
+ font-size: 0.8rem;
+ outline: none;
+ background: $color-3;
+ color: $wrong-red;
+ border: none;
+ padding: 0.5rem 1rem;
+ height: 2rem;
+ border-radius: 0.7rem;
+ font-family: inherit;
+ display: flex;
+ align-items: center;
+ cursor: pointer;
+ transition: all .3s ease;
+
+ &:hover {
+  opacity: 80%;
+ }
+}

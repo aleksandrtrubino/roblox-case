@@ -1,0 +1,57 @@
+@import '../../../../styles/colors';
+
+.main{
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+
+
+}
+
+.header{
+  padding-right: 0.5rem;
+  height: 1.6em;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-5;
+  color: $color-1;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+
+  &_closed{
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+  }
+}
+
+.dropdownContent {
+  position: absolute;
+  top: 100%; /* Располагает выпадающий список под заголовком */
+  left: 0;
+  width: 100%; /* Ширина выпадающего меню */
+  //background-color: $color-5;
+  //z-index: 1; /* Устанавливает порядок наложения */
+  //border-radius: 0 0 0.5em 0.5em; /* Закругленные края снизу */
+}
+
+.option{
+  width: inherit - 1em;
+  height: 1.2em;
+  padding-left: 1.5em;
+  flex-direction: row;
+  align-items: center;
+  background-color: $color-5;
+  color: $color-1;
+
+  &:last-child{
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+  }
+}

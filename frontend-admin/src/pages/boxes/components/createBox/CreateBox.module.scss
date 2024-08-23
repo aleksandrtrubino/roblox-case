@@ -1,0 +1,193 @@
+@import '../../../../styles/colors';
+
+.main{
+  display: grid;
+  grid-template-columns: 23rem 10rem 18rem 23rem;
+  grid-template-rows: 2.5rem 2.5rem 2.5rem 8rem 18rem 4rem;
+  grid-template-areas:
+          ". image name ."
+          ". image price ."
+          ". image rarity ."
+          "selected selected selected selected"
+          "cards cards cards cards"
+          ". . . button";
+
+  background-color: $color-1;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.imageWrapper, .nameWrapper, .priceWrapper, .rarityWrapper, .selectedWrapper, .cardsWrapper, .buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.imageWrapper {
+  grid-area: image;
+
+
+
+}
+
+.image {
+  width: 8rem;
+}
+
+.nameWrapper {
+  grid-area: name;
+  justify-content: flex-end;
+
+}
+
+.propertyName{
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.nameInput{
+  width: 9rem;
+  height: 1.5rem;
+  padding: 0.1em 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: $color-1;
+  background-color: $color-5;
+  transition: all 0.2s ease-in;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.priceWrapper{
+  grid-area: price;
+  justify-content: flex-end;
+}
+
+.priceInput{
+  width: 9rem;
+  height: 1.5rem;
+  padding: 0.1em 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: $color-1;
+  background-color: $color-5;
+  transition: all 0.2s ease-in;
+  /* Hide arrows in WebKit browsers (Chrome, Safari) */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Hide arrows in Firefox */
+  -moz-appearance: textfield;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.rarityWrapper {
+  grid-area: rarity;
+  justify-content: flex-end;
+
+}
+
+.selectedWrapper {
+  grid-area: selected;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+
+.selected{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.cardsWrapper {
+  grid-area: cards;
+  background-color: $color-2;
+  border-radius: 1rem;
+}
+
+.cards{
+  height: 15.5rem;
+  display: grid;
+  grid-template-columns: min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  justify-content: flex-start;
+  width: fit-content;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+
+  &::-webkit-scrollbar {
+    width: 0.7rem;
+    height: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $color-1;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-3;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    //border: 0.2rem solid $color-1; /* Padding around thumb */
+  }
+
+}
+
+
+.buttonWrapper {
+  grid-area: button;
+  justify-content: flex-end;
+}
+
+.createButton{
+  margin-top: 1rem;
+  align-self: flex-end;
+  font-size: 1rem;
+  outline: none;
+  background: $color-3;
+  color: $right-green;
+  border: none;
+  padding: 0.1rem 1rem;
+  height: 2rem;
+  border-radius: 0.7rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    opacity: 80%;
+  }
+}

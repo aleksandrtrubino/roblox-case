@@ -11,7 +11,7 @@ export const PetCreationCard = ({onClose}) => {
 
     const rarityList = [
         {id: 1, name: 'Common'},
-        {id: 2, name: 'Ucommon'},
+        {id: 2, name: 'Uncommon'},
         {id: 3, name: 'Rare'},
         {id: 4, name: 'Ultra-rare'},
         {id: 5, name: 'Legendary'},
