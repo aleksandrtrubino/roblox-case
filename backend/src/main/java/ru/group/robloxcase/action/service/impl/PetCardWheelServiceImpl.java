@@ -1,7 +1,6 @@
 package ru.group.robloxcase.action.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.group.robloxcase.action.dto.IdDto;
 import ru.group.robloxcase.action.service.PetCardWheelService;
 import ru.group.robloxcase.box.Box;
 import ru.group.robloxcase.box.BoxRepository;
