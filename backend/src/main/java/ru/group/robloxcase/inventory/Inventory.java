@@ -29,23 +29,14 @@ public class Inventory {
     )
     private List<PetCard> petCards;
 
-    @ManyToMany
-    @JoinTable(
-            name = "inventory_boxes",
-            joinColumns = @JoinColumn(name = "inventory_id"),
-            inverseJoinColumns = @JoinColumn(name = "box_id")
-    )
-    private List<Box> boxes;
 
     public Inventory() {
         this.petCards = new ArrayList<>();
-        this.boxes = new ArrayList<>();
     }
 
     public Inventory(User user) {
         this.user = user;
         this.petCards = new ArrayList<>();
-        this.boxes = new ArrayList<>();
     }
 
     // Getters and setters
@@ -63,13 +54,5 @@ public class Inventory {
 
     public void setPetCards(List<PetCard> petCards) {
         this.petCards = petCards;
-    }
-
-    public List<Box> getBoxes() {
-        return boxes;
-    }
-
-    public void setBoxes(List<Box> boxes) {
-        this.boxes = boxes;
     }
 }

@@ -22,35 +22,6 @@
 
 
     <changeSet id="0073" author="aleksandrtrubino">
-        <createTable tableName="inventory_boxes">
-            <column name="inventory_id" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="box_id" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="0074" author="aleksandrtrubino">
-        <addForeignKeyConstraint
-                baseTableName="inventory_boxes"
-                baseColumnNames="inventory_id"
-                constraintName="fk_inventory_boxes_inventory_id"
-                referencedTableName="inventory"
-                referencedColumnNames="id"/>
-    </changeSet>
-
-    <changeSet id="0075" author="aleksandrtrubino">
-        <addForeignKeyConstraint
-                baseTableName="inventory_boxes"
-                baseColumnNames="box_id"
-                constraintName="fk_inventory_boxes_box_id"
-                referencedTableName="boxes"
-                referencedColumnNames="id"/>
-    </changeSet>
-
-    <changeSet id="0076" author="aleksandrtrubino">
         <createTable tableName="inventory_pet_cards">
             <column name="inventory_id" type="BIGINT">
                 <constraints nullable="false"/>
@@ -61,7 +32,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="0077" author="aleksandrtrubino">
+    <changeSet id="0074" author="aleksandrtrubino">
         <addForeignKeyConstraint
                 baseTableName="inventory_pet_cards"
                 baseColumnNames="inventory_id"
@@ -70,7 +41,7 @@
                 referencedColumnNames="id"/>
     </changeSet>
 
-    <changeSet id="0078" author="aleksandrtrubino">
+    <changeSet id="0075" author="aleksandrtrubino">
         <addForeignKeyConstraint
                 baseTableName="inventory_pet_cards"
                 baseColumnNames="pet_card_id"

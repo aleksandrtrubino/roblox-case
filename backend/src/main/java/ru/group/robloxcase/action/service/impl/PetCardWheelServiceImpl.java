@@ -2,6 +2,8 @@ package ru.group.robloxcase.action.service.impl;
 
 import org.springframework.stereotype.Service;
 import ru.group.robloxcase.action.service.PetCardWheelService;
+import ru.group.robloxcase.balance.Balance;
+import ru.group.robloxcase.balance.BalanceRepository;
 import ru.group.robloxcase.box.Box;
 import ru.group.robloxcase.box.BoxRepository;
 import ru.group.robloxcase.box.chance.Chance;
@@ -17,37 +19,39 @@ import java.util.Random;
 public class PetCardWheelServiceImpl implements PetCardWheelService {
 
     private final InventoryRepository inventoryRepository;
+    private final BalanceRepository balanceRepository;
     private final BoxRepository boxRepository;
 
-    public PetCardWheelServiceImpl(InventoryRepository inventoryRepository, BoxRepository boxRepository) {
+    public PetCardWheelServiceImpl(InventoryRepository inventoryRepository, BalanceRepository balanceRepository, BoxRepository boxRepository) {
         this.inventoryRepository = inventoryRepository;
+        this.balanceRepository = balanceRepository;
         this.boxRepository = boxRepository;
     }
 
     @Override
     public PetCard spin(Long userId, Long boxId) {
-        // Получаем инвентарь пользователя
+
+        Box box = boxRepository.findById(boxId)
+                .orElseThrow(() -> new NotFoundException(String.format("Box with ID %d not found", boxId)));
+        Balance balance = balanceRepository.findByUserId(userId)
+                .orElseThrow(()->new NotFoundException(String.format("Balance for user with ID %1$s not found",userId)));
         Inventory inventory = inventoryRepository.findByUserId(userId)
-                .orElseThrow(() -> new NotFoundException(String.format("Inventory for user with id %s not found", userId)));
+                .orElseThrow(()->new NotFoundException(String.format("Inventory for user with ID %1$s not found",userId)));
+        int price = box.getPrice();
+        int currentBalance = balance.getBalance();
+        if(currentBalance < price)
+            throw new NotFoundException(String.format("Balance for user with ID %1$s doesn't have enough money",userId));
+        balance.setBalance(currentBalance - price);
 
-        // Находим Box по boxId в инвентаре пользователя
-        Box box = inventory.getBoxes().stream()
-                .filter(b -> b.getId().equals(boxId))
-                .findFirst()
-                .orElseThrow(() -> new NotFoundException(String.format("Box with id %s not found in inventory", boxId)));
-
-        // Получаем случайный PetCard из Box
         List<PetCard> petCards = box.getChances().stream()
                 .map(Chance::getPetCard)
                 .toList();
 
         if (petCards.isEmpty()) {
-            throw new NotFoundException(String.format("No PetCards available in Box with id %s", boxId));
+            throw new NotFoundException(String.format("No Pet cards available in Box with id %s", boxId));
         }
         //TODO: реализовать метод для возвращение питомца согласно вероятности
         PetCard selectedPetCard = petCards.get(new Random().nextInt(petCards.size()));
-
-        inventory.getBoxes().remove(box);
 
         inventory.getPetCards().add(selectedPetCard);
 
