@@ -9,6 +9,7 @@
     <include file="003_add_pets.xml" relativeToChangelogFile="true"/>
     <include file="004_add_pet_cards.xml" relativeToChangelogFile="true"/>
     <include file="005_add_boxes.xml" relativeToChangelogFile="true"/>
-
+    <include file="006_add_balance.xml" relativeToChangelogFile="true"/>
+    <include file="007_add_inventory.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

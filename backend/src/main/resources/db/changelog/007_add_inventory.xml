@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="0071" author="aleksandrtrubino">
+        <createSequence sequenceName="inventory_seq" startValue="1000" incrementBy="50"/>
+    </changeSet>
+
+    <changeSet id="0072" author="aleksandrtrubino">
+        <createTable tableName="inventory">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+
+    <changeSet id="0073" author="aleksandrtrubino">
+        <createTable tableName="inventory_boxes">
+            <column name="inventory_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="box_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="0074" author="aleksandrtrubino">
+        <addForeignKeyConstraint
+                baseTableName="inventory_boxes"
+                baseColumnNames="inventory_id"
+                constraintName="fk_inventory_boxes_inventory_id"
+                referencedTableName="inventory"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="0075" author="aleksandrtrubino">
+        <addForeignKeyConstraint
+                baseTableName="inventory_boxes"
+                baseColumnNames="box_id"
+                constraintName="fk_inventory_boxes_box_id"
+                referencedTableName="boxes"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="0076" author="aleksandrtrubino">
+        <createTable tableName="inventory_pet_cards">
+            <column name="inventory_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pet_card_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="0077" author="aleksandrtrubino">
+        <addForeignKeyConstraint
+                baseTableName="inventory_pet_cards"
+                baseColumnNames="inventory_id"
+                constraintName="fk_inventory_pet_cards_inventory_id"
+                referencedTableName="inventory"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="0078" author="aleksandrtrubino">
+        <addForeignKeyConstraint
+                baseTableName="inventory_pet_cards"
+                baseColumnNames="pet_card_id"
+                constraintName="fk_inventory_pet_cards_pet_card_id"
+                referencedTableName="pet_cards"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>
