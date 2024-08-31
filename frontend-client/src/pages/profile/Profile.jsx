@@ -14,6 +14,7 @@ export const Profile = () => {
   });
 
   const user = useGetUserMeQuery();
+  console.log(user)
 
 
   return (

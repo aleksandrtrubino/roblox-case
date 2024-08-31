@@ -33,15 +33,17 @@ export const EditChance = ({chance, setChance, isActive, onClick, className}) =>
         </div>),
     ]
 
-   // const [chance, setChance] = useState({petCardId: null, percent: null});
+    const formatPercent = (percent) =>{
+        if(percent)
+            return percent/100;
+        else
+            return '';
+    }
 
     const handlePercentChange = (e) => {
-        setChance({...chance, percent: e.target.value})
+        setChance({...chance, percent: e.target.value * 100})
     };
 
-    // useEffect(() => {
-    //     setChanceDto({...chanceDto, petCardId: petCard.id})
-    // }, [petCard]);
 
     return(
         <div
@@ -71,7 +73,7 @@ export const EditChance = ({chance, setChance, isActive, onClick, className}) =>
                     type="number"
                     onChange={handlePercentChange}
                     placeholder="0"
-                    value={chance.percent}/>
+                    value={formatPercent(chance.percent)}/>
                 <span className={styles.percentSymbol}>%</span>
             </div>
         </div>

@@ -63,7 +63,7 @@ export const EditBox = ({ box, onClose }) => {
         if (exists) {
             setChanceList(chanceList.filter(chance => chance.petCard && chance.petCard.id !== petCard.id));
         } else {
-            setChanceList([...chanceList, { petCard: petCard, percent: null }]);
+            setChanceList([...chanceList, { petCard: petCard, percent: 0 }]);
         }
     };
 
