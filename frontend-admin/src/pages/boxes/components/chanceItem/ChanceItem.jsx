@@ -15,6 +15,10 @@ export const ChanceItem = ({chance, isActive, onClick, className}) =>{
         styles.rarity_legendary
     ]
 
+    const formatPercent = (percent) =>{
+        return percent/100;
+    }
+
     const propertyById = [
         (<></>),
         (<div className={styles.property + ' ' + styles.property_neon}>
@@ -54,7 +58,7 @@ export const ChanceItem = ({chance, isActive, onClick, className}) =>{
                 <div className={styles.name}>{chance.petCard.pet.name}</div>
             </div>
             <div className={styles.percentWrapper}>
-                <div className={styles.percent}>{chance.percent}%</div>
+                <div className={styles.percent}>{formatPercent(chance.percent)}%</div>
             </div>
         </div>
     )

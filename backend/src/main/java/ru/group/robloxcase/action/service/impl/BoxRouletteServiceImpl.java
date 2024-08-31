@@ -14,11 +14,15 @@ import ru.group.robloxcase.inventory.Inventory;
 import ru.group.robloxcase.inventory.InventoryRepository;
 import ru.group.robloxcase.pet.card.PetCard;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 @Service
 public class BoxRouletteServiceImpl implements BoxRouletteService {
+
+    private static final int PERCENT_SUM = 10000;
 
     private final InventoryRepository inventoryRepository;
     private final BalanceRepository balanceRepository;
@@ -47,15 +51,7 @@ public class BoxRouletteServiceImpl implements BoxRouletteService {
             throw new NotFoundException(String.format("Balance for user with ID %1$s doesn't have enough money",userId));
         balance.setBalance(currentBalance - price);
 
-        List<PetCard> petCards = box.getChances().stream()
-                .map(Chance::getPetCard)
-                .toList();
-
-        if (petCards.isEmpty()) {
-            throw new NotFoundException(String.format("No Pet cards available in Box with id %s", boxId));
-        }
-        //TODO: реализовать метод для возвращение питомца согласно вероятности
-        PetCard selectedPetCard = petCards.get(new Random().nextInt(petCards.size()));
+        PetCard selectedPetCard = getRandomPet(box);
 
         inventory.getPetCards().add(selectedPetCard);
 
@@ -65,5 +61,51 @@ public class BoxRouletteServiceImpl implements BoxRouletteService {
         spinEventRepository.save(spinEvent);
 
         return selectedPetCard;
+    }
+
+    private PetCard getRandomPet(Box box) {
+        List<Chance> chances = box.getChances();
+        int randomValue = new Random().nextInt(PERCENT_SUM) + 1;
+        int cumulativeSum = 0;
+
+        for (Chance chance : chances) {
+            cumulativeSum += chance.getPercent();
+            if (randomValue <= cumulativeSum) {
+                return chance.getPetCard();
+            }
+        }
+
+        throw new IllegalStateException("Spin failed to select a PetCard, please check the configuration of chances.");
+    }
+
+    public String testSpin(Long boxId, int spinCount) {
+
+        // Получаем коробку для теста
+        Box box = boxRepository.findById(boxId)
+                .orElseThrow(() -> new NotFoundException(String.format("Box with ID %d not found", boxId)));
+
+        // Словарь для подсчета количества выпадений каждой карты питомца
+        Map<Long, Integer> petCardCounts = new HashMap<>();
+
+        // Выполняем заданное количество спинов
+        for (int i = 0; i < spinCount; i++) {
+            PetCard petCard = getRandomPet(box);
+            petCardCounts.put(petCard.getId(), petCardCounts.getOrDefault(petCard.getId(), 0) + 1);
+        }
+
+        // Строим строку с результатами
+        StringBuilder result = new StringBuilder();
+        result.append("Test Results:\n");
+        for (Chance chance : box.getChances()) {
+            Long petCardId = chance.getPetCard().getId();
+            int count = petCardCounts.getOrDefault(petCardId, 0);
+            double actualPercent = (double) count / spinCount * 100;
+            double expectedPercent = (double) chance.getPercent() / 100;
+
+            result.append(String.format("PetCard ID: %d | Expected: %.2f%% | Actual: %.2f%%\n",
+                    petCardId, expectedPercent, actualPercent));
+        }
+
+        return result.toString();
     }
 }

@@ -14,6 +14,8 @@ import java.util.stream.Collectors;
 @Service
 public class BoxServiceImpl implements BoxService{
 
+    private static final int PERCENT_SUM = 10000;
+
     private final BoxRepository boxRepository;
     private final PetCardRepository petCardRepository;
 
@@ -32,13 +34,13 @@ public class BoxServiceImpl implements BoxService{
             throw new IllegalArgumentException("Field 'rarity' of class Pet cannot be NULL");
         }
         BoxRarity rarity;
-        if(rarityId.equals(PetRarity.COMMON.getId())){
+        if(rarityId.equals(BoxRarity.COMMON.getId())){
             rarity = BoxRarity.COMMON;
-        } else if(rarityId.equals(PetRarity.UNCOMMON.getId())){
+        } else if(rarityId.equals(BoxRarity.UNCOMMON.getId())){
             rarity = BoxRarity.UNCOMMON;
-        } else if (rarityId.equals(PetRarity.RARE.getId())) {
+        } else if (rarityId.equals(BoxRarity.RARE.getId())) {
             rarity = BoxRarity.RARE;
-        } else if (rarityId.equals(PetRarity.LEGENDARY.getId())) {
+        } else if (rarityId.equals(BoxRarity.LEGENDARY.getId())) {
             rarity = BoxRarity.LEGENDARY;
         } else {
             throw new NotFoundException(String.format("BoxRarity with ID=%1$s not found", rarityId));
@@ -52,6 +54,13 @@ public class BoxServiceImpl implements BoxService{
                     return new Chance(petCard, box, chanceDto.percent());
                 })
                 .collect(Collectors.toList());
+
+        int percentSum = 0;
+        for(Chance chance : chances) {
+           percentSum+=chance.getPercent();
+        }
+        if(percentSum != PERCENT_SUM)
+            throw new IllegalArgumentException("Box cannot be created: incorrect sum of percents");
 
         box.setChances(chances);
         return boxRepository.save(box);
@@ -82,19 +91,35 @@ public class BoxServiceImpl implements BoxService{
         Long rarityId = boxDto.rarityId();
         if(rarityId != null){
             BoxRarity rarity;
-            if(rarityId.equals(PetRarity.COMMON.getId())){
+            if(rarityId.equals(BoxRarity.COMMON.getId())){
                 rarity = BoxRarity.COMMON;
-            } else if(rarityId.equals(PetRarity.UNCOMMON.getId())){
+            } else if(rarityId.equals(BoxRarity.UNCOMMON.getId())){
                 rarity = BoxRarity.UNCOMMON;
-            } else if (rarityId.equals(PetRarity.RARE.getId())) {
+            } else if (rarityId.equals(BoxRarity.RARE.getId())) {
                 rarity = BoxRarity.RARE;
-            } else if (rarityId.equals(PetRarity.LEGENDARY.getId())) {
+            } else if (rarityId.equals(BoxRarity.LEGENDARY.getId())) {
                 rarity = BoxRarity.LEGENDARY;
             } else {
                 throw new NotFoundException(String.format("BoxRarity with ID=%1$s not found", rarityId));
             }
             box.setRarity(rarity);
         }
+
+        List<Chance> chances = boxDto.chances().stream()
+                .map(chanceDto -> {
+                    PetCard petCard = petCardRepository.findById(chanceDto.petCardId())
+                            .orElseThrow(() -> new NotFoundException(String.format("PetCard with ID %d not found", chanceDto.petCardId())));
+                    return new Chance(petCard, box, chanceDto.percent());
+                })
+                .collect(Collectors.toList());
+
+        int percentSum = 0;
+        for(Chance chance : chances) {
+            percentSum+=chance.getPercent();
+        }
+        if(percentSum != PERCENT_SUM)
+            throw new IllegalArgumentException("Box cannot be updated: incorrect sum of percents");
+
         return boxRepository.save(box);
     }
 

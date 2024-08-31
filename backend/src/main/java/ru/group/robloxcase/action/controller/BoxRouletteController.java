@@ -4,10 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.group.robloxcase.action.service.BoxRouletteService;
 import ru.group.robloxcase.pet.card.PetCard;
 
@@ -27,5 +24,10 @@ public class BoxRouletteController {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         Long userId = Long.parseLong(userDetails.getUsername());
         return ResponseEntity.ok(boxRouletteService.spin(userId, boxId));
+    }
+
+    @GetMapping("/spin/test/{boxId}")
+    public ResponseEntity<String> test(@PathVariable Long boxId, @RequestParam int spinCount){
+        return ResponseEntity.ok(boxRouletteService.testSpin(boxId, spinCount));
     }
 }
