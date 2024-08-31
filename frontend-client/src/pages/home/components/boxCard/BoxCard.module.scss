@@ -1,0 +1,63 @@
+@import "../../../../styles/colors";
+
+.main{
+  padding: 2em;
+  margin: 0.5em;
+  background-color: $color-2;
+  border-radius: 2em;
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 15em;
+  grid-template-rows: min-content 2em 2em;
+  grid-template-areas:
+  "imageArea"
+  "nameArea"
+  "priceArea";
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+
+  &:hover{
+
+    & .image {
+      scale: 1.05; // Увеличение изображения при наведении
+    }
+
+    background-color: $color-3;
+  }
+}
+
+.imageWrapper{
+  grid-area: imageArea;
+}
+
+.image{
+ width: 15rem;
+  transition: background-color 0.5s ease;
+}
+
+.nameWrapper{
+ grid-area: nameArea;
+  display: flex;
+  justify-content: center;
+}
+
+.name{
+ font-size: 1.3em;
+}
+
+.priceWrapper{
+ grid-area: priceArea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price{
+ font-size: 1.5em;
+}
+
+.priceIcon{
+  font-size: 1.2em;
+ margin-left: 0.5em;
+}

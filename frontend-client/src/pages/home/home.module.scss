@@ -1,0 +1,12 @@
+@import "../../styles/colors.scss";
+
+.main {
+  width: 90%;
+  align-self: center;
+  margin-top: 2rem;
+}
+
+.boxWrapper{
+  display: grid;
+  grid-template-columns: min-content min-content min-content min-content;
+}
