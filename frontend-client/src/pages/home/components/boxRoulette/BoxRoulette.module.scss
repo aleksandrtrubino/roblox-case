@@ -1,0 +1,134 @@
+@import '../../../../styles/colors';
+
+.rouletteWrapper{
+  width: 66rem;
+  height: 30rem;
+  background-color: $color-2;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roulette {
+  position: relative;
+  width: 62rem;
+  height: 10rem;
+  background: $color-1;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.pointer {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 54%;
+  transform: translate3d(-50%, -25px, 0);
+  height: 50px;
+  filter: drop-shadow(0 0 20px white);
+}
+
+.scope {
+  overflow: hidden;
+}
+
+.list {
+  position: relative;
+  display: inline-flex;
+  left: 0;
+  transform: translate3d(0, 0, 0);
+  list-style: none;
+  transition: 20s cubic-bezier(0.21, 0.53, 0.29, 0.99);
+}
+
+.listItem {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 160px;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+.listItem:nth-child(2n) {
+  background: $color-3;
+}
+
+.active {
+  transition: all 2s ease;
+  filter: drop-shadow(0 0 1rem white);
+}
+
+//.active img {
+//  transform: scale(1.05);
+//}
+
+.listItem img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: .3s ease;
+}
+
+.start {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate3d(-50%, 20px, 0);
+  padding: 24px 52px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: $right-green;
+  color: inherit;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+  //box-shadow: 0 0 30px 0 rgba(255, 118, 118, 0.2);
+  cursor: pointer;
+}
+
+.start:hover {
+  opacity: 0.8;
+}
+
+.coinsIcon{
+  margin-left: 0.2rem;
+
+}
+
+.display-none{
+  display: none;
+}
+
+.collect{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate3d(-50%, 20px, 0);
+  padding: 24px 52px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: $right-green;
+  color: inherit;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+  //box-shadow: 0 0 30px 0 rgba(255, 118, 118, 0.2);
+  cursor: pointer;
+}
+
+.collect:hover{
+  opacity: 0.8;
+}
+
+.fadeOut {
+  display: none; /* Прозрачность кнопки после нажатия */
+
+}

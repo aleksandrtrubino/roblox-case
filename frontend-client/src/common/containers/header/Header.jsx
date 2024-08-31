@@ -10,10 +10,13 @@ import { useDispatch, useSelector } from 'react-redux';
 //? import { Online } from './components/Online/Online';
 
 import styles from './header.module.scss';
+import {useGetBalanceMeQuery} from "../../../api/balanceApi";
 
 let balanceCount = 101;
 
 export const Header = () => {
+
+
 
   return (
     <div className={styles.header}>
@@ -24,7 +27,7 @@ export const Header = () => {
         {/* <Online className={styles.header_online}/> */}
       </div>
           <div className={styles.header_right}>
-            <Balance balanceCount={balanceCount}/>
+            <Balance />
             <ProfileIcon />
               <NotificationIcon />
           </div>

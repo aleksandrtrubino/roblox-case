@@ -3,7 +3,7 @@
 .profile {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 77rem;
     align-self: center;
     margin-top: 2rem;
 
@@ -64,7 +64,7 @@
 
 }
 
-.header {
+.avatar {
 
 
     &_picture {
@@ -219,6 +219,99 @@
         & path {
             stroke: $color-5;
         }
+    }
+}
+
+.main {
+    margin-top: 0.5rem;
+    width: 100%;
+    height: fit-content;
+    border-radius: 12px;
+    position: relative;
+
+    background-color: $color-2;
+
+}
+
+.header {
+    &_wrapper {
+        background-color: $color-2;
+        border-radius: 10px;
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+    }
+
+    &_button {
+        padding: 12px 24px;
+        width: 100%;
+        border-radius: 12px;
+        background-color: $color-3;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 500;
+
+        transition: all .3s ease;
+
+        //&:hover  {
+        //    background-color: $color-4;
+        //}
+        //
+        //&:hover .header_icon path {
+        //    fill: $color-5;
+        //}
+
+        &_wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        & span {
+            color: $color-4;
+
+            transition: all .3s ease;
+        }
+
+        //&:hover span {
+        //    color: $color-5;
+        //}
+    }
+
+    &_icon {
+        width: 24px;
+        height: 24px;
+
+        & path {
+            transition: all .3s ease;
+            fill: $color-4;
+        }
+    }
+}
+
+.home_button {
+    width: 64px;
+    height: 48px;
+
+    &:hover &_icon {
+        fill: $color-5;
+    }
+
+    &_icon {
+        width: 24px;
+        height: 24px;
+        fill: $color-4;
+
+        transition: all .3s ease;
     }
 }
 

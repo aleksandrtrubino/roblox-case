@@ -6,6 +6,7 @@ import ru.group.robloxcase.pet.card.PetCard;
 import ru.group.robloxcase.box.Box;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -49,6 +50,7 @@ public class Inventory {
     }
 
     public List<PetCard> getPetCards() {
+        Collections.reverse(petCards);
         return petCards;
     }
 

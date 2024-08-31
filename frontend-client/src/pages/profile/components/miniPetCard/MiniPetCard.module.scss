@@ -1,0 +1,132 @@
+@import "../../../../styles/colors.scss";
+
+.main{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-3;
+  width: 10rem;
+  height: 12rem;
+  border-radius: 12px;
+  padding: 0.4rem;
+  margin: 0.5rem;
+
+  transition: All 0.2s ease-in;
+  -webkit-transition: All 0.2s ease-in;
+  -moz-transition: All 0.2s ease-in;
+  -o-transition: All 0.2s ease-in;
+}
+
+.imageWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1
+}
+
+.rarity{
+  position: relative;
+  margin-bottom: -0.4em;
+  //margin-left: 0.5rem;
+  border-top-right-radius: 0.3rem;
+  border-top-left-radius: 0.3em;
+  width: 5em;
+  height: 0.5em;
+
+  //border-top: 0.1em solid $color-4; /* Верхняя граница */
+  //border-left: 0.1em solid $color-4; /* Левая граница */
+  //border-right: 0.1em solid $color-4; /* Правая граница */
+
+  &_common{
+    background-color: $rarity-common;
+  }
+
+  &_uncommon{
+    background-color: $rarity-uncommon;
+  }
+
+  &_rare{
+    background-color: $rarity-rare;
+  }
+
+  &_ultraRare{
+    background-color: $rarity-ultra-rare;
+  }
+
+  &_legendary{
+    background-color: $rarity-legendary;
+  }
+}
+
+.image{
+  object-fit: cover;
+  overflow: hidden;
+  height: 6rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.nameWrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+}
+
+.name{
+  font-size: 1.2rem;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  user-select: none;
+}
+
+
+
+.propertyListWrapper{
+  position: absolute;
+  margin-left: 7rem;
+}
+
+.propertyList{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.1rem;
+}
+
+.property {
+  width: 2rem;         // Ширина квадратика
+  height: 2rem;        // Высота квадратика
+  display: flex;       // Используем Flexbox для центрирования содержимого
+  align-items: center; // Центрирование по вертикали
+  justify-content: center; // Центрирование по горизонтали
+  font-size: 1.2rem;     // Размер шрифта для буквы
+  color: white;        // Цвет текста внутри квадратика
+  border-radius: 0.5rem;  // Скругление углов
+  text-transform: uppercase; // Преобразование текста в верхний регистр
+  user-select: none;
+
+  &_neon {
+    background-color: $property-neon; // Розовый цвет неона
+    //box-shadow: 0 0 10px rgba(255, 0, 255, 0.7); // Эффект неона
+  }
+
+  &_megaNeon{
+    background-color: $property-mega-neon; // Голубой цвет неона
+    //box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); // Эффект мега неона
+  }
+
+  &_flyable{
+    background-color: $property-flyable; // Зеленый цвет
+    //box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); // Эффект свечение
+  }
+
+  &_rideable{
+    background-color: $property-rideable; // Желтый цвет
+    //box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); // Эффект свечение
+  }
+}

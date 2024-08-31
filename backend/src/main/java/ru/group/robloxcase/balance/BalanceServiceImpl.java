@@ -3,6 +3,8 @@ package ru.group.robloxcase.balance;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.group.robloxcase.exception.NotFoundException;
+import ru.group.robloxcase.history.balance.BalanceEvent;
+import ru.group.robloxcase.history.balance.BalanceEventRepository;
 import ru.group.robloxcase.user.User;
 import ru.group.robloxcase.user.UserRepository;
 
@@ -12,9 +14,11 @@ import java.util.Optional;
 public class BalanceServiceImpl implements BalanceService{
 
     private final BalanceRepository balanceRepository;
+    private final BalanceEventRepository balanceEventRepository;
 
-    public BalanceServiceImpl(BalanceRepository balanceRepository) {
+    public BalanceServiceImpl(BalanceRepository balanceRepository, BalanceEventRepository balanceEventRepository) {
         this.balanceRepository = balanceRepository;
+        this.balanceEventRepository = balanceEventRepository;
     }
 
     @Transactional
@@ -24,7 +28,9 @@ public class BalanceServiceImpl implements BalanceService{
                 .orElseThrow(()->new NotFoundException(String.format("Balance for user with id %1$s not found",userId)));
         int currentBalance = balance.getBalance();
         balance.setBalance(currentBalance + sum);
+        BalanceEvent balanceEvent = new BalanceEvent(balance, sum);
         balanceRepository.save(balance);
+        balanceEventRepository.save(balanceEvent);
     }
 
     @Transactional

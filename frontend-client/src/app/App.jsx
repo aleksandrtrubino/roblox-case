@@ -7,7 +7,7 @@ import {store} from "./store";
 import {Provider} from "react-redux";
 import {PersistGate} from "redux-persist/integration/react";
 import { Profile } from '../pages/profile/Profile';
-import { Home } from '../pages/cases/Home';
+import { Home } from '../pages/home/Home';
 import { Payment } from '../pages/payment/Payment';
 import { Unknown } from '../pages/unknown/Unknown';
 import { Privacy } from '../pages/privacy/Privacy';
