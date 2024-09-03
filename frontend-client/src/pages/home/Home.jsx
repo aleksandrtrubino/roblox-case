@@ -45,7 +45,7 @@ export const Home = () => {
         </Modal>
         <Modal isOpen={isBoxRouletteOpen} onClose={()=>{
             setBoxRouletteOpen(false);
-            setBoxInfoOpen(true);
+            setBoxInfoOpen(false);
         }}>
             <BoxRoulette box={currentBox} onClose={()=>{
                 setBoxRouletteOpen(false);

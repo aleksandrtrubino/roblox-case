@@ -43,7 +43,7 @@ export const Payment = () => {
             Для пополнения баланса вы будете перемещены на сайт платежной системы.
           </span>
         </div>
-        <div className={`${styles.payment_right} ${styles.right}`}>
+        <zz className={`${styles.payment_right} ${styles.right}`}>
           <div className={`${styles.right_selected} ${styles.selected}`}>
             <div className={styles.selected_method}>
               <span className={styles.selected_title}>Выбранный способ оплаты</span>
@@ -120,7 +120,7 @@ export const Payment = () => {
               <path d="M22,17a4,4,0,1,1-4-4A4,4,0,0,1,22,17ZM21,3H4A2,2,0,0,0,2,5V19a2,2,0,0,0,2,2h9.54A5.99,5.99,0,0,1,22,12.54V8a1,1,0,0,0-1-1H5A1,1,0,0,1,5,5H22V4A1,1,0,0,0,21,3Z" />
             </svg>
           </button>
-        </div>
+        </zz>
       </div>
       <div className={styles.history}>
 

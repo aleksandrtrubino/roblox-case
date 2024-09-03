@@ -1,5 +1,9 @@
 package ru.group.robloxcase.withdrawal;
 
+import java.util.List;
+
 public interface WithdrawalService {
-    Withdrawal withdraw(Long userId, Long petCardId);
+
+    List<Withdrawal> findByUserId(Long userId);
+    Withdrawal withdraw(Long userId, Long inventoryItemId);
 }

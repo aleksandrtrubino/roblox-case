@@ -1,9 +1,9 @@
 package ru.group.robloxcase.inventory;
 
 import jakarta.persistence.*;
+import ru.group.robloxcase.inventory.item.InventoryItem;
 import ru.group.robloxcase.user.User;
 import ru.group.robloxcase.pet.card.PetCard;
-import ru.group.robloxcase.box.Box;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,22 +22,17 @@ public class Inventory {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
-    @ManyToMany
-    @JoinTable(
-            name = "inventory_pet_cards",
-            joinColumns = @JoinColumn(name = "inventory_id"),
-            inverseJoinColumns = @JoinColumn(name = "pet_card_id")
-    )
-    private List<PetCard> petCards;
+    @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    private List<InventoryItem> items;
 
 
     public Inventory() {
-        this.petCards = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     public Inventory(User user) {
         this.user = user;
-        this.petCards = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     // Getters and setters
@@ -49,12 +44,12 @@ public class Inventory {
         this.user = user;
     }
 
-    public List<PetCard> getPetCards() {
-        Collections.reverse(petCards);
-        return petCards;
+    public List<InventoryItem> getItems() {
+        Collections.reverse(items);
+        return items;
     }
 
-    public void setPetCards(List<PetCard> petCards) {
-        this.petCards = petCards;
+    public void setItems(List<InventoryItem> petCards) {
+        this.items = petCards;
     }
 }

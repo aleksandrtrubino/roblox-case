@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import {faCoins} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useGetUserMeQuery} from "../../api/userApi";
+import {WithdrawHistory} from "./components/withdrawHistory/WithdrawHistory";
 
 export const Profile = () => {
   React.useLayoutEffect(() => {
@@ -118,7 +119,7 @@ export const Profile = () => {
             </div>
           </div>
         </div>
-        {/*<Inventory />*/}
+        <WithdrawHistory />
 
       </div>
 

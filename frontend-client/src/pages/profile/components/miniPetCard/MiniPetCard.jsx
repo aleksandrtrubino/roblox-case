@@ -1,6 +1,6 @@
 import styles from './MiniPetCard.module.scss'
 
-export const MiniPetCard = ({petCard}) =>{
+export const MiniPetCard = ({petCard, onClick, className}) =>{
 
     const rarityById = [
         '',
@@ -28,8 +28,7 @@ export const MiniPetCard = ({petCard}) =>{
     ]
 
     return(
-        <div
-            className={styles.main}>
+        <div className={styles.card + " " + className} onClick={onClick}>
             <div className={styles.imageWrapper} >
                 <img className={styles.image} src={petCard.pet.image?`data:image/webp;base64,${petCard.pet.image}`:"/images/default-product-image.jpg"} alt="Изображение питомца"/>
             </div>

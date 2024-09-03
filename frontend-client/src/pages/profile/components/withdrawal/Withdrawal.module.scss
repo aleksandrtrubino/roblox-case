@@ -1,0 +1,71 @@
+@import "../../../../styles/colors.scss";
+
+.main{
+  background-color: $color-3;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 2rem;
+}
+
+.property {
+  width: 2rem;         // Ширина квадратика
+  height: 2rem;        // Высота квадратика
+  display: flex;       // Используем Flexbox для центрирования содержимого
+  align-items: center; // Центрирование по вертикали
+  justify-content: center; // Центрирование по горизонтали
+  font-size: 1.2rem;     // Размер шрифта для буквы
+  color: white;        // Цвет текста внутри квадратика
+  border-radius: 0.5rem;  // Скругление углов
+  text-transform: uppercase; // Преобразование текста в верхний регистр
+  user-select: none;
+  margin-right: 0.2rem;
+
+  &_neon {
+    background-color: $property-neon; // Розовый цвет неона
+    //box-shadow: 0 0 10px rgba(255, 0, 255, 0.7); // Эффект неона
+  }
+
+  &_megaNeon{
+    background-color: $property-mega-neon; // Голубой цвет неона
+    //box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); // Эффект мега неона
+  }
+
+  &_flyable{
+    background-color: $property-flyable; // Зеленый цвет
+    //box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); // Эффект свечение
+  }
+
+  &_rideable{
+    background-color: $property-rideable; // Желтый цвет
+    //box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); // Эффект свечение
+  }
+}
+
+.nameWrapper{
+ margin-left: 1rem;
+  margin-right: 5rem;
+  width: 20rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.name{
+ font-size: 1.1rem;
+}
+
+.propertyList{
+  margin-left: auto;
+ display: flex;
+  flex-direction: row;
+}
+
+.createdAt{
+  margin-left: auto;
+  font-size: 1.1rem;
+}

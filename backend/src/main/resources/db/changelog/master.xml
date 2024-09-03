@@ -15,5 +15,8 @@
     <include file="009_add_spin_events.xml" relativeToChangelogFile="true"/>
     <include file="010_add_withdrawals.xml" relativeToChangelogFile="true"/>
 
+    <include file="999_add_constants.xml" relativeToChangelogFile="true"/>
+
+
 
 </databaseChangeLog>

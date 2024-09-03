@@ -10,7 +10,14 @@ export const balanceApi = baseApi.injectEndpoints({
             }),
             providesTags: ['Balance']
         }),
+        depositMe: build.mutation(({
+            query: () => ({
+                url: "/balance/deposit/me",
+                method: "POST",
+            }),
+            invalidatesTags: ['Balance']
+        }))
     })
 })
 
-export const {useGetBalanceMeQuery} = balanceApi;
+export const {useGetBalanceMeQuery, useDepositMeMutation} = balanceApi;

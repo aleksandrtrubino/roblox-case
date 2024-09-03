@@ -5,16 +5,14 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.group.robloxcase.exception.NotFoundException;
 import ru.group.robloxcase.inventory.Inventory;
 import ru.group.robloxcase.inventory.InventoryRepository;
+import ru.group.robloxcase.inventory.item.InventoryItem;
 import ru.group.robloxcase.pet.card.PetCard;
-import ru.group.robloxcase.pet.property.PetProperty;
 import ru.group.robloxcase.telegram.TelegramLongPollingBotImpl;
 import ru.group.robloxcase.user.User;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class WithdrawalServiceImpl implements WithdrawalService{
@@ -29,26 +27,32 @@ public class WithdrawalServiceImpl implements WithdrawalService{
         this.telegramBot = telegramBot;
     }
 
+
+    @Override
+    public List<Withdrawal> findByUserId(Long userId) {
+        return withdrawalRepository.findByUserId(userId);
+    }
+
     @Transactional
     @Override
-    public Withdrawal withdraw(Long userId, Long petCardId) {
+    public Withdrawal withdraw(Long userId, Long inventoryItemId) {
         Inventory inventory = inventoryRepository.findByUserId(userId)
                 .orElseThrow(() -> new NotFoundException(String.format("Inventory for user with ID %1$s not found", userId)));
 
-        List<PetCard> petCards = inventory.getPetCards();
+        List<InventoryItem> items = inventory.getItems();
 
-        PetCard petCardToRemove = petCards.stream()
-                .filter(petCard -> petCard.getId().equals(petCardId))
+        InventoryItem itemToRemove = items.stream()
+                .filter(item -> item.getId().equals(inventoryItemId))
                 .findFirst()
-                .orElseThrow(() -> new NotFoundException(String.format("PetCard with ID %1$s not found in user's inventory", petCardId)));
+                .orElseThrow(() -> new NotFoundException(String.format("InventoryItem with ID %1$s not found in user's inventory", inventoryItemId)));
 
-        petCards.remove(petCardToRemove);
+        items.remove(itemToRemove);
 
         inventoryRepository.save(inventory);
 
         User user = inventory.getUser();
 
-        Withdrawal withdrawal = new Withdrawal(user, petCardToRemove, LocalDateTime.now());
+        Withdrawal withdrawal = new Withdrawal(user, itemToRemove.getPetCard(), LocalDateTime.now());
         Withdrawal savedWithdrawal = withdrawalRepository.save(withdrawal);
 
         telegramBot.sendMessage(composeMessage(withdrawal));
@@ -65,7 +69,7 @@ public class WithdrawalServiceImpl implements WithdrawalService{
         message.append("Свойства:\n");
 
         withdrawal.getPetCard().getProperties().forEach(petProperty ->
-                message.append("- ").append(petProperty.getName()).append("\n")
+                message.append("- ").append(petProperty.getName()).append(" \n")
         );
 
         return message.toString();
