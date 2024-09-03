@@ -1,4 +1,4 @@
-package ru.group.robloxcase.history.balance;
+package ru.group.robloxcase.balance_event;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;

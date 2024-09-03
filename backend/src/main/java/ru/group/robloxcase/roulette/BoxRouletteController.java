@@ -1,11 +1,11 @@
-package ru.group.robloxcase.action.controller;
+package ru.group.robloxcase.roulette;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-import ru.group.robloxcase.action.service.BoxRouletteService;
+import ru.group.robloxcase.roulette.BoxRouletteService;
 import ru.group.robloxcase.pet.card.PetCard;
 
 @RestController

@@ -1,4 +1,4 @@
-package ru.group.robloxcase.history.spin;
+package ru.group.robloxcase.spin_event;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

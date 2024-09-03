@@ -13,5 +13,7 @@
     <include file="007_add_inventory.xml" relativeToChangelogFile="true"/>
     <include file="008_add_balance_events.xml" relativeToChangelogFile="true"/>
     <include file="009_add_spin_events.xml" relativeToChangelogFile="true"/>
+    <include file="010_add_withdrawals.xml" relativeToChangelogFile="true"/>
+
 
 </databaseChangeLog>

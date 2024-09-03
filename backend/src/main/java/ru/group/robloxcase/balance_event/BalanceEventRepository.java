@@ -1,9 +1,10 @@
-package ru.group.robloxcase.history.spin;
+package ru.group.robloxcase.balance_event;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SpinEventRepository extends JpaRepository<SpinEvent, Long>, JpaSpecificationExecutor<SpinEvent> {
+public interface BalanceEventRepository extends JpaRepository<BalanceEvent, Long>, JpaSpecificationExecutor<BalanceEvent> {
 }

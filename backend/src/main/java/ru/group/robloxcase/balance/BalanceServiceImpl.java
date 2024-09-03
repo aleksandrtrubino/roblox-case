@@ -3,12 +3,8 @@ package ru.group.robloxcase.balance;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.group.robloxcase.exception.NotFoundException;
-import ru.group.robloxcase.history.balance.BalanceEvent;
-import ru.group.robloxcase.history.balance.BalanceEventRepository;
-import ru.group.robloxcase.user.User;
-import ru.group.robloxcase.user.UserRepository;
-
-import java.util.Optional;
+import ru.group.robloxcase.balance_event.BalanceEvent;
+import ru.group.robloxcase.balance_event.BalanceEventRepository;
 
 @Service
 public class BalanceServiceImpl implements BalanceService{

@@ -1,4 +1,4 @@
-package ru.group.robloxcase.history.spin;
+package ru.group.robloxcase.spin_event;
 
 import java.util.List;
 

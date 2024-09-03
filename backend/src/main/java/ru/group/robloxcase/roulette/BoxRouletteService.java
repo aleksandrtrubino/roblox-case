@@ -1,4 +1,4 @@
-package ru.group.robloxcase.action.service;
+package ru.group.robloxcase.roulette;
 
 import ru.group.robloxcase.pet.card.PetCard;
 

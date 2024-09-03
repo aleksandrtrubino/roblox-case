@@ -28,3 +28,9 @@ security:
   expiration:
     access-token: 3000000 # 5 min
     refresh-token: 604800000 # 1 week
+telegram:
+  bot:
+    name: pet_case_bot
+    token: 7211035777:AAGjtfxt3xE_8l2ZuT18lO9sr0b9c2yGhSU
+    chat-id: -1002192822844
+

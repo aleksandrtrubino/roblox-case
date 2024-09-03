@@ -1,15 +1,15 @@
-package ru.group.robloxcase.action.service.impl;
+package ru.group.robloxcase.roulette;
 
 import org.springframework.stereotype.Service;
-import ru.group.robloxcase.action.service.BoxRouletteService;
+import ru.group.robloxcase.roulette.BoxRouletteService;
 import ru.group.robloxcase.balance.Balance;
 import ru.group.robloxcase.balance.BalanceRepository;
 import ru.group.robloxcase.box.Box;
 import ru.group.robloxcase.box.BoxRepository;
 import ru.group.robloxcase.box.chance.Chance;
 import ru.group.robloxcase.exception.NotFoundException;
-import ru.group.robloxcase.history.spin.SpinEvent;
-import ru.group.robloxcase.history.spin.SpinEventRepository;
+import ru.group.robloxcase.spin_event.SpinEvent;
+import ru.group.robloxcase.spin_event.SpinEventRepository;
 import ru.group.robloxcase.inventory.Inventory;
 import ru.group.robloxcase.inventory.InventoryRepository;
 import ru.group.robloxcase.pet.card.PetCard;
