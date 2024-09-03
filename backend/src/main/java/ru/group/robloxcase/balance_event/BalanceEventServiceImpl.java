@@ -1,6 +1,5 @@
-package ru.group.robloxcase.history.balance;
+package ru.group.robloxcase.balance_event;
 
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 

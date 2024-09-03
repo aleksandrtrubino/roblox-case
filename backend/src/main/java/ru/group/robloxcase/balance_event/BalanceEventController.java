@@ -1,4 +1,4 @@
-package ru.group.robloxcase.history.balance;
+package ru.group.robloxcase.balance_event;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

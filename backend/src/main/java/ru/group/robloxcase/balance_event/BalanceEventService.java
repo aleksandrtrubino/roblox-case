@@ -1,4 +1,4 @@
-package ru.group.robloxcase.history.balance;
+package ru.group.robloxcase.balance_event;
 
 import java.util.List;
 
