@@ -1,13 +1,19 @@
 @import "../../../../styles/colors.scss";
 
 .main{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.card{
   position: relative;
   display: flex;
   flex-direction: column;
   background-color: $color-3;
   width: 10rem;
   height: 12rem;
-  border-radius: 12px;
+  border-radius: 0.7rem;
   padding: 0.4rem;
   margin: 0.5rem;
 
@@ -15,6 +21,8 @@
   -webkit-transition: All 0.2s ease-in;
   -moz-transition: All 0.2s ease-in;
   -o-transition: All 0.2s ease-in;
+
+
 }
 
 .imageWrapper{
@@ -130,3 +138,4 @@
     //box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); // Эффект свечение
   }
 }
+

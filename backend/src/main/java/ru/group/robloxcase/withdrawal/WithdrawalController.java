@@ -6,6 +6,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/withdrawals")
 public class WithdrawalController {
@@ -14,6 +16,14 @@ public class WithdrawalController {
 
     public WithdrawalController(WithdrawalService withdrawalService) {
         this.withdrawalService = withdrawalService;
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<List<Withdrawal>> findMe(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        Long userId = Long.parseLong(userDetails.getUsername());
+        return ResponseEntity.ok(withdrawalService.findByUserId(userId));
     }
 
     @PostMapping("withdraw/me")

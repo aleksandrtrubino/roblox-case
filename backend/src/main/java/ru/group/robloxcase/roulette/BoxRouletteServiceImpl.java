@@ -1,13 +1,14 @@
 package ru.group.robloxcase.roulette;
 
 import org.springframework.stereotype.Service;
-import ru.group.robloxcase.roulette.BoxRouletteService;
+import org.springframework.transaction.annotation.Transactional;
 import ru.group.robloxcase.balance.Balance;
 import ru.group.robloxcase.balance.BalanceRepository;
 import ru.group.robloxcase.box.Box;
 import ru.group.robloxcase.box.BoxRepository;
 import ru.group.robloxcase.box.chance.Chance;
 import ru.group.robloxcase.exception.NotFoundException;
+import ru.group.robloxcase.inventory.item.InventoryItem;
 import ru.group.robloxcase.spin_event.SpinEvent;
 import ru.group.robloxcase.spin_event.SpinEventRepository;
 import ru.group.robloxcase.inventory.Inventory;
@@ -36,6 +37,7 @@ public class BoxRouletteServiceImpl implements BoxRouletteService {
         this.spinEventRepository = spinEventRepository;
     }
 
+    @Transactional
     @Override
     public PetCard spin(Long userId, Long boxId) {
 
@@ -53,7 +55,7 @@ public class BoxRouletteServiceImpl implements BoxRouletteService {
 
         PetCard selectedPetCard = getRandomPet(box);
 
-        inventory.getPetCards().add(selectedPetCard);
+        inventory.getItems().add(new InventoryItem(selectedPetCard, inventory));
 
         SpinEvent spinEvent = new SpinEvent(inventory, box, selectedPetCard);
 

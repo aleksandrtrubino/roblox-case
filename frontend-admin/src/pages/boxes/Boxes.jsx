@@ -18,10 +18,11 @@ export const Boxes = () =>{
             box = {box}/>);
     }
 
+
     const [isCreateBoxOpen, setCreateBoxOpen] = useState(false);
 
     return(
-        boxes.isSuccess && boxes.data.length > 0 ?
+        boxes.isSuccess ?
         <div className={styles.main}>
             <div className={styles.header}>
                 Кейсы

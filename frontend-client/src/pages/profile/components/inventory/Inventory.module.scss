@@ -4,3 +4,10 @@
   display: grid;
   grid-template-columns: min-content min-content min-content min-content min-content min-content min-content;
 }
+
+.petCard{
+  cursor: pointer;
+  &:hover{
+    background-color: $color-1;
+  }
+}
