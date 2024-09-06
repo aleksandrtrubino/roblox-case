@@ -80,4 +80,15 @@
         </insert>
     </changeSet>
 
+    <changeSet id="9995" author="aleksandrtrubino">
+        <insert tableName="promo_code_types">
+            <column name="id" value="1"/>
+            <column name="name" value="sum"/>
+        </insert>
+        <insert tableName="promo_code_types">
+            <column name="id" value="2"/>
+            <column name="name" value="percent"/>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>
