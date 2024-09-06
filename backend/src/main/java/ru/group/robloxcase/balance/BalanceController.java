@@ -21,11 +21,11 @@ public class BalanceController {
 
     @PreAuthorize("hasAnyAuthority('user')")
     @PostMapping("/deposit/me")
-    public ResponseEntity<Void> deposit(@RequestBody Integer sum) {
+    public ResponseEntity<Void> deposit(@RequestParam Integer sum, @RequestParam(required = false) String promoCode) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         Long userId = Long.parseLong(userDetails.getUsername());
-        balanceService.deposit(userId, sum);
+        balanceService.deposit(userId, sum, promoCode);
         return ResponseEntity.ok().build();
     }
 

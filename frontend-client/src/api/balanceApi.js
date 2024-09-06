@@ -11,11 +11,12 @@ export const balanceApi = baseApi.injectEndpoints({
             providesTags: ['Balance']
         }),
         depositMe: build.mutation(({
-            query: () => ({
+            query: ({sum, promoCode}) => ({
                 url: "/balance/deposit/me",
                 method: "POST",
+                params: {sum, promoCode}
             }),
-            invalidatesTags: ['Balance']
+            invalidatesTags: ['Balance', 'BalanceEvent']
         }))
     })
 })
