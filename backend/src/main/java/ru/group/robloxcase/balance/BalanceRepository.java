@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface BalanceRepository extends JpaRepository<Balance, Long>, JpaSpecificationExecutor<Balance> {
 
     Optional<Balance> findByUserId(Long userId);
+    void deleteByUserId(Long userId);
 }

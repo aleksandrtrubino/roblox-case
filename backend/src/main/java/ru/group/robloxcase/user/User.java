@@ -2,6 +2,7 @@ package ru.group.robloxcase.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import ru.group.robloxcase.contact.Contact;
 import ru.group.robloxcase.user.authority.Authority;
 
 import java.util.HashSet;
@@ -25,6 +26,8 @@ public class User {
     private String password;
     @Column(name ="enabled")
     private Boolean enabled;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Contact contact;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_authorities",
@@ -80,6 +83,10 @@ public class User {
 
     public Set<Authority> getAuthorities() {
         return authorities;
+    }
+
+    public Contact getContact() {
+        return contact;
     }
 
     @JsonIgnore

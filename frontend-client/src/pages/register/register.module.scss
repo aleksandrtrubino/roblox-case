@@ -29,7 +29,7 @@
 }
 
 .form {
-  width: 20rem;
+  width: fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -98,7 +98,10 @@
   font-size: 0.8rem;
   padding: 0.4rem;
   background-color: $wrong-red;
-  border-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.1rem;
   transition: all 0.2s ease-in;
 }
 
@@ -108,4 +111,71 @@
 
 .errorMessage#middle-name {
   margin-left: 22rem;
+}
+
+.registerGrid{
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-template-areas: "leftColumn rightColumn";
+  gap: 1rem;
+}
+
+.leftColumn{
+  grid-area: leftColumn;
+
+}
+
+.rightColumn{
+  grid-area: rightColumn;
+
+}
+
+.socials {
+
+  &_icons {
+    display: flex;
+    gap: 0.1rem;
+    background-color: $color-5;
+    border-radius: 0.5rem;
+    padding: 0.1rem;
+    margin-bottom: 1.05rem;
+  }
+
+  &_icon {
+    width: 25px;
+    height: 25px;
+    //fill: $color-5;
+  }
+
+  &_button {
+    background: $color-5;
+    height: 2.3rem;
+    width: 4.9rem;
+    padding: 0 16px;
+    border-radius: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.4s ease-in-out;
+
+    & svg path{
+      fill: $color-3;
+    }
+    &_active{
+      background: $color-3;
+      & svg path{
+        fill: $color-5;
+      }
+    }
+
+    &:hover {
+      background: $color-3;
+      & svg path{
+        fill: $color-5;
+      }
+
+    }
+  }
 }

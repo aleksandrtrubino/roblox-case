@@ -7,6 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.group.robloxcase.balance.Balance;
 import ru.group.robloxcase.balance.BalanceRepository;
+import ru.group.robloxcase.contact.Contact;
+import ru.group.robloxcase.contact.ContactRepository;
+import ru.group.robloxcase.contact.type.ContactType;
+import ru.group.robloxcase.email.EmailConfirmation;
+import ru.group.robloxcase.email.EmailConfirmationRepository;
 import ru.group.robloxcase.exception.NotFoundException;
 import ru.group.robloxcase.exception.AlreadyExistsException;
 import ru.group.robloxcase.inventory.Inventory;
@@ -22,13 +27,17 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final BalanceRepository balanceRepository;
     private final InventoryRepository inventoryRepository;
+    private final EmailConfirmationRepository emailConfirmationRepository;
+    private final ContactRepository contactRepository;
 
     private final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
-    public UserServiceImpl(UserRepository userRepository, BalanceRepository balanceRepository, InventoryRepository inventoryRepository) {
+    public UserServiceImpl(UserRepository userRepository, BalanceRepository balanceRepository, InventoryRepository inventoryRepository, EmailConfirmationRepository emailConfirmationRepository, ContactRepository contactRepository) {
         this.userRepository = userRepository;
         this.balanceRepository = balanceRepository;
         this.inventoryRepository = inventoryRepository;
+        this.emailConfirmationRepository = emailConfirmationRepository;
+        this.contactRepository = contactRepository;
     }
 
     @Transactional
@@ -43,7 +52,6 @@ public class UserServiceImpl implements UserService {
         if (userRepository.findByEmail(email).isPresent()) {
             throw new AlreadyExistsException(String.format("Email %1$s is taken", email));
         }
-
         String password = userDto.password();
         String encodedPassword = new BCryptPasswordEncoder().encode(password);
 
@@ -81,52 +89,108 @@ public class UserServiceImpl implements UserService {
 
         user.getAuthorities().add(authority);
 
-        // Save the User entity again with the updated authorities
+        EmailConfirmation emailConfirmation = new EmailConfirmation(user, user.getEmail());
+
+        Long contactTypeId = userDto.contactTypeId();
+        String contactLink = userDto.contactLink();
+        ContactType contactType;
+        if(contactTypeId.equals(ContactType.TELEGRAM.getId())) {
+            contactType = ContactType.TELEGRAM;
+        } else if (contactTypeId.equals(ContactType.DISCORD.getId())) {
+            contactType = ContactType.DISCORD;
+        } else if (contactTypeId.equals(ContactType.VK.getId())) {
+            contactType = ContactType.VK;
+        } else if (contactTypeId.equals(ContactType.WHATSAPP.getId())) {
+            contactType = ContactType.WHATSAPP;
+        } else {
+            throw new NotFoundException(String.format("ContactType with ID=%1$s not found", authorityId));
+        }
+        Contact contact = new Contact(contactLink, contactType, user);
+
+        contactRepository.save(contact);
+        emailConfirmationRepository.save(emailConfirmation);
         return userRepository.save(user);
     }
 
+    @Transactional
     @Override
     public User patchById(Long userId, UserDto userDto) {
         User user = userRepository.findById(userId)
-                .orElseThrow(()->new NotFoundException(String.format("User with id %1$s not found",userId)));
+                .orElseThrow(() -> new NotFoundException(String.format("User with id %1$s not found", userId)));
+
         String nickname = userDto.nickname();
         String email = userDto.email();
         String password = userDto.password();
-        String encodedPassword;
         Boolean enabled = userDto.enabled();
         Long authorityId = userDto.authorityId();
-        if(nickname != null) {
-            if (userRepository.findByNickname(nickname).isPresent())
+        String contactLink = userDto.contactLink();
+        Long contactTypeId = userDto.contactTypeId();
+
+        if (nickname != null && !nickname.equals(user.getNickname())) {
+            if (userRepository.findByNickname(nickname).isPresent()) {
                 throw new AlreadyExistsException(String.format("Nickname %1$s is taken", nickname));
+            }
             user.setNickname(nickname);
         }
-        if(email != null) {
-            if (userRepository.findByEmail(email).isPresent())
+
+        if (email != null && !email.equals(user.getEmail())) {
+            if (userRepository.findByEmail(email).isPresent()) {
                 throw new AlreadyExistsException(String.format("Email %1$s is taken", email));
+            }
             user.setEmail(email);
+            EmailConfirmation emailConfirmation = new EmailConfirmation(user, user.getEmail());
+            emailConfirmationRepository.save(emailConfirmation);
         }
-        if(password != null) {
-            encodedPassword = new BCryptPasswordEncoder().encode(password);
+
+        if (password != null) {
+            String encodedPassword = new BCryptPasswordEncoder().encode(password);
             user.setPassword(encodedPassword);
         }
-        if(enabled != null)
+
+        if (enabled != null) {
             user.setEnabled(enabled);
-        if(authorityId != null){
+        }
+
+        if (authorityId != null) {
             Authority authority;
-            if(authorityId.equals(Authority.USER.getId()))
+            if (authorityId.equals(Authority.USER.getId())) {
                 authority = Authority.USER;
-            else if(authorityId.equals(Authority.MODERATOR.getId()))
+            } else if (authorityId.equals(Authority.MODERATOR.getId())) {
                 authority = Authority.MODERATOR;
-            else if(authorityId.equals(Authority.ADMIN.getId())) {
+            } else if (authorityId.equals(Authority.ADMIN.getId())) {
                 authority = Authority.ADMIN;
-            }
-            else
+            } else {
                 throw new NotFoundException(String.format("Authority with ID=%1$s not found", authorityId));
+            }
             user.getAuthorities().clear();
             user.getAuthorities().add(authority);
         }
+
+        if (contactTypeId != null && contactLink != null) {
+            ContactType contactType;
+            if (contactTypeId.equals(ContactType.TELEGRAM.getId())) {
+                contactType = ContactType.TELEGRAM;
+            } else if (contactTypeId.equals(ContactType.DISCORD.getId())) {
+                contactType = ContactType.DISCORD;
+            } else if (contactTypeId.equals(ContactType.VK.getId())) {
+                contactType = ContactType.VK;
+            } else if (contactTypeId.equals(ContactType.WHATSAPP.getId())) {
+                contactType = ContactType.WHATSAPP;
+            } else {
+                throw new NotFoundException(String.format("ContactType with ID=%1$s not found", contactTypeId));
+            }
+
+            Contact contact = contactRepository.findByUserId(userId).orElseThrow(() ->
+                    new NotFoundException("Contact not found for user with id " + userId));
+
+            contact.setLink(contactLink);
+            contact.setType(contactType);
+            contactRepository.save(contact);
+        }
+
         return userRepository.save(user);
     }
+
 
     @Override
     public User findById(Long userId) {
@@ -134,10 +198,18 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(()->new NotFoundException(String.format("User with id %1$s not found",userId)));
     }
 
+    @Transactional
     @Override
     public void deleteById(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new NotFoundException(String.format("User with id %1$s not found", userId)));
+        balanceRepository.deleteByUserId(userId);
+        inventoryRepository.deleteByUserId(userId);
+        emailConfirmationRepository.deleteByUserId(userId);
+        contactRepository.deleteByUserId(userId);
         userRepository.deleteById(userId);
     }
+
 
     @Override
     public List<User> findAll() {

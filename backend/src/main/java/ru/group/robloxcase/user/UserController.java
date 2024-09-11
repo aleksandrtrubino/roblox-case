@@ -59,7 +59,9 @@ public class UserController {
                 userDto.email(),
                 userDto.password(),
                 userDto.enabled(),
-                Authority.USER.getId()
+                Authority.USER.getId(),
+                userDto.contactTypeId(),
+                userDto.contactLink()
         );
         return ResponseEntity.ok(userService.create(safeUserDto));
     }

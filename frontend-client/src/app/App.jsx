@@ -17,6 +17,9 @@ import { Login } from "../pages/login/Login";
 import { Faq } from '../pages/faq/Faq';
 
 import styles from './app.module.scss';
+import {RequireAuth} from "../model/requireAuth/RequireAuth";
+import EmailMessage from "../pages/email/message/EmailMessage";
+import EmailConfirmation from "../pages/email/confirmation/EmailConfirmation";
 
 
 function App() {
@@ -27,17 +30,23 @@ function App() {
           <Provider store={store}>
               <PersistGate loading={null} persistor={persistor}>
                   <Routes>
+                      <Route element={<RequireAuth />}>
+                          <Route element={<Layout />} >
+                              <Route path="*" element={<Unknown />} />
+                              <Route path="/" element={<Navigate to="/home" />}/>
+                              <Route path="/home" element={<Home />} />
+                              <Route path="/faq" element={<Faq />} />
+                              <Route path="/profile" element={<Profile />} />
+                              <Route path="/payment" element={<Payment />} />
+                              <Route path="/privacy" element={<Privacy />} />
+                              <Route path="/agreement" element={<Agreement />}/>
+                          </Route>
+                      </Route>
                       <Route element={<Layout />} >
-                          <Route path="*" element={<Unknown />} />
-                          <Route path="/" element={<Navigate to="/home" />}/>
-                          <Route path="/home" element={<Home />} />
-                          <Route path="/faq" element={<Faq />} />
-                          <Route path="/profile" element={<Profile />} />
-                          <Route path="/payment" element={<Payment />} />
-                          <Route path="/privacy" element={<Privacy />} />
-                          <Route path="/agreement" element={<Agreement />}/>
                           <Route path="/login" element={<Login />} />
                           <Route path="/register" element={<Register />} />
+                          <Route path="/email-message" element={<EmailMessage />}/>
+                          <Route path="/email-confirmation" element={<EmailConfirmation />}/>
                       </Route>
                   </Routes>
               </PersistGate>

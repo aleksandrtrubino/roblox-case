@@ -15,6 +15,8 @@
     <include file="009_add_spin_events.xml" relativeToChangelogFile="true"/>
     <include file="010_add_withdrawals.xml" relativeToChangelogFile="true"/>
     <include file="011_add_promo_codes.xml" relativeToChangelogFile="true"/>
+    <include file="012_add_email_confirmation.xml" relativeToChangelogFile="true"/>
+    <include file="013_add_contacts.xml" relativeToChangelogFile="true"/>
 
     <include file="999_add_constants.xml" relativeToChangelogFile="true"/>
 

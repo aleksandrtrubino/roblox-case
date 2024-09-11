@@ -1,0 +1,27 @@
+@import "../../../styles/colors";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background-color: $color-1; /* Цвет фона страницы */
+}
+
+.messageBox {
+  padding: 8rem;
+  border-radius: 1rem;
+  background-color: $color-2; /* Цвет фона сообщения */
+  color: $color-5; /* Цвет текста */
+  text-align: center;
+}
+
+.header {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 1rem;
+}
+
