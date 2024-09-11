@@ -63,6 +63,7 @@ public class WithdrawalServiceImpl implements WithdrawalService{
         StringBuilder message = new StringBuilder();
         message.append("Запрос от `").append(withdrawal.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"))).append("` \n");
         message.append("\n");
+        message.append(withdrawal.getUser().getContact().getType().getName()).append(": `").append(withdrawal.getUser().getContact().getLink()).append("` \n");
         message.append("Никнейм: `").append(withdrawal.getUser().getNickname()).append("`\n");
         message.append("Почта: ").append(withdrawal.getUser().getEmail()).append("\n");
         message.append("Питомец: `").append(withdrawal.getPetCard().getPet().getName()).append("`\n");

@@ -91,4 +91,23 @@
         </insert>
     </changeSet>
 
+    <changeSet id="9996" author="aleksandrtrubino">
+        <insert tableName="contact_types">
+            <column name="id" value="1"/>
+            <column name="name" value="Telegram"/>
+        </insert>
+        <insert tableName="contact_types">
+            <column name="id" value="2"/>
+            <column name="name" value="Discord"/>
+        </insert>
+        <insert tableName="contact_types">
+            <column name="id" value="3"/>
+            <column name="name" value="VK"/>
+        </insert>
+        <insert tableName="contact_types">
+            <column name="id" value="4"/>
+            <column name="name" value="WhatsApp"/>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>

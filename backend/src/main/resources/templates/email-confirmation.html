@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Подтверждение почты</title>
+    <style>
+        .message-body {
+            font-family: Arial, sans-serif;
+            color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            background-color: #1b1c24;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 550px;
+            margin: 0 auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .link-container{
+            display: flex;
+            justify-content: center;
+        }
+        .confirmation-link{
+            margin-left: auto;
+            margin-right: auto;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background: #6fbc75;
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+            cursor: pointer;
+        }
+        .confirmation-link:hover{
+            opacity: 80%;
+        }
+    </style>
+</head>
+<body>
+<div class="message-body">
+    <p>Спасибо за регистрацию на сервисе Petcase!</p>
+    <p>Пожалуйста, перейдите по ссылке ниже для подтверждения почты:</p>
+    <div class="link-container">
+        <a class="confirmation-link" th:href="@{${emailConfirmationUrl}}">Подтвердить</a>
+    </div>
+    <p>Если Вы не регистрировались на сервисе, пожалуйста, проигнорируйте это сообщение.</p>
+    <p>С уважением,</p>
+    <p>Команда PetCase</p>
+</div>
+</body>
+</html>

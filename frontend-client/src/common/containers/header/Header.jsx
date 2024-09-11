@@ -29,7 +29,7 @@ export const Header = () => {
           <div className={styles.header_right}>
             <Balance />
             <ProfileIcon />
-              <NotificationIcon />
+              {/*<NotificationIcon />*/}
           </div>
           {/*{ <button className={styles.auth} >*/}
           {/*  Войти*/}

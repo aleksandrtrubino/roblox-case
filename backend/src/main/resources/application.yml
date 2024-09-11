@@ -23,11 +23,26 @@ spring:
     user: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     change-log: db/changelog/master.xml
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: trubino2003@gmail.com
+    password: xvta dkyq ogfa vkht
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        debug: true
+app:
+  site: localhost:8080
 security:
   key: aW5zdGFodWIoY2h1cGFjaHVwczg0LGs0cjNsMW5zLHN3dHk0NSxpcmluYWZlZG9yb3ZpY2gxOTk1KQ==
   expiration:
     access-token: 3000000 # 5 min
     refresh-token: 604800000 # 1 week
+    email-confirmation: 86400000 # 24 hours
 telegram:
   bot:
     name: pet_case_bot

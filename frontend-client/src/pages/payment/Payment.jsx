@@ -55,34 +55,36 @@ export const Payment = () => {
   const depositClick = async (e) => {
     e.preventDefault();
 
-    if (!promoCode) {
-      alert("No promo code applied.");
-      return;
-    }
+    // Формируем объект запроса
+    const depositPayload = {
+      sum, // Всегда передаем сумму
+      ...(promoCode ? { promoCode: promoCode.code } : {}) // Добавляем promoCode, если он существует
+    };
 
-    if (promoCode.type.id === 1 && (sum === "" || sum === 0)) {
-      // If type is sum-based and sum is 0 or empty
+    if (promoCode && promoCode.type.id === 1 && (sum === "" || sum === 0)) {
+      // Если промокод тип 1 и сумма 0 или пустая
       try {
-        await depositMe({ sum: 0, promoCode: promoCode.code }); // Send deposit with 0 sum
+        await depositMe({ sum: 0, promoCode: promoCode.code }); // Отправляем депозит с суммой 0
         alert("Deposit successful with 0 sum.");
       } catch (error) {
         console.error("Deposit failed:", error);
         alert("Deposit failed.");
       }
-    } else if (promoCode.type.id === 2 && (sum === "" || sum == 0)) {
-      // If type is percent-based and sum is 0, do nothing
+    } else if (promoCode && promoCode.type.id === 2 && (sum === "" || sum == 0)) {
+      // Если промокод тип 2 и сумма 0, не разрешаем
       alert("Percentage-based promo cannot be applied with 0 sum.");
     } else {
-      // Handle deposit for non-empty sum
+      // Обработка депозита с непустой суммой или без промокода
       let result;
       try {
-        result = await depositMe({ sum, promoCode: promoCode.code }).unwrap(); // Send deposit with entered sum
+        result = await depositMe(depositPayload).unwrap(); // Отправляем депозит
       } catch (error) {
         console.error("Deposit failed:", result);
         alert("Deposit failed.");
       }
     }
   };
+
 
   return (
     <div className={styles.payment}>

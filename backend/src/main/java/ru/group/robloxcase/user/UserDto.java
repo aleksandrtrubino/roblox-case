@@ -5,5 +5,7 @@ public record UserDto(
         String email,
         String password,
         Boolean enabled,
-        Long authorityId) {
+        Long authorityId,
+        Long contactTypeId,
+        String contactLink) {
 }

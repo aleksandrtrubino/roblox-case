@@ -68,7 +68,8 @@ public class WebSecurityConfig {
 
     private final String REGISTRATION_PATH = "/api/v1/users/me";
     private final String AUTHENTICATION_PATH = "/api/v1/auth";
-    private final String[] PUBLIC = {"/swagger-ui/**","/v3/api-docs/**",REGISTRATION_PATH, AUTHENTICATION_PATH};
+    private final String EMAIL_CONFIRMATION_PATH = "/api/v1/email-confirmation/**";
+    private final String[] PUBLIC = {"/swagger-ui/**","/v3/api-docs/**",REGISTRATION_PATH, AUTHENTICATION_PATH, EMAIL_CONFIRMATION_PATH};
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
