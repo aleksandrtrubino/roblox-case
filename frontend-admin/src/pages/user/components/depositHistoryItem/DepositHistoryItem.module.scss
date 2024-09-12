@@ -1,0 +1,33 @@
+@import "../../../../styles/colors.scss";
+
+.main{
+padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.wrapper{
+  padding: 12px 24px;
+  border-radius: 10px;
+  background-color: $color-3;
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.deposit{
+  margin-left: 5rem;
+ font-size: 1.3rem;
+}
+
+.coinsIcon{
+ margin-left: 0.1rem;
+}
+
+.timestamp{
+  margin-left: auto;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+
+}

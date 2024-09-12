@@ -2,9 +2,11 @@ package ru.group.robloxcase.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 import ru.group.robloxcase.balance.Balance;
 import ru.group.robloxcase.balance.BalanceRepository;
 import ru.group.robloxcase.contact.Contact;
@@ -212,7 +214,23 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public List<User> findAll() {
-        return userRepository.findAll();
+    public List<User> findAll(Long authorityId, String search) {
+        Specification<User> spec = Specification.where(null);
+
+        // Фильтр по authorityId, если он не null
+        if (authorityId != null) {
+            spec = spec.and((root, query, criteriaBuilder) ->
+                    criteriaBuilder.equal(root.join("authorities").get("id"), authorityId)
+            );
+        }
+
+        // Фильтр по nickname, если строка поиска не пуста
+        if (StringUtils.hasText(search)) {
+            spec = spec.and((root, query, criteriaBuilder) ->
+                    criteriaBuilder.like(root.get("nickname"), "%" + search + "%")
+            );
+        }
+
+        return userRepository.findAll(spec);
     }
 }
