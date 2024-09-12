@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Friends } from './components/friends/Friends';
 import { Inventory } from './components/inventory/Inventory';
 import { History } from './components/history/History';
 import styles from './profile.module.scss';
 import { Link } from 'react-router-dom';
-import {faCoins} from "@fortawesome/free-solid-svg-icons";
+import {faCoins, faEdit} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useGetUserMeQuery} from "../../api/userApi";
 import {WithdrawHistory} from "./components/withdrawHistory/WithdrawHistory";
+import Modal from "../../common/containers/modal/Modal";
+import {EditProfile} from "./components/editProfile/EditProfile";
 
 export const Profile = () => {
   React.useLayoutEffect(() => {
@@ -16,6 +18,12 @@ export const Profile = () => {
 
   const user = useGetUserMeQuery();
   console.log(user)
+
+  const [isEditProfileOpen, setEditProfileOpen] = useState(false);
+
+  const openEditProfile = () => {
+    setEditProfileOpen(true);
+  };
 
 
   return (
@@ -43,13 +51,19 @@ export const Profile = () => {
         <div className={styles.avatar_picture}>{user.data.nickname[0].toUpperCase()}</div>
         <div className={styles.details}>
           <div className={styles.details_content}>
-            <span className={styles.details_name}>{user.data.nickname}</span>
+            <span className={styles.details_name}>{"Никнейм: " + user.data.nickname}</span>
+            <span className={styles.details_name}>{"Почта: " + user.data.email}</span>
+            <span className={styles.details_name}>{user.data.contact.type.name + ": " + user.data.contact.link}</span>
           </div>
           <div className={styles.details_buttons}>
             <Link to="/payment" className={`${styles.details_button} ${styles.payment}`}>
               <FontAwesomeIcon className={styles.details_button_money_icon} icon={faCoins} />
               Пополнить баланс
             </Link>
+            <button className={styles.details_button} onClick={openEditProfile}>
+              <FontAwesomeIcon className={styles.details_button_money_icon} icon={faEdit} />
+              Редактировать профиль
+            </button>
             <button className={`${styles.details_button} ${styles.support}`}>
               <svg
                 className={styles.details_button_support}
@@ -122,6 +136,10 @@ export const Profile = () => {
         <WithdrawHistory />
 
       </div>
+      <Modal isOpen={isEditProfileOpen} onClose={() => setEditProfileOpen(false)}>
+        <EditProfile user={user.data} onClose={() => setEditProfileOpen(false)} />
+      </Modal>
+
 
       {/* <History /> */}
     </div>
