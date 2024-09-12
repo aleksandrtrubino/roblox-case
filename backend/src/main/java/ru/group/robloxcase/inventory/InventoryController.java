@@ -30,4 +30,10 @@ public class InventoryController {
         return ResponseEntity.ok(inventoryService.findByUserId(userId));
     }
 
+    @PreAuthorize("hasAnyAuthority('admin', 'moderator')")
+    @GetMapping
+    public ResponseEntity<Inventory>  findByUserId(@RequestParam Long userId){
+        return ResponseEntity.ok(inventoryService.findByUserId(userId));
+    }
+
 }

@@ -10,6 +10,6 @@ public interface UserService {
     User findById(Long userId);
     void deleteById(Long userId);
 
-    List<User> findAll();
+    List<User> findAll(Long authorityId, String search);
 
 }

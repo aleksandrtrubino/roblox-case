@@ -1,172 +1,373 @@
-.user {
-    padding: 32px 12px;
-}
+@import "../../styles/colors.scss";
 
 .profile {
     display: flex;
-    gap: 12px;
-    position: relative;
-    justify-content: space-between;
-    margin-bottom: 24px;
+    flex-direction: column;
+    width: 90%;
+    align-self: center;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &_settings {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 32px;
+    }
+
+    &_header {
+        display: flex;
+
+        margin-bottom: 32px;
+    }
+
+    &_info {
+
+    }
+}
+
+.settings {
+    &_title {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    &_button {
+        background-color: $color-2;
+
+        display: flex;
+        align-items: center;
+        padding: 12px 24px;
+        border-radius: 10px;
+        transition: all .2s ease;
+
+        &:hover {
+            background-color: $color-3;
+        }
+    }
+
+    &_icon {
+        margin-right: 10px;
+
+        width: 20px;
+        height: 20px;
+
+        & path {
+            fill: $color-5;
+        }
+    }
+
+    &_text {
+        text-transform: uppercase;
+    }
+
 }
 
 .avatar {
-    width: 128px;
-    height: 128px;
-    border-radius: 16px;
-    object-fit: cover;
-    
-}
-
-.profile__avatar {
-    position: relative;
-}
-
-.profile__main {
-    display: flex;
-    gap: 12px;
-}
-
-.profile__container {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.profile__info {
-
-}
 
 
-.profile__control {
-    display: flex;
-    gap: 64px;
-}
+    &_picture {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-.statistic {
-    display: flex;
-    gap: 12px;
-}
 
-.balance {
-    width: 128px;
-    padding: 12px;
-    height: 82px;
-    background-color: rgb(17, 17, 17);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    border-radius: 6px;
+        font-size:4rem;
+        font-weight: 700;
+        color:$color-4;
 
-    & span {
-        font-weight: 500;
-        font-size: 24px;
+        width:7rem;
+        height:7rem;
+
+        line-height:2.5em;
+        text-align:center;
+        border-radius: 2rem;
+
+        //background-color: lightgrey;
+
+        //width: 8rem;
+        //height: 8rem;
+        //border-radius: 2rem;
+        background-color: $color-3;
+
+        margin-right: 24px;
     }
 }
 
-.output {
-    width: 156px;
-    padding: 12px;
-    height: 82px;
-    background-color: rgb(17, 17, 17);
+.details {
+
+    padding: 12px 0 12px 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    border-radius: 6px;
+    justify-content: space-between;
 
-    & span {
-        font-weight: 500;
-        font-size: 24px;
+    &_content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &_name {
+        //text-transform: uppercase;
+        font-size: 20px;
+        margin-bottom: 12px;
+        margin-left: 0.2rem;
+    }
+
+    &_identificator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &_buttons {
+
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &_buttonBan {
+        background: $color-3;
+        color: $color-5;
+        padding: 12px 24px;
+        height: 3rem;
+        border-radius: 0.5rem;
+        border-style: none;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: $wrong-red;
+            cursor: pointer;
+        }
+
+        &_money {
+            width: 25px;
+            height: 25px;
+
+            &_icon {
+                scale: 120%;
+            }
+
+            & path {
+                stroke: $color-5;
+            }
+
+        }
+
+        &_support {
+            width: 25px;
+            height: 25px;
+
+
+            & path {
+                fill: $color-5;
+            }
+        }
+    }
+
+    &_buttonUnban {
+        background: $color-3;
+        color: $color-5;
+        padding: 12px 24px;
+        height: 3rem;
+        border-radius: 0.5rem;
+        border-style: none;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: $right-green;
+            cursor: pointer;
+        }
+
+        &_money {
+            width: 25px;
+            height: 25px;
+
+            &_icon {
+                scale: 120%;
+            }
+
+            & path {
+                stroke: $color-5;
+            }
+
+        }
+
+        &_support {
+            width: 25px;
+            height: 25px;
+
+
+            & path {
+                fill: $color-5;
+            }
+        }
+    }
+
+}
+
+.identificator {
+    &_copy {
+        background: transparent;
+        &_icon {
+            width: 18px;
+            height: 18px;
+            & path {
+                fill: $color-5;
+            }
+        }
     }
 }
 
-.replenish {
-    width: 202px;
-    padding: 12px;
-    height: 82px;
-    background-color: rgb(17, 17, 17);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    border-radius: 6px;
-
-    & span {
-        font-weight: 500;
-        font-size: 24px;
-    }
-}
-
-.control {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.control__button {
-    border: none;
-    border-radius: 6px;
-    padding: 8px 20px;
-    background-color: rgb(17, 17, 17);
-    cursor: pointer;
-}
-
-.profile__delete {
-
-}
-
-.nickname {
-    font-weight: 500;
-    font-size: 20px;
-    
-}
-
-.profile__status {
-    position: absolute;
-    width: 128px;
-    bottom: calc(0% - 6px);
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.status {
-    color: white;
-    font-weight: 500;
+.settings_right {
     display: flex;
     align-items: center;
-    height: 20px;
-    padding: 0 12px;
-    border-radius: 3px;
-    background-color: black;
+    gap: 10px;
 }
 
-.mail {
-    text-align: center;
-    color: #d8d8d8;
-    display: block;
-    background-color: black;
-    border-radius: 6px;
-    padding: 2px 4px;
-}
+.logout {
+    height: 3rem;
+    border-radius: 0.5rem;
 
-.game__nickname {
+    padding: 9px;
+    background-color: $color-2;
 
-}
 
-.registration {
+    font-size: 14px;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $color-3;
+    }
+
+
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    & svg {
+        margin-right: 0.5rem;
+        width: 25px;
+        height: 25px;
+
+        & path {
+            stroke: $color-5;
+        }
+    }
 }
 
-.banned {
-    background-color: red;
+.main {
+    margin-top: 0.5rem;
+    width: 100%;
+    height: fit-content;
+    border-radius: 12px;
+    position: relative;
+
+    background-color: $color-2;
+
 }
 
-.active {
-    background-color: green;
+.header {
+    &_wrapper {
+        background-color: $color-2;
+        border-radius: 10px;
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+    }
+
+    &_button {
+        padding: 12px 24px;
+        width: 100%;
+        border-radius: 12px;
+        background-color: $color-3;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 500;
+
+        transition: all .3s ease;
+
+        //&:hover  {
+        //    background-color: $color-4;
+        //}
+        //
+        //&:hover .header_icon path {
+        //    fill: $color-5;
+        //}
+
+        &_wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        & span {
+            color: $color-4;
+
+            transition: all .3s ease;
+        }
+
+        //&:hover span {
+        //    color: $color-5;
+        //}
+    }
+
+    &_icon {
+        width: 24px;
+        height: 24px;
+
+        & path {
+            transition: all .3s ease;
+            fill: $color-4;
+        }
+    }
 }
 
-.offline {
-    background-color: grey;
+.home_button {
+    width: 64px;
+    height: 48px;
+
+    &:hover &_icon {
+        fill: $color-5;
+    }
+
+    &_icon {
+        width: 24px;
+        height: 24px;
+        fill: $color-4;
+
+        transition: all .3s ease;
+    }
 }
+
+
+

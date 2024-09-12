@@ -48,8 +48,8 @@ public class UserController {
 
     @PreAuthorize("hasAnyAuthority('moderator','admin')")
     @GetMapping
-    public ResponseEntity<List<User>> findAll(){
-        return ResponseEntity.ok(userService.findAll());
+    public ResponseEntity<List<User>> findAll(@RequestParam(required = false) Long authorityId, @RequestParam(required = false) String search){
+        return ResponseEntity.ok(userService.findAll(authorityId, search));
     }
 
     @PostMapping("/me")

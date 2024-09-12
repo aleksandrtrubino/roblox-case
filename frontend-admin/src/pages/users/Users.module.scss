@@ -1,220 +1,58 @@
-.users {
-    padding: 12px 12px;
+@import '../../styles/colors';
+
+.main{
+
 }
 
-.title {
-    font-size: 32px;
-    margin-bottom: 12px;
-}
+.user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: $color-2;
+  border-radius: 1.5rem;
+  margin-left: 8rem;
+  margin-top: 0.5rem;
+  width: 60rem;
+  height: 4rem;
 
-.control {
-    margin-bottom: 10px;
+  &_icon{
+    margin-left: 0.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
+    justify-content: center;
 
-.control__variations {
-    display: flex;
-    gap: 6px;
-}
 
-.variation {
-    border-radius: 6px;
-    padding: 4px 10px;
-    color: #fcfcfc;
-}
+    font-size:1.5rem;
+    font-weight: 700;
+    color:$color-4;
 
-.variation__active {
-    background-color: rgb(5, 149, 5);
-}
+    width:3rem;
+    height:3rem;
 
-.variation__offline {
-    background-color: rgb(117, 115, 115);
-}
+    line-height:1rem;
+    text-align:center;
+    border-radius: 1rem;
 
-.variation__banned {
-    background-color: rgb(158, 41, 25);
-}
+    //background-color: lightgrey;
 
-.panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    //width: 8rem;
+    //height: 8rem;
+    //border-radius: 2rem;
+    background-color: $color-3;
+  }
 
-    margin-bottom: 12px;
-    background-color: rgb(17, 17, 17);
-    padding: 8px 16px;
-    border-radius: 6px;
+  &_nickname{
+    margin-left: 1rem;
+  }
 
-    & button {
-        padding: 4px 8px;
-        background-color: rgb(32, 32, 32);
-        transition: .2s;
-
-        &:hover {
-            background-color: rgb(48, 48, 48);
-        }
-    }
-}
-
-.button__cancel {
-    border: none;
-    border-radius: 6px;
-    padding: 4px 6px;
+  &:hover{
+    background-color: $color-3;
     cursor: pointer;
-
-    margin-right: 4px;
+  }
 }
 
-.button__ban {
-    border: none;
-    border-radius: 6px;
-    padding: 4px 6px;
-    cursor: pointer;
-
-    margin-right: 4px;
-}
-
-.button__delete {
-    border: none;
-    border-radius: 6px;
-    padding: 4px 6px;
-
-    cursor: pointer;
-}
-
-.users__control {
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: space-between;
-}
-
-.control__manage {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-}
-
-.pagination {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-}
-
-.page__button {
-    background-color: rgb(17, 17, 17);
-    padding: 4px 6px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-}
-
-.control__search {
-    background-color: rgb(17, 17, 17);
-    border: none;
-    outline: none;
-    padding: 4px 6px;
-    border-radius: 6px;
-}
-
-.control__sorting {
-    border: none;
-    padding: 4px 6px;
-    border-radius: 6px;
-    background-color: rgb(17, 17, 17);
-    cursor: pointer;
-    
-}
-
-.list {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.profile__user {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4px 16px;
-    background-color: rgb(17, 17, 17);
-    border-radius: 12px;
-}
-
-.profile__container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.profile__image {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-.profile__name {
-    font-weight: 500;
-}
-
-.profile__status {
-    border: 1px solid black;
-    border-radius: 6px;
-    padding: 2px 4px;
-    text-transform: uppercase;
-    font-size: 12px;
-}
-
-.banned {
-    border-color: rgb(158, 41, 25);
-    color: rgb(158, 41, 25);
-}
-
-.active {
-    border-color: rgb(5, 149, 5);
-    color: rgb(5, 149, 5);
-}
-
-.offline {
-    border-color: rgb(124, 121, 121);
-    color: rgb(124, 121, 121);
-}
-
-.profile__buttons {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.button__del {
-    border: none;
-    background-color: rgb(158, 41, 25);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: .2s;
-
-    &:hover {
-        background-color: rgb(179, 40, 22);
-    }
-}
-
-.link__button {
-    border: none;
-    background-color: rgb(32, 32, 32);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: .2s;
-
-    &:hover {
-        background-color: rgb(48, 48, 48);
-    }
+.header{
+  font-size: 2.5em;
+  margin-top: 1em;
+  margin-left: 8rem;
 }

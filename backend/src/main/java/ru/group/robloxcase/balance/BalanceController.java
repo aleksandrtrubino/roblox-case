@@ -37,4 +37,10 @@ public class BalanceController {
         Long userId = Long.parseLong(userDetails.getUsername());
         return ResponseEntity.ok(balanceService.findByUserId(userId));
     }
+
+    @PreAuthorize("hasAnyAuthority('admin','moderator')")
+    @GetMapping
+    public ResponseEntity<Balance> findByUserId(@RequestParam Long userId){
+        return ResponseEntity.ok(balanceService.findByUserId(userId));
+    }
 }

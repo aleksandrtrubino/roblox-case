@@ -41,7 +41,7 @@ function App() {
                           <Route path="/users" element={<Users />}/>
                           <Route path="/admins" element={<Admins />} />
                           <Route path="/admin/:id" element={<Admin />}/>
-                          <Route path="/user/:id" element={<User />} />
+                          <Route path="/user/:userId" element={<User />} />
                           <Route path="/items" element={<Items />}/>
                           <Route path="/cases" element={<Cases />}/>
                           <Route path="/payments" element={<Payments />}/>

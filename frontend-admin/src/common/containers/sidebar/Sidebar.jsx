@@ -28,21 +28,6 @@ const Sidebar = () => {
         <div className={styles.profileInfo_role}>Администратор</div>
       </div>
       <div className={styles.links}>
-        <div className={styles.links_header}>
-          Основные
-        </div>
-        <Link to='/' className={activeClass("/dashboard")}>
-          <div>Дашборд</div>
-        </Link>
-        <div className={styles.links_header}>
-          Списки
-        </div>
-        <Link to='/users' className={activeClass("/users")}>
-          <div>Пользователи</div>
-        </Link>
-        <Link to='/admins' className={activeClass("/admins")}>
-          <div>Администраторы</div>
-        </Link>
         <Link to='/pet-cards' className={activeClass("/pet-cards")}>
           <div>Карточки</div>
         </Link>
@@ -52,12 +37,20 @@ const Sidebar = () => {
         <Link to='/boxes' className={activeClass("/boxes")}>
           <div>Кейсы</div>
         </Link>
+        <Link to='/users' className={activeClass("/users")}>
+          <div>Пользователи</div>
+        </Link>
+        ----------------------
         <Link to='/cases' className={activeClass("/cases")}>
           <div>Игровые кейсы</div>
         </Link>
-        <div className={styles.links_header}>
-          Управление
-        </div>
+        <Link to='/' className={activeClass("/dashboard")}>
+          <div>Дашборд</div>
+        </Link>
+
+        <Link to='/admins' className={activeClass("/admins")}>
+          <div>Администраторы</div>
+        </Link>
         <Link to='/promocodes' className={activeClass("/promocodes")}>
           <div>Промокоды</div>
         </Link>

@@ -26,6 +26,11 @@ public class WithdrawalController {
         return ResponseEntity.ok(withdrawalService.findByUserId(userId));
     }
 
+    @GetMapping
+    public ResponseEntity<List<Withdrawal>> findAll(@RequestParam Long userId){
+        return ResponseEntity.ok(withdrawalService.findByUserId(userId));
+    }
+
     @PostMapping("withdraw/me")
     public ResponseEntity<Withdrawal> withdraw(@RequestParam Long petCardId){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
