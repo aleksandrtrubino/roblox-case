@@ -30,14 +30,8 @@ public class PromoCode {
     @Column(name = "uses_left")
     Integer usesNumber;
 
-//    @ManyToMany(fetch = FetchType.EAGER)
-//    @JoinTable(name = "users_authorities",
-//            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
-//    private Set<Authority> authorities;
-
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "promo_codes_users",
     joinColumns = @JoinColumn(name = "promo_code_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
@@ -96,5 +90,9 @@ public class PromoCode {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    public Integer getUses(){
+        return users.size();
     }
 }
