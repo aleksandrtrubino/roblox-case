@@ -44,7 +44,7 @@ public class BalanceServiceImpl implements BalanceService{
                 } else if (promoCode.getType().getId().equals(PromoCodeType.PERCENT.getId())) {
                     if(sum == 0)
                         throw new NotFoundException("Sum cannot be equal to 0");
-                    sumToDeposit = (int)(sum * ((double)(promoCode.getNumber() + 100)/100));
+                    sumToDeposit = (int)Math.ceil(sum * ((double)(promoCode.getNumber() + 100) / 100));
                 }
                 else
                     throw new NotFoundException("PromoCodeType does not exist");

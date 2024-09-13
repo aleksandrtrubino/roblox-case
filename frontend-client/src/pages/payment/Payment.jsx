@@ -8,6 +8,8 @@ import {BoxCard} from "../home/components/boxCard/BoxCard";
 import {DepositHistoryItem} from "./components/depositHistoryItem/DepositHistoryItem";
 import {useDepositMeMutation} from "../../api/balanceApi";
 import {useGetPromoCodeQuery, useLazyGetPromoCodeQuery} from "../../api/promoCodeApi";
+import Modal from "../../common/containers/modal/Modal";
+import {SuccessPromoCode} from "./components/successPromoCode/SuccessPromoCode";
 
 
 export const Payment = () => {
@@ -17,6 +19,7 @@ export const Payment = () => {
   const [promoCodeInput, setPromoCodeInput] = useState(""); // Input field value for promo code
   const [promoCode, setPromoCode] = useState(null); // Promo code object from the API
   const [sum, setSum] = useState(""); // Input field value for the deposit sum
+  const [isSuccessPromoCodeOpen, setSuccessPromoCodeOpen] = useState(false);
 
   const [depositMe] = useDepositMeMutation(); // Mutation for deposit
   const promoCodeQuery = useGetPromoCodeQuery(
@@ -35,16 +38,19 @@ export const Payment = () => {
     e.preventDefault();
 
     if (promoCodeQuery.isSuccess && promoCodeQuery.data) {
-      alert(`Promocode: ${promoCodeQuery.data.code}`)
       setPromoCode(promoCodeQuery.data)
-      if(promoCodeQuery.data.type.id === 2 && sum === ""){
+
+      if(promoCodeQuery.data.type.id === 1 && sum === ""){
         try {
           await depositMe({ sum: 0, promoCode: promoCodeQuery.data.code }); // Send deposit with 0 sum
-          alert("Deposit successful with 0 sum.");
+          setSuccessPromoCodeOpen(true);
         } catch (error) {
           console.error("Deposit failed:", error);
           alert("Deposit failed.");
         }
+      }
+      else{
+        setSuccessPromoCodeOpen(true);
       }
     }
     if(promoCodeQuery.isError){
@@ -221,6 +227,9 @@ export const Payment = () => {
         <div>
           {content}
         </div>
+        <Modal isOpen={isSuccessPromoCodeOpen} onClose={()=>setSuccessPromoCodeOpen(false)}>
+            <SuccessPromoCode promoCode={promoCode} onClose={()=>setSuccessPromoCodeOpen(false)} />
+        </Modal>
 
       </div>
     </div>

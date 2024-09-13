@@ -40,6 +40,9 @@ const Sidebar = () => {
         <Link to='/users' className={activeClass("/users")}>
           <div>Пользователи</div>
         </Link>
+        <Link to='/promocodes' className={activeClass("/promocodes")}>
+          <div>Промокоды</div>
+        </Link>
         ----------------------
         <Link to='/cases' className={activeClass("/cases")}>
           <div>Игровые кейсы</div>
@@ -51,9 +54,7 @@ const Sidebar = () => {
         <Link to='/admins' className={activeClass("/admins")}>
           <div>Администраторы</div>
         </Link>
-        <Link to='/promocodes' className={activeClass("/promocodes")}>
-          <div>Промокоды</div>
-        </Link>
+
         <Link to='/payments' className={activeClass("/payments")}>
           <div>Транзакции</div>
         </Link>
