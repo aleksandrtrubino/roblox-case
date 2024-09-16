@@ -43,7 +43,9 @@
                 baseColumnNames="type_id"
                 constraintName="fk_contacts_contact_type_id"
                 referencedTableName="contact_types"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
     <changeSet id="0135" author="aleksandrtrubino">
@@ -52,7 +54,9 @@
                 baseColumnNames="user_id"
                 constraintName="fk_contacts_user_id"
                 referencedTableName="users"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
 

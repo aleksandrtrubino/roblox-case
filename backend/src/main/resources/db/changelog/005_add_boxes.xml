@@ -86,7 +86,9 @@
                 baseColumnNames="rarity_id"
                 constraintName="fk_boxes_rarity_id"
                 referencedTableName="box_rarity"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
 </databaseChangeLog>

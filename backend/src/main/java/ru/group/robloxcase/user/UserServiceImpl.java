@@ -14,6 +14,7 @@ import ru.group.robloxcase.contact.ContactRepository;
 import ru.group.robloxcase.contact.type.ContactType;
 import ru.group.robloxcase.email.EmailConfirmation;
 import ru.group.robloxcase.email.EmailConfirmationRepository;
+import ru.group.robloxcase.email.EmailConfirmationService;
 import ru.group.robloxcase.exception.NotFoundException;
 import ru.group.robloxcase.exception.AlreadyExistsException;
 import ru.group.robloxcase.inventory.Inventory;
@@ -31,15 +32,17 @@ public class UserServiceImpl implements UserService {
     private final InventoryRepository inventoryRepository;
     private final EmailConfirmationRepository emailConfirmationRepository;
     private final ContactRepository contactRepository;
+    private final EmailConfirmationService emailConfirmationService;
 
     private final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
-    public UserServiceImpl(UserRepository userRepository, BalanceRepository balanceRepository, InventoryRepository inventoryRepository, EmailConfirmationRepository emailConfirmationRepository, ContactRepository contactRepository) {
+    public UserServiceImpl(UserRepository userRepository, BalanceRepository balanceRepository, InventoryRepository inventoryRepository, EmailConfirmationRepository emailConfirmationRepository, ContactRepository contactRepository, EmailConfirmationService emailConfirmationService) {
         this.userRepository = userRepository;
         this.balanceRepository = balanceRepository;
         this.inventoryRepository = inventoryRepository;
         this.emailConfirmationRepository = emailConfirmationRepository;
         this.contactRepository = contactRepository;
+        this.emailConfirmationService = emailConfirmationService;
     }
 
     @Transactional
@@ -92,6 +95,7 @@ public class UserServiceImpl implements UserService {
         user.getAuthorities().add(authority);
 
         EmailConfirmation emailConfirmation = new EmailConfirmation(user, user.getEmail());
+        emailConfirmationService.sendEmail(email);
 
         Long contactTypeId = userDto.contactTypeId();
         String contactLink = userDto.contactLink();
@@ -139,9 +143,12 @@ public class UserServiceImpl implements UserService {
             if (userRepository.findByEmail(email).isPresent()) {
                 throw new AlreadyExistsException(String.format("Email %1$s is taken", email));
             }
-            user.setEmail(email);
-            EmailConfirmation emailConfirmation = new EmailConfirmation(user, user.getEmail());
+            EmailConfirmation emailConfirmation = emailConfirmationRepository.findByEmail(user.getEmail()).get();
+            emailConfirmation.setEmail(email);
+            emailConfirmation.setIsConfirmed(false);
             emailConfirmationRepository.save(emailConfirmation);
+            emailConfirmationService.sendEmail(email);
+            user.setEmail(email);
         }
 
         if (password != null) {

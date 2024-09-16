@@ -32,7 +32,9 @@
                 baseColumnNames="balance_id"
                 constraintName="fk_balance_events_balance_id"
                 referencedTableName="balance"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
 </databaseChangeLog>

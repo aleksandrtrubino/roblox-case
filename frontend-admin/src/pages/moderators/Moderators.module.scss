@@ -1,0 +1,85 @@
+@import '../../styles/colors';
+
+.main{
+
+}
+
+.user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: $color-2;
+  border-radius: 1.5rem;
+  margin-left: 8rem;
+  margin-top: 0.5rem;
+  width: 60rem;
+  height: 4rem;
+
+  &_icon{
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    font-size:1.5rem;
+    font-weight: 700;
+    color:$color-4;
+
+    width:3rem;
+    height:3rem;
+
+    line-height:1rem;
+    text-align:center;
+    border-radius: 1rem;
+
+    //background-color: lightgrey;
+
+    //width: 8rem;
+    //height: 8rem;
+    //border-radius: 2rem;
+    background-color: $color-3;
+  }
+
+  &_nickname{
+    margin-left: 1rem;
+  }
+
+  &:hover{
+    background-color: $color-3;
+    cursor: pointer;
+  }
+}
+
+.header{
+  font-size: 2.5em;
+  margin-top: 1em;
+  margin-left: 8rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.createButton{
+  margin-left: 1.5rem;
+  margin-bottom: 0.3rem;
+  align-self: flex-end;
+  font-size: 1rem;
+  outline: none;
+  background: $color-3;
+  color: $right-green;
+  border: none;
+  padding: 0.1rem 1rem;
+  height: 2rem;
+  border-radius: 0.7rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+

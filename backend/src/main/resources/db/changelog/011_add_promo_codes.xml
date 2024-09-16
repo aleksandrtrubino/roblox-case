@@ -46,7 +46,9 @@
                 baseColumnNames="type_id"
                 constraintName="fk_promo_codes_type_id"
                 referencedTableName="promo_code_types"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
     <changeSet id="0115" author="aleksandrtrubino">
@@ -66,7 +68,9 @@
                 baseColumnNames="promo_code_id"
                 constraintName="fk_promo_codes_users_promo_code_id"
                 referencedTableName="promo_codes"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
     <changeSet id="0117" author="aleksandrtrubino">
@@ -75,7 +79,9 @@
                 baseColumnNames="user_id"
                 constraintName="fk_promo_codes_users_user_id"
                 referencedTableName="users"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
 </databaseChangeLog>

@@ -35,7 +35,9 @@
                 baseColumnNames="inventory_id"
                 constraintName="fk_spin_events_inventory_id"
                 referencedTableName="inventory"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
     <changeSet id="0094" author="aleksandrtrubino">
@@ -44,7 +46,9 @@
                 baseColumnNames="box_id"
                 constraintName="fk_spin_events_box_id"
                 referencedTableName="boxes"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
     <changeSet id="0095" author="aleksandrtrubino">
@@ -53,7 +57,9 @@
                 baseColumnNames="pet_card_id"
                 constraintName="fk_spin_events_pet_card_id"
                 referencedTableName="pet_cards"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
 </databaseChangeLog>

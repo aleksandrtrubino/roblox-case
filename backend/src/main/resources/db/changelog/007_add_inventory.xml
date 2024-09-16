@@ -26,7 +26,9 @@
                 baseColumnNames="user_id"
                 constraintName="fk_inventory_user_id"
                 referencedTableName="users"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
     <changeSet id="0075" author="aleksandrtrubino">
@@ -56,7 +58,9 @@
                 baseColumnNames="inventory_id"
                 constraintName="fk_inventory_items_inventory_id"
                 referencedTableName="inventory"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
 </databaseChangeLog>

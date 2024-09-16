@@ -1,0 +1,182 @@
+@import "../../../../styles/colors";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.section {
+  border-radius: 1rem;
+  background-color: $color-2;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 3rem 2rem 3rem;
+}
+
+.header {
+  margin-bottom: 1rem;
+  font-family: "PT Sans Narrow", sans-serif;
+  align-self: center;
+  color: $color-5;
+}
+
+.form {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.label {
+  display: none;
+}
+
+.input::placeholder {
+  color: $color-1;
+}
+
+.inputWrapper {
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  margin-bottom: 0.5rem;
+  width: 20rem;
+  height: 1.5rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Rubik', sans-serif;
+  color: $color-1;
+  background-color: $color-5;
+  transition: all 0.2s ease-in;
+
+  &_focus {
+    outline: none;
+  }
+}
+
+.button {
+  align-self: center;
+  margin-top: 2rem;
+  color: $color-5;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: $color-3;
+  outline: none;
+  border: none;
+  font-family: 'Rubik', sans-serif;
+  border-radius: 1rem;
+  width: 12rem;
+  height: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $color-6;
+  }
+
+  &:active {
+    opacity: 60%;
+  }
+}
+
+.errorMessage {
+  align-content: center;
+  min-height: 2rem;
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  background-color: $wrong-red;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.1rem;
+  transition: all 0.2s ease-in;
+}
+
+.errorMessageHidden {
+  display: none;
+}
+
+.errorMessage#middle-name {
+  margin-left: 22rem;
+}
+
+.registerGrid{
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-template-areas: "leftColumn rightColumn";
+  gap: 1rem;
+}
+
+.leftColumn{
+  grid-area: leftColumn;
+
+}
+
+.rightColumn{
+  grid-area: rightColumn;
+
+}
+
+.socials {
+
+  &_icons {
+    display: flex;
+    gap: 0.1rem;
+    background-color: $color-5;
+    border-radius: 0.5rem;
+    padding: 0.1rem;
+    margin-bottom: 1.05rem;
+  }
+
+  &_icon {
+    width: 25px;
+    height: 25px;
+    //fill: $color-5;
+  }
+
+  &_button {
+    cursor: pointer;
+    border-style: none;
+    background: $color-5;
+    height: 2.3rem;
+    width: 5.37rem;
+    padding: 0 16px;
+    border-radius: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.4s ease-in-out;
+
+    & svg path{
+      fill: $color-3;
+    }
+    &_active{
+      background: $color-3;
+      & svg path{
+        fill: $color-5;
+      }
+    }
+
+    &:hover {
+      background: $color-3;
+      & svg path{
+        fill: $color-5;
+      }
+
+    }
+  }
+}

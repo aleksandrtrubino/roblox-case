@@ -25,6 +25,7 @@ import {RequireAuth} from "../common/widgets/requireAuth/RequireAuth";
 import {Pets} from "../pages/pets/Pets";
 import {PetCards} from "../pages/pet-cards/PetCards";
 import {Boxes} from "../pages/boxes/Boxes";
+import Moderators from "../pages/moderators/Moderators";
 
 function App() {
 
@@ -36,16 +37,11 @@ function App() {
                 <Routes>
                   <Route element={<RequireAuth />}>
                       <Route element={<Layout />}>
-                          <Route path="/" element={<Navigate to="/dashboard"/>}/>
-                          <Route path="/dashboard" element={<Dashboard/>}/>
+                          <Route path="/" element={<Navigate to="/boxes"/>}/>
+
                           <Route path="/users" element={<Users />}/>
-                          <Route path="/admins" element={<Admins />} />
-                          <Route path="/admin/:id" element={<Admin />}/>
+                          <Route path="/moderators" element={<Moderators />}/>
                           <Route path="/user/:userId" element={<User />} />
-                          <Route path="/items" element={<Items />}/>
-                          <Route path="/cases" element={<Cases />}/>
-                          <Route path="/payments" element={<Payments />}/>
-                          <Route path="/outputtings" element={<Outputting />}/>
                           <Route path="/promocodes" element={<Promocodes />}/>
                           <Route path="/pets" element={<Pets />}/>
                           <Route path="/pet-cards" element={<PetCards />}/>
