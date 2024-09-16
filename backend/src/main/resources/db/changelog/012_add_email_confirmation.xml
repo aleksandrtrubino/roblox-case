@@ -32,7 +32,9 @@
                 baseColumnNames="user_id"
                 constraintName="fk_email_confirmation_user_id"
                 referencedTableName="users"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
 </databaseChangeLog>

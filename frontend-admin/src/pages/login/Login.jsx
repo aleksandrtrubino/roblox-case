@@ -28,7 +28,7 @@ const Login = () => {
     const [login] = useLoginMutation()
     const [logoutMutation] = useLogoutMutation()
 
-    const from = location.state?.from?.pathname || "/dashboard";
+    const from = location.state?.from?.pathname || "/boxes";
 
     const doLogout = async () =>{
         try{

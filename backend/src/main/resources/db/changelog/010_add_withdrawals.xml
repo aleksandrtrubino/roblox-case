@@ -32,7 +32,9 @@
                 baseColumnNames="user_id"
                 constraintName="fk_withdrawals_user_id"
                 referencedTableName="users"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
     <changeSet id="0104" author="aleksandrtrubino">
@@ -41,7 +43,9 @@
                 baseColumnNames="pet_card_id"
                 constraintName="fk_withdrawals_pet_card_id"
                 referencedTableName="pet_cards"
-                referencedColumnNames="id"/>
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+        />
     </changeSet>
 
 </databaseChangeLog>
