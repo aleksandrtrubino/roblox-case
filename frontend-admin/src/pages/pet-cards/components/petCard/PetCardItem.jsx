@@ -1,6 +1,6 @@
 import styles from './PetCardItem.module.scss'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPlus} from "@fortawesome/free-solid-svg-icons";
+import {faCoins, faPlus} from "@fortawesome/free-solid-svg-icons";
 
 export const PetCardItem = ({petCard, isActive, onClick, className}) =>{
 
@@ -54,6 +54,10 @@ export const PetCardItem = ({petCard, isActive, onClick, className}) =>{
             </div>
             <div className={styles.nameWrapper}>
                 <div className={styles.name}>{petCard.pet.name}</div>
+            </div>
+            <div className={styles.priceWrapper}>
+                <div className={styles.price}>{petCard.price}</div>
+                <FontAwesomeIcon className={styles.coinsIcon} icon={faCoins}/>
             </div>
         </div>
     )

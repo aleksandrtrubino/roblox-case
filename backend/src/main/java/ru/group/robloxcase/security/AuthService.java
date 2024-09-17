@@ -45,11 +45,11 @@ public class AuthService {
                 .orElseThrow(()->new NotFoundException(String.format("User with email %1$s not found",email)));
         String cookieName;
         if(user.getAuthorities().contains(Authority.USER)){
-            EmailConfirmation emailConfirmation = emailConfirmationRepository.findByEmail(email)
-                    .orElseThrow(()->new NotFoundException(String.format("EmailConfirmation for email %1$s not found",email)));
-
-            if(!emailConfirmation.getIsConfirmed())
-                throw new NotFoundException("Email is not confirmed");
+//            EmailConfirmation emailConfirmation = emailConfirmationRepository.findByEmail(email)
+//                    .orElseThrow(()->new NotFoundException(String.format("EmailConfirmation for email %1$s not found",email)));
+//
+//            if(!emailConfirmation.getIsConfirmed())
+//                throw new NotFoundException("Email is not confirmed");
 
             cookieName = "userRefreshToken";
         } else {

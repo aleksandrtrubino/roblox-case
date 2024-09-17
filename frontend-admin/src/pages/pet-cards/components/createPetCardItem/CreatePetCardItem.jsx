@@ -15,6 +15,8 @@ export const CreatePetCardItem = ({onClose}) => {
         { id: 4, name: "rideable", className: styles.property_rideable }
     ];
 
+    const [price, setPrice] = useState(0);
+
     const pets = useGetPetsQuery();
     const [createPetCard] = useCreatePetCardMutation();
 
@@ -25,6 +27,7 @@ export const CreatePetCardItem = ({onClose}) => {
     const handlePetItemClick = (pet) => {
         const currentProperties = Array.from(propertyIds).map(id => propertyList.find(prop => prop.id === id));
         const currentPetCard = {
+            price: 0,
             pet: pet,
             properties: currentProperties
         };
@@ -70,7 +73,8 @@ export const CreatePetCardItem = ({onClose}) => {
 
         const petCardDto = {
             petId: petId,
-            propertyIds: Array.from(propertyIds)
+            propertyIds: Array.from(propertyIds),
+            price: price
         }
 
         if(petId !== null){
@@ -96,6 +100,12 @@ export const CreatePetCardItem = ({onClose}) => {
         ));
     }
 
+    const handlePriceChange = (e)=>{
+        setPrice(e.target.value)
+        petCard.price = e.target.value;
+        setPetCard(petCard)
+    }
+
     return (
         <form className={styles.main} onSubmit={handleCreateButtonClick}>
             <div className={styles.petCardWrapper}>
@@ -103,10 +113,25 @@ export const CreatePetCardItem = ({onClose}) => {
                     <AddPetCardButton />
                 ) : (
                     <>
-                        <PetCardItem petCard={petCard} isActive={false} onClick={() => {}} />
-                        <div className={styles.properties}>
-                            {renderProperties()}
+                        <div className={styles.column}>
+                            <div className={styles.row}>
+                                <PetCardItem petCard={petCard} isActive={false} onClick={() => {}} />
+                                <div className={styles.properties}>
+                                    {renderProperties()}
+                                </div>
+                            </div>
+
+
+                            <div className={styles.inputWrapper}>
+                                <div className={styles.propertyName}>Цена</div>
+                                <input
+                                    className={styles.input}
+                                    type="number"
+                                    onChange={handlePriceChange}
+                                    value={price}/>
+                            </div>
                         </div>
+
                     </>
                 )}
             </div>

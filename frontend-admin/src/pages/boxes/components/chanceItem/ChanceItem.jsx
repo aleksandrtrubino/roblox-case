@@ -1,4 +1,6 @@
 import styles from "./ChanceItem.module.scss";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCoins} from "@fortawesome/free-solid-svg-icons";
 
 export const ChanceItem = ({chance, isActive, onClick, className}) =>{
 
@@ -56,6 +58,10 @@ export const ChanceItem = ({chance, isActive, onClick, className}) =>{
             </div>
             <div className={styles.nameWrapper}>
                 <div className={styles.name}>{chance.petCard.pet.name}</div>
+            </div>
+            <div className={styles.priceWrapper}>
+                <div className={styles.price}>{chance.petCard.price}</div>
+                <FontAwesomeIcon className={styles.coinsIcon} icon={faCoins}/>
             </div>
             <div className={styles.percentWrapper}>
                 <div className={styles.percent}>{formatPercent(chance.percent)}%</div>

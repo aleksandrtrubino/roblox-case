@@ -108,7 +108,7 @@
 .collect{
   position: absolute;
   top: 65%;
-  left: 50%;
+  left: 40rem;
   transform: translate3d(-50%, 20px, 0);
   padding: 24px 52px;
   border: none;
@@ -125,6 +125,29 @@
 }
 
 .collect:hover{
+  opacity: 0.8;
+}
+
+.sell{
+  position: absolute;
+  top: 65%;
+  left: 59rem;
+  transform: translate3d(-50%, 20px, 0);
+  padding: 24px 52px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: $right-green;
+  color: inherit;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+  //box-shadow: 0 0 30px 0 rgba(255, 118, 118, 0.2);
+  cursor: pointer;
+}
+
+.sell:hover{
   opacity: 0.8;
 }
 

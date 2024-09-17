@@ -16,6 +16,8 @@ public class PetCard {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pet_cards_seq")
     @Column(name = "id")
     private Long id;
+    @Column(name = "price")
+    private Integer price;
     @ManyToOne
     @JoinColumn(name = "pet_id")
     Pet pet;
@@ -28,8 +30,9 @@ public class PetCard {
     public PetCard() {
     }
 
-    public PetCard(Pet pet, Set<PetProperty> properties) {
+    public PetCard(Pet pet, Integer price, Set<PetProperty> properties) {
         this.pet = pet;
+        this.price = price;
         this.properties = properties;
     }
 
@@ -39,6 +42,14 @@ public class PetCard {
 
     public Pet getPet() {
         return pet;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     public void setPet(Pet pet) {
