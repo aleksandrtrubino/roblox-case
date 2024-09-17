@@ -12,6 +12,7 @@ import ru.group.robloxcase.user.User;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -31,6 +32,13 @@ public class WithdrawalServiceImpl implements WithdrawalService{
     @Override
     public List<Withdrawal> findByUserId(Long userId) {
         return withdrawalRepository.findByUserId(userId);
+    }
+
+    @Override
+    public List<Withdrawal> findAll() {
+        List<Withdrawal> withdrawals = withdrawalRepository.findAll();
+        Collections.reverse(withdrawals);
+        return withdrawals;
     }
 
     @Transactional
@@ -57,6 +65,19 @@ public class WithdrawalServiceImpl implements WithdrawalService{
 
         telegramBot.sendMessage(composeMessage(withdrawal));
         return savedWithdrawal;
+    }
+
+    @Transactional
+    @Override
+    public void deny(Long withdrawalId) {
+        Withdrawal withdrawal = withdrawalRepository.findById(withdrawalId)
+                .orElseThrow(() -> new NotFoundException(String.format("Withdrawal with ID %1$s not found", withdrawalId)));
+        Long userId = withdrawal.getUser().getId();
+        Inventory inventory = inventoryRepository.findByUserId(userId)
+                .orElseThrow(() -> new NotFoundException(String.format("Inventory for user with ID %1$s not found", userId)));
+        PetCard petCard = withdrawal.getPetCard();
+        inventory.getItems().add(new InventoryItem(petCard, inventory));
+        withdrawalRepository.deleteById(withdrawalId);
     }
 
     private String composeMessage(Withdrawal withdrawal){
