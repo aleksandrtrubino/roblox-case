@@ -10,7 +10,21 @@ export const withdrawalApi = baseApi.injectEndpoints({
             }),
             providesTags: ['Withdrawal']
         }),
+        getAllWithdrawals: build.query({
+            query: () =>({
+                url: '/withdrawals',
+                method: 'GET'
+            }),
+            providesTags: ['Withdrawal']
+        }),
+        cancelWithdrawal: build.mutation({
+            query: ({withdrawalId}) =>({
+                url: `/withdrawals/${withdrawalId}`,
+                method: 'DELETE'
+            }),
+            invalidatesTags: ['Withdrawal','Inventory']
+        })
     })
 })
 
-export const {useGetWithdrawalsByUserIdQuery, useWithdrawMutation} = withdrawalApi;
+export const {useGetWithdrawalsByUserIdQuery, useGetAllWithdrawalsQuery, useCancelWithdrawalMutation} = withdrawalApi;

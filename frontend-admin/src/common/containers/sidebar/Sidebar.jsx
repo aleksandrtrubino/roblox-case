@@ -65,6 +65,9 @@ const Sidebar = () => {
               <Link to='/promocodes' className={activeClass("/promocodes")}>
                 <div>Промокоды</div>
               </Link>
+              <Link to='/withdrawals' className={activeClass('/withdrawals')}>
+                <div>Выводы</div>
+              </Link>
             </div>
           </div>
           :

@@ -26,6 +26,7 @@ import {Pets} from "../pages/pets/Pets";
 import {PetCards} from "../pages/pet-cards/PetCards";
 import {Boxes} from "../pages/boxes/Boxes";
 import Moderators from "../pages/moderators/Moderators";
+import {Withdrawals} from "../pages/withdrawals/Withdrawals";
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
                           <Route path="/pets" element={<Pets />}/>
                           <Route path="/pet-cards" element={<PetCards />}/>
                           <Route path="/boxes" element={<Boxes />}/>
+                          <Route path="/withdrawals" element={<Withdrawals />}/>
                       </Route>
                   </Route>
                   <Route path="/login" element={<Login />}/>

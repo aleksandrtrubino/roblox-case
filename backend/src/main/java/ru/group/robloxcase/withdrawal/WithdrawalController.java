@@ -27,8 +27,11 @@ public class WithdrawalController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Withdrawal>> findAll(@RequestParam Long userId){
-        return ResponseEntity.ok(withdrawalService.findByUserId(userId));
+    public ResponseEntity<List<Withdrawal>> findAll(@RequestParam(required = false) Long userId){
+        if(userId != null)
+            return ResponseEntity.ok(withdrawalService.findByUserId(userId));
+        else
+            return ResponseEntity.ok(withdrawalService.findAll());
     }
 
     @PostMapping("withdraw/me")
@@ -38,5 +41,11 @@ public class WithdrawalController {
         Long userId = Long.parseLong(userDetails.getUsername());
         Withdrawal withdrawal = withdrawalService.withdraw(userId, petCardId);
         return ResponseEntity.ok(withdrawal);
+    }
+
+    @DeleteMapping("/{withdrawalId}")
+    public ResponseEntity<Void> deny(@PathVariable Long withdrawalId){
+        withdrawalService.deny(withdrawalId);
+        return ResponseEntity.ok().build();
     }
 }

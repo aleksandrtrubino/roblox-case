@@ -11,12 +11,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './header.module.scss';
 import {useGetBalanceMeQuery} from "../../../api/balanceApi";
+import {selectUserRole} from "../../../model/authSlice";
 
 let balanceCount = 101;
 
 export const Header = () => {
 
-
+    const userRole = useSelector(selectUserRole);
+    const isUserRoleValid = userRole === ("user")
 
   return (
     <div className={styles.header}>
@@ -26,11 +28,15 @@ export const Header = () => {
         {/* Добавление счетчика пользователей на сайте */}
         {/* <Online className={styles.header_online}/> */}
       </div>
-          <div className={styles.header_right}>
-            <Balance />
-            <ProfileIcon />
-              {/*<NotificationIcon />*/}
-          </div>
+        {
+            isUserRoleValid &&
+            <div className={styles.header_right}>
+                <Balance />
+                <ProfileIcon />
+                {/*<NotificationIcon />*/}
+            </div>
+        }
+
           {/*{ <button className={styles.auth} >*/}
           {/*  Войти*/}
           {/*</button> }*/}

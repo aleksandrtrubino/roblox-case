@@ -1,6 +1,9 @@
 @import "../../../../styles/colors.scss";
 
 .main{
+  margin-left: 4rem;
+  margin-right: 2rem;
+  animation-fill-mode: none;
   background-color: $color-3;
   height: 0.1rem;
   margin-bottom: 0.5rem;

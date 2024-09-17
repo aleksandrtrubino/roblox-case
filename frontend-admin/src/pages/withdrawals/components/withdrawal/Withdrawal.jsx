@@ -1,6 +1,6 @@
 import styles from './Withdrawal.module.scss'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBan} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRotateLeft, faBan} from "@fortawesome/free-solid-svg-icons";
 import {useCancelWithdrawalMutation} from "../../../../api/withdrawalApi";
 
 export const Withdrawal = ({withdrawal}) =>{
@@ -47,6 +47,11 @@ export const Withdrawal = ({withdrawal}) =>{
 
     return(
         <div className={styles.main}>
+            <div className={styles.userWrapper}>
+                <span className={styles.user}>
+                    {withdrawal.user.nickname + " : "}
+                </span>
+            </div>
             <div className={styles.nameWrapper}>
                 <span className={styles.name}>
             {withdrawal.petCard.pet.name}
