@@ -119,3 +119,45 @@
     opacity: 80%;
   }
 }
+
+.inputWrapper{
+  margin-top: 1rem;
+  width: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.propertyName{
+  font-weight: bold;
+}
+
+.input{
+  width: 5rem;
+  height: 1.5rem;
+  padding: 0.1em 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: $color-1;
+  background-color: $color-5;
+  transition: all 0.2s ease-in;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}

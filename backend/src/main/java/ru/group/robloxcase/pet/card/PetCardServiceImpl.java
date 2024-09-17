@@ -26,6 +26,7 @@ public class PetCardServiceImpl implements PetCardService{
     @Override
     public PetCard create(PetCardDto petCardDto) {
         Long petId = petCardDto.petId();
+        Integer price = petCardDto.price();
         List<Long> propertyIds = petCardDto.propertyIds();
         Pet pet = petService.findById(petId);
         Set<PetProperty> properties = new HashSet<>();
@@ -41,7 +42,7 @@ public class PetCardServiceImpl implements PetCardService{
             else
                 throw new NotFoundException(String.format("PetProperty with ID=%1$s not found", propertyId));
         }
-        PetCard petCard = new PetCard(pet, properties);
+        PetCard petCard = new PetCard(pet, price, properties);
         return petCardRepository.save(petCard);
     }
 
@@ -50,6 +51,7 @@ public class PetCardServiceImpl implements PetCardService{
         PetCard petCard = petCardRepository.findById(petCardId)
                 .orElseThrow(()->new NotFoundException(String.format("PetCard with ID %1$s not found",petCardId)));
         Long petId = petCardDto.petId();
+        Integer price = petCardDto.price();
         List<Long> propertyIds = petCardDto.propertyIds();
         Pet pet = petService.findById(petId);
         Set<PetProperty> properties = new HashSet<>();
@@ -64,6 +66,9 @@ public class PetCardServiceImpl implements PetCardService{
                 properties.add(PetProperty.RIDEABLE);
             else
                 throw new NotFoundException(String.format("PetProperty with ID=%1$s not found", propertyId));
+        }
+        if(price != null){
+            petCard.setPrice(price);
         }
         petCard.setPet(pet);
         petCard.setProperties(properties);

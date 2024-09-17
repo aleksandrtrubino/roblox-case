@@ -4,6 +4,8 @@ import { MiniPetCard } from '../miniPetCard/MiniPetCard';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoins } from "@fortawesome/free-solid-svg-icons";
 import {useSpinRouletteMutation} from "../../../../api/boxRouletteApi";
+import {useSellMeMutation} from "../../../../api/sellingApi";
+import {useGetInventoryMeQuery} from "../../../../api/inventoryApi";
 
 export const BoxRoulette = ({ box, onClose }) => {
     const [listItems, setListItems] = useState([]);
@@ -13,6 +15,8 @@ export const BoxRoulette = ({ box, onClose }) => {
     const [isCollectButtonVisible, setIsCollectButtonVisible] = useState(false);
     const listRef = useRef(null);
     const [spinRoulette] = useSpinRouletteMutation();
+    const [sell] = useSellMeMutation();
+    const inventory = useGetInventoryMeQuery()
 
     const getPetCard = () => {
         const randomIndex = Math.floor(Math.random() * box.chances.length);
@@ -77,6 +81,16 @@ export const BoxRoulette = ({ box, onClose }) => {
 
     };
 
+    const handleSell = async () =>{
+        try{
+            const res = await sell({inventoryItemId: inventory.data.items[0].id}).unwrap();
+            onClose()
+        }
+        catch (error){
+            alert("Error selling pet")
+        }
+    }
+
     return (
         <div className={styles.rouletteWrapper}>
             <img className={styles.pointer} src="images/pointer.png" alt="Pointer" />
@@ -111,10 +125,17 @@ export const BoxRoulette = ({ box, onClose }) => {
 
                 </button>
             )}
-            {isCollectButtonVisible && (
-                <button className={styles.collect} onClick={onClose}>
-                    Забрать выигрыш
-                </button>
+            {isCollectButtonVisible && inventory.isSuccess && (
+                <>
+                    <button className={styles.collect} onClick={onClose}>
+                        Забрать
+                    </button>
+                    <button className={styles.sell} onClick={handleSell}>
+                        {"Продать (+" + inventory.data.items[0].petCard.price }<FontAwesomeIcon className={styles.coinsIcon} icon={faCoins} />{")"}
+
+                    </button>
+                </>
+
             )}
         </div>
     );

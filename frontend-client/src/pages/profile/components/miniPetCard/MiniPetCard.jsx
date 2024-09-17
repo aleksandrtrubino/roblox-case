@@ -1,4 +1,6 @@
 import styles from './MiniPetCard.module.scss'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCoins} from "@fortawesome/free-solid-svg-icons";
 
 export const MiniPetCard = ({petCard, onClick, className}) =>{
 
@@ -42,6 +44,13 @@ export const MiniPetCard = ({petCard, onClick, className}) =>{
             <div className={styles.nameWrapper}>
                 <div className={styles.name}>{petCard.pet.name}</div>
                 <div className={styles.rarity + ' ' + (rarityById[petCard.pet.rarity.id])}></div>
+
+            </div>
+            <div className={styles.priceWrapper}>
+                <div className={styles.row}>
+                    <div className={styles.price}>{petCard.price}</div>
+                    <FontAwesomeIcon className={styles.coinsIcon} icon={faCoins}/>
+                </div>
             </div>
         </div>
     )

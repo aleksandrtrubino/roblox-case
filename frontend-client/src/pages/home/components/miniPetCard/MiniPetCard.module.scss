@@ -26,8 +26,8 @@
 
 .rarity{
   position: relative;
-  margin-bottom: -0.4em;
-  //margin-left: 0.5rem;
+  margin-bottom: -0.4rem;
+  margin-left: 1.5rem;
   border-top-right-radius: 0.3rem;
   border-top-left-radius: 0.3em;
   width: 2.5em;
@@ -72,13 +72,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.1rem;
 }
 
 .name{
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   width: fit-content;
-  margin: auto;
+
   text-align: center;
   user-select: none;
 }
@@ -128,4 +131,28 @@
     background-color: $property-rideable; // Желтый цвет
     //box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); // Эффект свечение
   }
+}
+
+.priceWrapper{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.price{
+ font-size: 0.6rem;
+}
+
+.coinsIcon{
+  font-size: 0.5rem;
+  margin-left: 0.1rem;
+  margin-bottom: 0.1rem;
 }

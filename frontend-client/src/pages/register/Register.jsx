@@ -154,7 +154,8 @@ const Register = () => {
                     contactTypeId: contactTypeId,
                     contactLink: contactLink
                 }).unwrap();
-                navigate('/email-message',{ state: email });
+                navigate('/login');
+                //navigate('/email-message',{ state: email });
             } catch (error) {
                 console.log(error);
             }
