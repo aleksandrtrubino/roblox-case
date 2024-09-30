@@ -5,12 +5,12 @@ import {logout, setToken} from "../model/authSlice";
 
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'http://localhost:8080/api/v1',
+    baseUrl: `${process.env.REACT_APP_API_URL}`,
     credentials: 'include'
 })
 
 const baseQueryWithAccess = fetchBaseQuery({
-    baseUrl: 'http://localhost:8080/api/v1',
+    baseUrl: `${process.env.REACT_APP_API_URL}`,
     credentials: 'include',
     prepareHeaders: (headers, {getState }) => {
         const token = getState().auth.token
