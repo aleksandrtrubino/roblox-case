@@ -1,43 +1,70 @@
 version: '3.8'
 
-services:
-  frontend-client:
-    image: roblox-case-frontend-client:latest
-    build:
-      context: ./frontend-client
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    environment:
-      REACT_APP_API_URL: http://localhost:8080/api/v1
-    depends_on:
-      - backend
+networks:
+  roblox_case_net:
+    driver: bridge
 
-  frontend-admin:
-    image: roblox-case-frontend-admin:latest
-    build:
-      context: ./frontend-admin
-      dockerfile: Dockerfile
-    ports:
-      - "3001:3000"
-    environment:
-      REACT_APP_API_URL: http://localhost:8080/api/v1
-    depends_on:
-      - backend
+services:
+#  nginx:
+#    image: nginx:latest
+#    container_name: nginx-proxy
+#    ports:
+#      - "80:80"
+#      - "443:443"
+#    volumes:
+#      - ./nginx/conf.d:/etc/nginx/conf.d
+#      - /etc/letsencrypt:/etc/letsencrypt
+#      - /var/lib/letsencrypt:/var/lib/letsencrypt
+#    depends_on:
+#      - frontend-client
+#      - frontend-admin
+#      - backend
+#    networks:
+#      - roblox_case_net
+#
+#  frontend-client:
+#    image: roblox-case-frontend-client:latest
+#    build:
+#      context: ./frontend-client
+#      dockerfile: Dockerfile
+#    ports:
+#      - "3000:3000"
+#    environment:
+#      REACT_APP_API_URL: http://localhost:8080/api/v1
+#    depends_on:
+#      - backend
+#    networks:
+#      - roblox_case_net
+#
+#  frontend-admin:
+#    image: roblox-case-frontend-admin:latest
+#    build:
+#      context: ./frontend-admin
+#      dockerfile: Dockerfile
+#    ports:
+#      - "3001:3000"
+#    environment:
+#      REACT_APP_API_URL: http://localhost:8080/api/v1
+#    depends_on:
+#      - backend
+#    networks:
+#      - roblox_case_net
 
   backend:
     image: roblox-case-backend:latest
     build:
-      context: ./backend  # Path to your Spring app
-      dockerfile: Dockerfile  # Dockerfile for your Spring app
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
-      - "8080:8080"  # Expose Spring app on port 8080
+      - "8080:8080"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/robloxcase
     depends_on:
       - db
+    networks:
+      - roblox_case_net
 
   db:
     image: postgres:latest
@@ -47,3 +74,5 @@ services:
       POSTGRES_DB: robloxcase
     ports:
       - "5433:5432"
+    networks:
+      - roblox_case_net
