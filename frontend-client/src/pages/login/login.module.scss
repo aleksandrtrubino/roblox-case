@@ -7,6 +7,12 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
+  //background-color: #1a68e6;
+
+  @media (max-width: 480px) {
+    height: auto;
+    min-height: 80vh;
+  }
 }
 
 .section {
@@ -19,6 +25,13 @@
   justify-content: center;
   align-items: center;
   padding: 2rem 3rem 2rem 3rem;
+  //background-color: #1a68e6;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    max-width: 480px;
+    min-width: 200px;
+  }
 }
 
 .header {
@@ -34,6 +47,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  //background-color: #1a68e6;
 }
 
 .label {
