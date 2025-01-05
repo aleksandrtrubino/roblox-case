@@ -5,52 +5,52 @@ networks:
     driver: bridge
 
 services:
-#  nginx:
-#    image: nginx:latest
-#    container_name: nginx-proxy
-#    ports:
-#      - "80:80"
-#      - "443:443"
-#    volumes:
-#      - ./nginx/conf.d:/etc/nginx/conf.d
-#      - /etc/letsencrypt:/etc/letsencrypt
-#      - /var/lib/letsencrypt:/var/lib/letsencrypt
-#    depends_on:
-#      - frontend-client
-#      - frontend-admin
-#      - backend
-#    networks:
-#      - roblox_case_net
-#
-#  frontend-client:
-#    image: roblox-case-frontend-client:latest
-#    build:
-#      context: ./frontend-client
-#      dockerfile: Dockerfile
-#    ports:
-#      - "3000:3000"
-#    environment:
-#      REACT_APP_API_URL: http://localhost:8080/api/v1
-#    depends_on:
-#      - backend
-#    networks:
-#      - roblox_case_net
-#
-#  frontend-admin:
-#    image: roblox-case-frontend-admin:latest
-#    build:
-#      context: ./frontend-admin
-#      dockerfile: Dockerfile
-#    ports:
-#      - "3001:3000"
-#    environment:
-#      REACT_APP_API_URL: http://localhost:8080/api/v1
-#    depends_on:
-#      - backend
-#    networks:
-#      - roblox_case_net
+ nginx:
+   image: nginx:latest
+   container_name: nginx-proxy
+   ports:
+     - "80:80"
+     - "443:443"
+   volumes:
+     - ./nginx/conf.d:/etc/nginx/conf.d
+     - /etc/letsencrypt:/etc/letsencrypt
+     - /var/lib/letsencrypt:/var/lib/letsencrypt
+   depends_on:
+     - frontend-client
+     - frontend-admin
+     - backend
+   networks:
+     - roblox_case_net
 
-  backend:
+ frontend-client:
+   image: roblox-case-frontend-client:latest
+   build:
+     context: ./frontend-client
+     dockerfile: Dockerfile
+   ports:
+     - "3000:3000"
+   environment:
+     REACT_APP_API_URL: http://localhost:8080/api/v1
+   depends_on:
+     - backend
+   networks:
+     - roblox_case_net
+
+ frontend-admin:
+   image: roblox-case-frontend-admin:latest
+   build:
+     context: ./frontend-admin
+     dockerfile: Dockerfile
+   ports:
+     - "3001:3000"
+   environment:
+     REACT_APP_API_URL: http://localhost:8080/api/v1
+   depends_on:
+     - backend
+   networks:
+     - roblox_case_net
+
+ backend:
     image: roblox-case-backend:latest
     build:
       context: ./backend
@@ -66,7 +66,7 @@ services:
     networks:
       - roblox_case_net
 
-  db:
+ db:
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
