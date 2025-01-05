@@ -13,11 +13,21 @@ padding: 0.4rem;
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media (max-width: 480px) {
+    width: 110%;
+    justify-self: center;
+  }
 }
 
 .deposit{
   margin-left: 5rem;
- font-size: 1.3rem;
+  font-size: 1.3rem;
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+    font-size: 16px;
+  }
 }
 
 .coinsIcon{
@@ -29,4 +39,8 @@ padding: 0.4rem;
   margin-right: 3rem;
   font-size: 1.3rem;
 
+  @media (max-width: 480px) {
+    margin-right: 0;
+    font-size: 16px;
+  }
 }
