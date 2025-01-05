@@ -4,9 +4,17 @@
   width: 90%;
   align-self: center;
   margin-top: 2rem;
+
+  @media (max-width: 480px) {
+    width: 90vw;
+  }
 }
 
 .boxWrapper{
   display: grid;
   grid-template-columns: min-content min-content min-content min-content;
+
+  @media (max-width: 480px) {
+    grid-template-columns: min-content min-content;
+  }
 }

@@ -189,7 +189,7 @@
 
 }
 
-@media (max-width: 482px) {
+@media (max-width: 480px) {
   .body {
     display: none;
   }
@@ -200,8 +200,9 @@
       margin: 24px 0;
       align-items: center;
 
-      & span {
+      &_span {
         font-size: 14px;
+        transition: all 0.3s ease-in-out;
       }
     }
   }
