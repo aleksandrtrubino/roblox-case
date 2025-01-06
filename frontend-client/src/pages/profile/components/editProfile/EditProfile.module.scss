@@ -18,6 +18,10 @@
   justify-content: center;
   align-items: center;
   padding: 2rem 3rem 2rem 3rem;
+
+  @media (max-width: 480px) {
+    width: 85%;
+  }
 }
 
 .header {
@@ -117,6 +121,13 @@
   grid-template-columns: min-content min-content;
   grid-template-areas: "leftColumn rightColumn";
   gap: 1rem;
+
+  @media (max-width: 480px) {
+    grid-template-areas:
+            "leftColumn"
+            "rightColumn";
+    gap: 0;
+  }
 }
 
 .leftColumn{

@@ -17,6 +17,10 @@
   transition: background-color 0.5s ease;
   cursor: pointer;
 
+  @media (max-width: 480px) {
+    grid-template-columns: 7.5em;
+  }
+
   &:hover{
 
     & .image {
@@ -32,8 +36,12 @@
 }
 
 .image{
- width: 15rem;
+  width: 15rem;
   transition: background-color 0.5s ease;
+
+  @media (max-width: 480px) {
+    width: 7.5rem;
+  }
 }
 
 .nameWrapper{
@@ -44,6 +52,10 @@
 
 .name{
  font-size: 1.3em;
+
+  @media (max-width: 480px) {
+    font-size: 1em;
+  }
 }
 
 .priceWrapper{
@@ -55,9 +67,17 @@
 
 .price{
  font-size: 1.5em;
+
+  @media (max-width: 480px) {
+    font-size: 1.1em;
+  }
 }
 
 .priceIcon{
   font-size: 1.2em;
- margin-left: 0.5em;
+  margin-left: 0.5em;
+
+  @media (max-width: 480px) {
+    font-size: 1em;
+  }
 }

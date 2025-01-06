@@ -13,6 +13,16 @@
  "imageArea"
  "petCardsArea"
  "buttonArea";
+
+ @media (max-width: 480px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 85%;
+  grid-template-columns: 100vw;
+ }
 }
 
 .imageWrapper{
@@ -23,6 +33,10 @@
 
 .image{
  width: 12em;
+
+ @media (max-width: 480px) {
+  width: 7em;
+ }
 }
 
 .nameWrapper{
@@ -33,18 +47,38 @@
 
 .name{
  font-size: 1.5rem;
+
+ @media (max-width: 480px) {
+  font-size: 1.2rem;
+ }
 }
 
 .petCardsWrapper{
  grid-area: petCardsArea;
  display: flex;
- justify-content: center;
+ //justify-content: center;
+
+ @media (max-width: 480px) {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+ }
+}
+
+.petCardsWrapper::-webkit-scrollbar {
+ display: none; /* Убираем скроллбар в WebKit-браузерах (Chrome, Safari) */
 }
 
 .petCards{
  display: grid;
  width: fit-content;
  grid-template-columns: min-content min-content min-content min-content min-content min-content min-content min-content;
+
+ @media (max-width: 480px) {
+  grid-template-columns: repeat(auto-fit, min-content); /* Автоматическая подстройка количества колонок */
+ }
 }
 
 .buttonWrapper{
@@ -52,6 +86,10 @@
  display: flex;
  justify-content: flex-end;
  margin-top: 1rem;
+
+ @media (max-width: 480px) {
+  justify-content: center;
+ }
 }
 
 .coinsIcon{

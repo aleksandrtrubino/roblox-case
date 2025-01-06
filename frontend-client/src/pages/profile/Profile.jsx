@@ -58,11 +58,11 @@ export const Profile = () => {
           <div className={styles.details_buttons}>
             <Link to="/payment" className={`${styles.details_button} ${styles.payment}`}>
               <FontAwesomeIcon className={styles.details_button_money_icon} icon={faCoins} />
-              Пополнить баланс
+              <p>Пополнить баланс</p>
             </Link>
             <button className={styles.details_button} onClick={openEditProfile}>
               <FontAwesomeIcon className={styles.details_button_money_icon} icon={faEdit} />
-              Редактировать профиль
+              <p>Редактировать профиль</p>
             </button>
             <button className={`${styles.details_button} ${styles.support}`}>
               <svg
@@ -76,7 +76,7 @@ export const Profile = () => {
                   </g>
                 </g>
               </svg>
-              Нужна помощь?
+              <p>Нужна помощь?</p>
             </button>
             <Link to='/login' className={styles.logout}>
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +87,7 @@ export const Profile = () => {
                     stroke-linejoin="round"
                 />
               </svg>
-              Выйти из аккаунта
+              <p>Выйти из аккаунта</p>
             </Link>
           </div>
         </div>
