@@ -25,7 +25,7 @@ export const Boxes = () =>{
         boxes.isSuccess ?
         <div className={styles.main}>
             <div className={styles.header}>
-                Кейсы
+                <p>Кейсы</p>
                 <button className={styles.createButton} onClick={()=>setCreateBoxOpen(true)}>Создать</button>
             </div>
             <div className={styles.boxList}>

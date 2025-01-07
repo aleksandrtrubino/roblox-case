@@ -7,6 +7,11 @@
   &::-webkit-scrollbar {
     display: none; /* Hide the scrollbar */
   }
+
+  @media (max-width: 480px) {
+    width: 100vw;
+    overflow: scroll;
+  }
 }
 
 .header{
@@ -15,6 +20,12 @@
   margin-left: 1em;
   display: flex;
   flex-direction: row ;
+
+  & p {
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
+  }
 }
 
 .boxList{
@@ -38,6 +49,12 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
+
+  @media (max-width: 480px) {
+    font-size: 0.80rem;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+  }
 
   &:hover {
     opacity: 0.8;

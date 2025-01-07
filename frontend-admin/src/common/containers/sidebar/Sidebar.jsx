@@ -13,6 +13,9 @@ const Sidebar = () => {
     setIsOpen(!isOpen)
   }
 
+  const closeSidebar = () => {
+    setIsOpen(false);
+  };
 
   const user = useGetUserMeQuery();
 
@@ -32,44 +35,49 @@ const Sidebar = () => {
 
   return (
       user.isSuccess ?
-          <div className={styles.sidebar}>
-            <div className={styles.logotype}>
-              Petcase
+          <>
+            <button className={styles.burgerButton} onClick={handleOpening}>
+              ☰
+            </button>
+            <div className={`${styles.sidebar} ${isOpen ? styles.sidebar_open : ''}`}>
+              <div className={styles.logotype}>
+                Petcase
+              </div>
+              <div className={styles.profileInfo}>
+                <div className={styles.profileInfo_avatar}>{user.data.nickname[0].toUpperCase()}</div>
+                <div className={styles.profileInfo_nickname}>{user.data.nickname}</div>
+                <div className={styles.profileInfo_role}>{roleNameById(user.data.authorities[0].id)}</div>
+              </div>
+              <div className={styles.links} onClick={closeSidebar}>
+                <Link to='/boxes' className={activeClass("/boxes")}>
+                  <div>Кейсы</div>
+                </Link>
+                <Link to='/pets' className={activeClass("/pets")}>
+                  <div>Питомцы</div>
+                </Link>
+                <Link to='/pet-cards' className={activeClass("/pet-cards")}>
+                  <div>Карточки</div>
+                </Link>
+                <Link to='/users' className={activeClass("/users")}>
+                  <div>Пользователи</div>
+                </Link>
+                {
+                  user.data.authorities[0].id === 1 ?
+                      <Link to='/moderators' className={activeClass('/moderators')}>
+                        <div>Модераторы</div>
+                      </Link>
+                      :
+                      ''
+                }
+                <Link to='/promocodes' className={activeClass("/promocodes")}>
+                  <div>Промокоды</div>
+                </Link>
+                <Link to='/withdrawals' className={activeClass('/withdrawals')}>
+                  <div>Выводы</div>
+                </Link>
+              </div>
             </div>
-            <div className={styles.profileInfo}>
-              <div className={styles.profileInfo_avatar}>{user.data.nickname[0].toUpperCase()}</div>
-              <div className={styles.profileInfo_nickname}>{user.data.nickname}</div>
-              <div className={styles.profileInfo_role}>{roleNameById(user.data.authorities[0].id)}</div>
-            </div>
-            <div className={styles.links}>
-              <Link to='/boxes' className={activeClass("/boxes")}>
-                <div>Кейсы</div>
-              </Link>
-              <Link to='/pets' className={activeClass("/pets")}>
-                <div>Питомцы</div>
-              </Link>
-              <Link to='/pet-cards' className={activeClass("/pet-cards")}>
-                <div>Карточки</div>
-              </Link>
-              <Link to='/users' className={activeClass("/users")}>
-                <div>Пользователи</div>
-              </Link>
-              {
-                user.data.authorities[0].id === 1 ?
-                    <Link to='/moderators' className={activeClass('/moderators')}>
-                      <div>Модераторы</div>
-                    </Link>
-                    :
-                    ''
-              }
-              <Link to='/promocodes' className={activeClass("/promocodes")}>
-                <div>Промокоды</div>
-              </Link>
-              <Link to='/withdrawals' className={activeClass('/withdrawals')}>
-                <div>Выводы</div>
-              </Link>
-            </div>
-          </div>
+          </>
           :
           user.isLoading ?
               'loading...'

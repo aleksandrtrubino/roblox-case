@@ -15,6 +15,20 @@
   background-color: $color-1;
   padding: 1rem;
   border-radius: 1rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      "image"
+      "name"
+      "price"
+      "rarity"
+      "selected"
+      "cards"
+      "button";
+    width: 90vw;
+  }
 }
 
 .imageWrapper, .nameWrapper, .priceWrapper, .rarityWrapper, .selectedWrapper, .cardsWrapper, .buttonWrapper {
@@ -31,17 +45,27 @@
 .imageWrapper {
   grid-area: image;
 
-
+  @media (max-width: 480px) {
+    justify-self: center;
+  }
 
 }
 
 .image {
   width: 8rem;
+
+  @media (max-width: 480px) {
+    width: 6rem;
+  }
 }
 
 .nameWrapper {
   grid-area: name;
   justify-content: flex-end;
+
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
 
 }
 
@@ -72,6 +96,11 @@
 .priceWrapper{
   grid-area: price;
   justify-content: flex-end;
+
+  @media (max-width: 480px) {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
 }
 
 .priceInput{
@@ -106,6 +135,9 @@
   grid-area: rarity;
   justify-content: flex-end;
 
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
 }
 
 .selectedWrapper {
@@ -113,6 +145,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  @media (max-width: 480px) {
+    margin-bottom: 2rem;
+  }
 
 }
 
@@ -123,6 +159,12 @@
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
+
+  @media (max-width: 480px) {
+    gap: 0.4rem;
+    width: 80%;
+    flex-wrap: wrap;
+  }
 }
 
 .cardsWrapper {
@@ -143,6 +185,10 @@
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 0.5rem;
+
+  @media (max-width: 480px) {
+    overflow-x: auto;
+  }
 
   &::-webkit-scrollbar {
     width: 0.7rem;
