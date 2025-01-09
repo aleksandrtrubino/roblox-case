@@ -13,9 +13,22 @@
   padding: 1rem;
   margin-left: 1rem;
   margin-bottom: 1rem;
- width: fit-content;
+  width: fit-content;
   background-color: $color-2;
   border-radius: 1.3rem;
+
+ @media (max-width: 480px) {
+  width: 70vw;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto 10rem auto;
+  grid-template-areas:
+      "image"
+      "name"
+      "price"
+      "chances"
+      "buttons";
+  margin-left: 3rem;
+ }
 }
 
 .imageWrapper{
@@ -26,6 +39,10 @@
 
 .image{
  width: 4rem;
+
+ @media (max-width: 480px) {
+   width: 7rem;
+ }
 
 }
 
@@ -42,6 +59,10 @@
 .name{
  font-size: 0.8rem;
  text-align: center;
+
+ @media (max-width: 480px) {
+   font-size: 1rem;
+ }
 }
 
 .priceWrapper{
@@ -57,6 +78,10 @@
 .price{
  font-size: 0.8rem;
  text-align: center;
+
+ @media (max-width: 480px) {
+   font-size: 0.9rem;
+ }
 }
 
 .priceIcon{
@@ -73,6 +98,12 @@
  gap: 0.1rem;
  align-self: center;
  //justify-self: center;
+
+ @media (max-width: 480px) {
+   justify-self: center;
+   width: 90%;
+   overflow-x: scroll;
+ }
 }
 
 .petCard{
@@ -85,6 +116,10 @@
 
 .buttonWrapper{
  grid-area: buttons;
+
+ @media (max-width: 480px) {
+   justify-self: center;
+ }
 }
 
 .editButton{
@@ -123,7 +158,12 @@
  cursor: pointer;
  transition: all .3s ease;
 
+ @media (max-width: 480px) {
+   margin-left: 1.2rem;
+ }
+
  &:hover {
   opacity: 80%;
  }
 }
+

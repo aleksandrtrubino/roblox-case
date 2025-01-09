@@ -32,12 +32,47 @@
     margin-bottom: 24px;
 }
 
+.burgerButton {
+    display: none;
+
+    @media (max-width: 480px) {
+        display: block;
+        position: fixed;
+        top: 1.2em;
+        right: 1em;
+        z-index: 1001; // поверх всех элементов
+        background: none;
+        border: none;
+        font-size: 2em;
+        cursor: pointer;
+        color: white;
+    }
+}
+
 .sidebar{
     display: flex;
     flex-direction: column;
     position: sticky;
     width: fit-content;
     background-color: $color-2;
+
+    @media (max-width: 480px) {
+        display: none; // скрываем сайдбар
+        position: fixed; // делаем фиксированным для выпадания
+        top: 0;
+        z-index: 1000;
+        right: 0;
+        height: 100%;
+        width: 100vw; // ширина выпадающего меню
+        background-color: $color-2;
+        transform: translateX(-100%); // убираем за экран
+        transition: transform 0.3s ease;
+
+        &.sidebar_open {
+            display: block;
+            transform: translateX(0); // показываем сайдбар
+        }
+    }
 }
 
 .profileInfo{
@@ -105,6 +140,7 @@
         padding-left: 2.2em;
         text-decoration: none;
         color: inherit;
+
 
         &:hover{
             background-color: $color-1;

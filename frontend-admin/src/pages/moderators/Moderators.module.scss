@@ -2,6 +2,10 @@
 
 .main{
 
+  @media (max-width: 480px) {
+    width: 100vw;
+    overflow: scroll;
+  }
 }
 
 .user{
@@ -14,6 +18,12 @@
   margin-top: 0.5rem;
   width: 60rem;
   height: 4rem;
+
+  @media (max-width: 480px) {
+    margin-left: 0.5rem;
+    width: 90vw;
+    justify-self: center;
+  }
 
   &_icon{
     margin-left: 0.5rem;
@@ -58,6 +68,12 @@
   margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+    margin-left: 2rem;
+    margin-top: 2.7rem;
+  }
 }
 
 .createButton{
@@ -77,6 +93,13 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    margin-top: 0.3rem;
+    margin-left: 0.5rem;
+  }
 
   &:hover {
     opacity: 0.8;

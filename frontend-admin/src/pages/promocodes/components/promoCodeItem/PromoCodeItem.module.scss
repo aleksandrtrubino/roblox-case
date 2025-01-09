@@ -9,6 +9,24 @@
   margin-bottom: 0.5rem;
   margin-left: 4em;
   margin-right: 4rem;
+
+  @media (max-width: 480px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+    "codeWrapper"
+    "numberWrapper"
+    "usesWrapper"
+    "editButton"
+    "deleteButton";
+    width: 90vw;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    gap: 1rem; /* Задает отступы между элементами */
+    justify-items: center; /* Горизонтальное центрирование элементов */
+    align-items: center;
+  }
 }
 
 .codeWrapper{
@@ -16,6 +34,11 @@
   background-color: $color-3;
   border-radius: 0.5rem;
   width: 10rem;
+
+  @media (max-width: 480px) {
+    grid-area: codeWrapper;
+    width: 10rem;
+  }
 }
 
 .code{
@@ -27,6 +50,12 @@
   background-color: $color-3;
   border-radius: 0.5rem;
   margin-left: 1rem;
+
+  @media (max-width: 480px) {
+    grid-area: numberWrapper;
+    width: 10rem;
+    margin-left: 0;
+  }
 }
 
 .number{
@@ -38,6 +67,12 @@
   background-color: $color-3;
   border-radius: 0.5rem;
   margin-left: 1rem;
+
+  @media (max-width: 480px) {
+    grid-area: usesWrapper;
+    width: 10rem;
+    margin-left: 0;
+  }
 }
 
 .uses{
@@ -59,6 +94,11 @@
   cursor: pointer;
   transition: all .3s ease;
 
+  @media (max-width: 480px) {
+    grid-area: editButton;
+    margin-left: 0;
+  }
+
   &:hover {
     opacity: 80%;
   }
@@ -79,6 +119,10 @@
   align-items: center;
   cursor: pointer;
   transition: all .3s ease;
+
+  @media (max-width: 480px) {
+    grid-area: deleteButton;
+  }
 
   &:hover {
     opacity: 80%;

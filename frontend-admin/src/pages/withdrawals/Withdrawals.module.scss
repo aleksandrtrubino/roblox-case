@@ -3,6 +3,10 @@
 
 .main{
 
+  @media (max-width: 480px) {
+    width: 100vw;
+    overflow: scroll;
+  }
 }
 
 .header{
@@ -12,4 +16,10 @@
   margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+    margin-left: 2rem;
+    margin-top: 2.7rem;
+  }
 }

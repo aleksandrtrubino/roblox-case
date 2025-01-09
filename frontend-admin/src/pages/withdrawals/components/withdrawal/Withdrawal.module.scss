@@ -13,6 +13,32 @@
   align-items: center;
 
   padding: 2rem;
+
+  @media (max-width: 480px) {
+    width: 75vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "userWrapper"
+      "nameWrapper"
+      "createdAt"
+      "cancelIcon";
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    gap: 1rem; /* Задает отступы между элементами */
+    justify-items: center; /* Горизонтальное центрирование элементов */
+    align-items: center;
+  }
+}
+
+.userWrapper{
+  @media (max-width: 480px) {
+    grid-area: userWrapper;
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 .property {
@@ -56,6 +82,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media (max-width: 480px) {
+    grid-area: nameWrapper;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .name{
@@ -71,6 +103,12 @@
 .createdAt{
   margin-left: auto;
   font-size: 1.1rem;
+
+  @media (max-width: 480px) {
+    grid-area: createdAt;
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 .cancelIcon{
@@ -78,6 +116,12 @@
   margin-left: 2rem;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
+
+  @media (max-width: 480px) {
+    grid-area: cancelIcon;
+    margin-right: 0;
+    margin-left: 0;
+  }
 
   &:hover {
     & path{

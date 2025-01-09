@@ -80,7 +80,8 @@ export const CreatePromoCode = ({onClose}) =>{
             </div>
             <div className={styles.fieldWrapper}>
                 <div className={styles.name}>
-                    Использования:
+                    <p className={styles.desktopName}>Использования:</p>
+                    <p className={styles.mobileName}>Исп. :</p>
                 </div>
                 <div className={styles.inputWrapper}>
                     <input

@@ -1,7 +1,10 @@
 @import '../../styles/colors';
 
 .main{
-
+ @media (max-width: 480px) {
+   width: 100vw;
+   overflow: scroll;
+ }
 }
 
 .user{
@@ -14,6 +17,12 @@
   margin-top: 0.5rem;
   width: 60rem;
   height: 4rem;
+
+  @media (max-width: 480px) {
+    margin-left: 0.5rem;
+    width: 90vw;
+    justify-self: center;
+  }
 
   &_icon{
     margin-left: 0.5rem;
@@ -55,4 +64,10 @@
   font-size: 2.5em;
   margin-top: 1em;
   margin-left: 8rem;
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+    margin-left: 2rem;
+    margin-top: 2.7rem;
+  }
 }

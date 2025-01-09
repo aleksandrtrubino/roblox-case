@@ -12,6 +12,16 @@
   height: 100vh;
   width: 100%; /* Ensure the grid container doesn't exceed the viewport */
   overflow: hidden; /* Prevent horizontal overflow */
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas:
+    "header"
+    "petList";
+    width: 100vw;
+    overflow: scroll;
+  }
 }
 
 .header{
@@ -20,6 +30,12 @@
   font-size: 2.5em;
   margin-top: 1em;
   margin-left: 1em;
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+    margin-top: 2.7rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .petList{
@@ -36,6 +52,16 @@
   overflow-y: auto;
   &::-webkit-scrollbar {
     display: none; /* Hide the scrollbar */
+  }
+
+  @media (max-width: 480px) {
+    justify-content: center;
+    grid-template-columns: min-content min-content; /* Каждая карточка занимает всю ширину */
+    grid-template-rows: auto; /* Карточки располагаются вниз */
+    row-gap: 1rem; /* Промежуток между карточками */
+    width: 100%; /* Занимает всю ширину контейнера */
+    overflow-y: scroll; /* Скроллинг вниз */
+    overflow-x: hidden; /* Убираем горизонтальный скроллинг */
   }
 }
 

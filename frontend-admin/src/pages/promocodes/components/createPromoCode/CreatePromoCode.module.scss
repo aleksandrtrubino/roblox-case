@@ -8,6 +8,10 @@
   height: 15rem;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 480px) {
+    width: 70vw;
+  }
 }
 
 .fieldWrapper{
@@ -20,6 +24,19 @@
 .name{
   font-size: 1.3rem;
   transition: all 0.3s ease-in-out;
+}
+
+.mobileName {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .desktopName {
+    display: none;
+  }
+  .mobileName {
+    display: block;
+  }
 }
 
 .inputWrapper{
