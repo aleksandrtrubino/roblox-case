@@ -22,6 +22,11 @@
   &_active{
     background-color: $color-3;
   }
+
+  @media (max-width: 480px) {
+    width: 5.75em;
+    height: 5.75em;
+  }
 }
 
 //.pet:hover .image {

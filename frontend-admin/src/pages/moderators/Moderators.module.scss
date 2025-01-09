@@ -19,6 +19,12 @@
   width: 60rem;
   height: 4rem;
 
+  @media (max-width: 480px) {
+    margin-left: 0.5rem;
+    width: 90vw;
+    justify-self: center;
+  }
+
   &_icon{
     margin-left: 0.5rem;
     display: flex;
@@ -92,6 +98,7 @@
     font-size: 0.8rem;
     margin-bottom: 1rem;
     margin-top: 0.3rem;
+    margin-left: 0.5rem;
   }
 
   &:hover {

@@ -21,6 +21,12 @@
 
 
   border-radius: 1rem;
+
+  @media (max-width: 480px) {
+    margin-left: 0.5rem;
+    width: 90vw;
+    justify-self: center;
+  }
 }
 
 .input{
@@ -32,6 +38,18 @@
   outline: none;
   border: none;
   border-radius: 0.5rem;
+
+  @media (max-width: 480px) {
+    height: 1.6rem;
+    width: 95%;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  input::placeholder {
+    color: transparent; /* Делаем текст невидимым */
+  }
 }
 
 .iconWrapper{

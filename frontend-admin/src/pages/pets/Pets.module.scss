@@ -48,5 +48,14 @@
   &::-webkit-scrollbar {
     display: none; /* Hide the scrollbar */
   }
+
+  @media (max-width: 480px) {
+    grid-template-columns: min-content min-content min-content;
+    grid-template-rows: auto;
+    row-gap: 1rem; /* Промежуток между карточками */
+    width: 100vw; /* Занимает всю ширину контейнера */
+    overflow-y: scroll; /* Скроллинг вниз */
+    overflow-x: hidden; /* Убираем горизонтальный скроллинг */
+  }
 }
 
