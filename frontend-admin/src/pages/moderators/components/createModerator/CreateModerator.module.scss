@@ -117,6 +117,13 @@
   grid-template-columns: min-content min-content;
   grid-template-areas: "leftColumn rightColumn";
   gap: 1rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: min-content;
+    grid-template-areas:
+            "leftColumn"
+            "rightColumn";
+  }
 }
 
 .leftColumn{
