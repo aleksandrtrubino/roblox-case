@@ -16,6 +16,7 @@ import {selectUserRole} from "../../../model/authSlice";
 let balanceCount = 101;
 
 export const Header = () => {
+    const balance = useGetBalanceMeQuery();
 
     const userRole = useSelector(selectUserRole);
     const isUserRoleValid = userRole === ("user")
@@ -27,6 +28,7 @@ export const Header = () => {
 
         {/* Добавление счетчика пользователей на сайте */}
         {/* <Online className={styles.header_online}/> */}
+      <div className={styles.header_balance_count}>{balance.data.balance}</div>
       </div>
         {
             isUserRoleValid &&
