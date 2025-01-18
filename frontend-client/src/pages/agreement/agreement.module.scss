@@ -2,10 +2,20 @@
 
 .agreement {
   padding: 0 200px;
+
+  @media (max-width: 480px) {
+    padding: 0 16px;
+  }
   &_wrapper {
   }
 
   &_body {
+
+    @media (max-width: 480px) {
+      word-wrap: break-word;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
     & ol {
       list-style: none;
       counter-reset: li;
@@ -14,6 +24,10 @@
         & ol {
             margin-top: 10px;
             padding-left: 20px;
+
+          @media (max-width: 480px) {
+            padding-left: 16px;
+          }
         }
       }
     }
@@ -38,6 +52,10 @@
 
   margin-bottom: 64px;
 
+  @media (max-width: 480px) {
+    margin-bottom: 32px;
+  }
+
   &_body {
     width: 100%;
   }
@@ -47,5 +65,10 @@
     font-weight: 500;
 
     margin-bottom: 12px;
+
+    @media (max-width: 480px) {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
   }
 }
