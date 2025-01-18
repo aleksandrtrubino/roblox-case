@@ -16,12 +16,12 @@ export const Faq = () => {
   return (
     <div className={styles.faq}>
       <div className={styles.faq_wrapper}>
-        <ul className={`${styles.faq_features} ${styles.features}`}>
-          <li className={`${styles.features_item}`}></li>
-          <li className={`${styles.features_item}`}></li>
-          <li className={`${styles.features_item}`}></li>
-          <li className={`${styles.features_item}`}></li>
-        </ul>
+        {/*<ul className={`${styles.faq_features} ${styles.features}`}>*/}
+        {/*  <li className={`${styles.features_item}`}></li>*/}
+        {/*  <li className={`${styles.features_item}`}></li>*/}
+        {/*  <li className={`${styles.features_item}`}></li>*/}
+        {/*  <li className={`${styles.features_item}`}></li>*/}
+        {/*</ul>*/}
         <div className={`${styles.faq_drop} ${styles.drop}`}>
           <span className={styles.drop_title}>Часто задаваемые вопросы</span>
           <ul className={styles.drop_list}>
