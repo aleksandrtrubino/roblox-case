@@ -28,7 +28,7 @@ export const Header = () => {
 
         {/* Добавление счетчика пользователей на сайте */}
         {/* <Online className={styles.header_online}/> */}
-      <div className={styles.header_balance_count}>{balance.data.balance}</div>
+      <div className={styles.header_balance_count}>{balance.data?.balance}</div>
       </div>
         {
             isUserRoleValid &&
