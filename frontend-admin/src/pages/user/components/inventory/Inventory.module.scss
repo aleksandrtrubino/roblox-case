@@ -3,4 +3,8 @@
 .main{
   display: grid;
   grid-template-columns: min-content min-content min-content min-content min-content min-content min-content;
+
+  @media (max-width: 480px) {
+    overflow-x: auto;
+  }
 }

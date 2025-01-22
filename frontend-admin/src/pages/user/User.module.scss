@@ -7,6 +7,12 @@
     align-self: center;
     overflow-y: scroll;
 
+    @media (max-width: 480px) {
+        width: 100vw;
+        height: auto;
+        min-height: 80vh;
+    }
+
     &::-webkit-scrollbar {
         width: 0;
     }
@@ -23,6 +29,11 @@
         display: flex;
 
         margin-bottom: 32px;
+
+        @media (max-width: 480px) {
+            align-self: center;
+            margin-top: 40px;
+        }
     }
 
     &_info {
@@ -96,6 +107,11 @@
         background-color: $color-3;
 
         margin-right: 24px;
+
+        @media (max-width: 480px) {
+            width:8rem;
+            height:8rem;
+        }
     }
 }
 
@@ -129,6 +145,16 @@
         display: flex;
         align-items: center;
         gap: 12px;
+
+        @media (max-width: 480px) {
+            //flex-direction: column; // Кнопки одна под другой
+            gap: 8px;
+            flex-wrap: wrap;
+
+            & p {
+                display: none;
+            }
+        }
     }
 
     &_buttonBan {
@@ -284,6 +310,11 @@
     position: relative;
 
     background-color: $color-2;
+
+    @media (max-width: 480px) {
+        width: 90%;
+        align-self: center;
+    }
 
 }
 

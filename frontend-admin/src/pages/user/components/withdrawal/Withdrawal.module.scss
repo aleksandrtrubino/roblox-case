@@ -25,6 +25,12 @@
   user-select: none;
   margin-right: 0.2rem;
 
+  @media (max-width: 480px) {
+    width: 1.5rem;         // Ширина квадратика
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+
   &_neon {
     background-color: $property-neon; // Розовый цвет неона
     //box-shadow: 0 0 10px rgba(255, 0, 255, 0.7); // Эффект неона
@@ -53,10 +59,20 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+    //margin-right: 4rem;
+    gap: 0.5rem;
+  }
 }
 
 .name{
  font-size: 1.1rem;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 }
 
 .propertyList{
@@ -68,6 +84,10 @@
 .createdAt{
   margin-left: auto;
   font-size: 1.1rem;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 }
 
 .cancelIcon{
