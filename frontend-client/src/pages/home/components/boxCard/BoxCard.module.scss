@@ -21,6 +21,10 @@
     grid-template-columns: 7.5em;
   }
 
+  @media (max-width: 390px) {
+    grid-template-columns: 6em;
+  }
+
   &:hover{
 
     & .image {
@@ -41,6 +45,10 @@
 
   @media (max-width: 480px) {
     width: 7.5rem;
+  }
+
+  @media (max-width: 390px) {
+    width: 6rem;
   }
 }
 
