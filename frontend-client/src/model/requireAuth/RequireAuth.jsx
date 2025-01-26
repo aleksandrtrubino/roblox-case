@@ -14,7 +14,7 @@ export const RequireAuth = () =>{
     const location = useLocation()
 
     return (
-        !isExpired && isUserRoleValid
+        isUserRoleValid
             ? <Outlet />
             : <Navigate to="/login" state={{ from: location }} replace />
     )

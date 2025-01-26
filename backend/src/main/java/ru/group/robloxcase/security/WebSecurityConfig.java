@@ -55,12 +55,29 @@ public class WebSecurityConfig {
     }
 
     @Bean
-    CorsConfigurationSource corsConfigurationSource() {
+    public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://localhost:3001"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST","DELETE","PUT","PATCH","OPTIONS"));
+        configuration.setAllowedOrigins(Arrays.asList(
+                "http://localhost:3000",
+                "http://localhost:3001",
+                "http://www.petcase.pro",
+                "https://www.petcase.pro",
+                "http://petcase.pro",
+                "https://petcase.pro",
+                "http://92.53.69.207:3001"
+                ,"http://92.53.69.207"
+        ));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT", "PATCH", "OPTIONS"));
+        configuration.setAllowedHeaders(Arrays.asList(
+                "authorization",
+                "content-type",
+                "content-length",
+                "accept",
+                "x-requested-with"
+        ));
         configuration.setAllowCredentials(true);
-        configuration.setAllowedHeaders(Arrays.asList("authorization","content-type","content-length"));
+        configuration.setMaxAge(3600L);
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;

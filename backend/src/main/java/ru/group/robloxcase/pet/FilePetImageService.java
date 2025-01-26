@@ -8,7 +8,7 @@ import java.util.Arrays;
 @Service
 public class FilePetImageService implements PetImageService{
 
-    private final static String IMAGE_DIRECTORY = "backend/src/main/resources/images/pet/";
+    private final static String IMAGE_DIRECTORY = "/";
     private final static String IMAGE_NAME_PREFIX = "pet_";
     private final static String IMAGE_EXTENSION = ".webp";
 
