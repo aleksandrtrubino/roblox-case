@@ -191,6 +191,8 @@
 
   @media (max-width: 480px) {
     overflow-x: auto;
+    grid-template-rows: max-content;
+    height: max-content;
   }
 
   &::-webkit-scrollbar {

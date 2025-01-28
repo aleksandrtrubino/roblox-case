@@ -171,6 +171,10 @@
   grid-area: cards;
   background-color: $color-2;
   border-radius: 1rem;
+
+  @media (max-width: 480px) {
+    height: max-content;
+  }
 }
 
 .cards{
@@ -187,6 +191,8 @@
   padding-right: 0.5rem;
 
   @media (max-width: 480px) {
+    grid-template-rows: max-content;
+    height: max-content;
     overflow-x: auto;
   }
 

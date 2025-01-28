@@ -57,7 +57,7 @@
   @media (max-width: 480px) {
     justify-content: center;
     grid-template-columns: min-content min-content; /* Каждая карточка занимает всю ширину */
-    grid-template-rows: auto; /* Карточки располагаются вниз */
+    grid-template-rows: max-content; /* Карточки располагаются вниз */
     row-gap: 1rem; /* Промежуток между карточками */
     width: 100%; /* Занимает всю ширину контейнера */
     overflow-y: scroll; /* Скроллинг вниз */
